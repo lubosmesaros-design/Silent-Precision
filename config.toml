@@ -1,0 +1,8 @@
+baseURL = "https://silent-precision.org/"
+languageCode = "sk-sk"
+title = "Silent Precision"
+theme = "silentprecision"
+paginate = 10
+
+[params]
+  description = "Analytický web bez bullshitu – dáta, rozbory, fakty."
