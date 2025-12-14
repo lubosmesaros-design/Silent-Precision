@@ -1,18 +1,5 @@
-<!DOCTYPE html>
-<html lang="sk">
-<head>
-  <meta charset="UTF-8" />
-  <title>Silent Precision</title>
-</head>
-<body>
-
-  <h1>Silent Precision – bez bullshitu</h1>
-
-  {{ range .Site.RegularPages }}
-    <article>
-      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    </article>
-  {{ end }}
-
-</body>
-</html>
+{{ define "main" }}
+<main>
+  {{ .Content }}
+</main>
+{{ end }}
