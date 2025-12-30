@@ -1,7 +1,12 @@
 baseURL = "https://bez-bullshitu.org/"
-languageCode = "sk-sk"
+languageCode = "sk"
 title = "Silent Precision"
 paginate = 10
 
 [params]
-  description = "Analytický web bez bullshitu - dáta, rozbory, fakty."
+  description = "Analytický web bez bullshitu. Dáta. Rozbory. Fakty."
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
