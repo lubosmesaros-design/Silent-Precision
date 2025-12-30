@@ -13,7 +13,7 @@
     --color-text-light: #6c757d; /* Sivá na vedľajší text */
 }
 body {
-    background-color: var(--color-offwhite);
+    background-color: var(--color-navyblue);
     color: var(--color-text);
     font-family: 'Inter', 'Segoe UI', sans-serif;
     line-height: 1.6;
