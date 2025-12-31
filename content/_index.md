@@ -220,7 +220,11 @@
       <span>Evidence over vibes.</span>
       <span>No ads. No agenda. No mercy for bullshit.</span>
     </footer>
+    <p style="margin-top:40px; font-size:14px; color:var(--muted);">
+  Kontakt: <a href="mailto:kontakt@bez-bullshitu.org">kontakt@bez-bullshitu.org</a>
+</p>
 
   </main>
 </body>
 </html>
+
