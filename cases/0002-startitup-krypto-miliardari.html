@@ -1,132 +1,316 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="sk">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Case #0002 – Startitup: „Miliardári kryptotrhu krváčajú“</title>
-  <link rel="stylesheet" href="/static/css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case #0002 – „Krypto miliardári krvácejú“ | bez-bullshitu.org</title>
+  <meta name="description" content="Pitva článku: Startitup – 'miliardári krvácajú' a 'rok 2025 zničil ich majetok'. Fakty, kontext, verdikt." />
+
+  <style>
+    :root {
+      --bg: #0b0e13;
+      --panel: rgba(18,21,28,0.86);
+      --border: rgba(120,140,255,0.22);
+      --text: #e6e9ef;
+      --muted: #9aa3b2;
+      --accent: #b9c4ff;
+
+      --good: #8ff0a4;
+      --bad: #ff7b7b;
+      --mid: #ffd37a;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 500px at 15% 20%, rgba(120,140,255,.12), transparent 55%),
+        radial-gradient(900px 600px at 85% 30%, rgba(180,120,255,.10), transparent 55%),
+        linear-gradient(180deg, #0a0c11 0%, var(--bg) 100%);
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: 980px; margin: 0 auto; padding: 44px 22px 72px; }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 18px 60px rgba(0,0,0,.55);
+      backdrop-filter: blur(10px);
+    }
+
+    h1 {
+      font-size: 32px;
+      line-height: 1.15;
+      letter-spacing: -0.4px;
+      margin-bottom: 10px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .chip {
+      border: 1px solid var(--border);
+      background: rgba(18,21,28,.6);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--accent);
+    }
+
+    .hr { height: 1px; background: rgba(255,255,255,0.06); margin: 20px 0; }
+
+    .section { margin-top: 16px; }
+
+    .label {
+      font-size: 12px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    p { line-height: 1.7; font-size: 15.5px; margin-bottom: 12px; }
+
+    ul { margin-left: 18px; }
+    li { margin: 7px 0; line-height: 1.6; font-size: 15px; }
+
+    .quote {
+      border-left: 3px solid rgba(185,196,255,0.35);
+      padding: 12px 14px;
+      background: rgba(0,0,0,0.16);
+      border-radius: 10px;
+      line-height: 1.65;
+      font-size: 15.5px;
+    }
+
+    .muted { color: var(--muted); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .mini {
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.14);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .mini h3 {
+      font-size: 14px;
+      color: var(--accent);
+      margin-bottom: 8px;
+      letter-spacing: .02em;
+    }
+
+    .verdict {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.16);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .badge {
+      font-weight: 800;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.16);
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .mixed { color: var(--mid); border-color: rgba(255,211,122,0.35); }
+
+    .footer {
+      margin-top: 22px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+      h1 { font-size: 28px; }
+    }
+  </style>
 </head>
 
 <body>
-  <header class="topbar">
-    <div class="topbar-left">BEZ-BULLSHITU.ORG</div>
-    <div class="topbar-right">CASE #0002</div>
-  </header>
+  <main class="container">
 
-  <main class="article">
-    <h1 class="title">Startitup: „Miliardári kryptotrhu krváčajú. Rok 2025 zničil ich majetok, straty boli bolestivé“</h1>
-
-    <div class="chips">
-      <span class="chip">Citácia</span>
-      <span class="chip">Dáta</span>
-      <span class="chip">Logika</span>
-      <span class="chip">Verdikt</span>
+    <div class="topbar">
+      <div><a href="/">bez-bullshitu.org</a></div>
+      <div>Case #0002</div>
     </div>
 
-    <section class="card">
-      <div class="tag">ZDROJ</div>
-      <p><strong>Médium:</strong> Startitup.sk</p>
-      <p><strong>Článok:</strong> Miliardári kryptotrhu „krváčajú“… (rok 2025…)</p>
-      <p><strong>URL:</strong> <a href="https://www.startitup.sk/miliardari-kryptotrhu-krvacaju-rok-2025-znicil-ich-majetok-straty-boli-bolestive/" target="_blank" rel="noopener">otvoriť článok</a></p>
-      <p class="muted"><strong>Poznámka:</strong> Toto nie je “anti-crypto” text. Toto je pitva jazyka a framingu, ktorý sa tvári ako report, ale primárne predáva emóciu.</p>
-    </section>
+    <article class="card">
+      <h1>Startitup: „Miliardári kryptotrhu krvácejú“ a „rok 2025 zničil ich majetok“</h1>
 
-    <section class="card">
-      <div class="tag">PREČO TO PITVÁME</div>
-      <p>
-        Keď niekto napíše “krváčajú” a “rok zničil ich majetok”, nechce ťa informovať.
-        Chce, aby si cítil drámu (a klikol). Faktom je, že pri kryptu je volatilita normálna
-        a “majetok” v takýchto článkoch často znamená <em>papierové prepočty</em> (net worth),
-        ktoré lietajú s cenou aktíva.
-      </p>
-      <p class="muted">
-        Preložené do slovenčiny bez adrenalínu: “ceny klesli, odhady bohatstva sa prepočítali”.
-      </p>
-    </section>
+      <div class="meta">
+        <span class="chip">Citácia</span>
+        <span class="chip">Dáta</span>
+        <span class="chip">Logika</span>
+        <span class="chip">Verdikt</span>
+      </div>
 
-    <section class="card quote">
-      <div class="tag">CITOVANÉ TVRDENIE</div>
-      <p>
-        „Miliardári kryptotrhu krváčajú. Rok 2025 zničil ich majetok, straty boli bolestivé.“
-      </p>
-      <p class="muted">
-        Poznámka: citujeme jadro (titulok + framing). To je presne tá časť, ktorá manipuluje.
-      </p>
-    </section>
+      <div class="section">
+        <div class="label">Zdroj</div>
+        <p class="muted">
+          Médium: <strong>Startitup.sk</strong><br>
+          Článok: <strong>Miliardári kryptotrhu „krvácajú“. Rok 2025 zničil ich majetok, straty boli bolestivé</strong><br>
+          URL: <a href="https://www.startitup.sk/miliardari-kryptotrhu-krvacaju-rok-2025-znicil-ich-majetok-straty-boli-bolestive/" target="_blank" rel="noopener">otvoriť článok</a>
+        </p>
+      </div>
 
-    <section class="grid-2">
-      <article class="card">
-        <div class="tag">ČO JE NA TOM PRAVDA</div>
-        <ul>
-          <li>Hodnota kryptoaktív v roku 2025 mohla výrazne kolísať (to je pri tomto trhu bežné).</li>
-          <li>Net worth ľudí naviazaných na krypto (founderi, “whales”, CEO) sa mení s cenou aktív.</li>
-          <li>Niektoré médiá sumarizujú zmeny odhadov bohatstva (napr. rebríčky/odhadové indexy).</li>
-        </ul>
-      </article>
+      <div class="hr"></div>
 
-      <article class="card">
-        <div class="tag">ČO JE ZAVÁDZAJÚCE</div>
-        <ul>
-          <li><strong>„Krvácajú“</strong> je emotívna metafora bez metriky (koľko? oproti čomu? v akom období?).</li>
-          <li><strong>„Rok 2025 zničil ich majetok“</strong> znie ako definitívna škoda – často ide len o prepočet odhadu pri poklese ceny.</li>
-          <li>“Miliardári kryptotrhu” nie je presne definovaná skupina (kto tam patrí a podľa čoho?).</li>
-        </ul>
-      </article>
-    </section>
+      <div class="section">
+        <div class="label">Prečo to pitváme</div>
+        <p>
+          Toto je učebnicový príklad titulku, ktorý predáva emóciu („krvácajú“, „bolestivé“, „zničil“),
+          ale bežnému čitateľovi nedá základné rozlíšenie:
+          <strong>realizovaná strata</strong> vs. <strong>pokles papierovej hodnoty</strong>.
+          Často ide len o to, že trh klesol a “net worth” (odhad majetku) sa prepočítal.
+          To nie je „zničenie majetku“. To je prepis excelu.
+        </p>
+      </div>
 
-    <section class="card">
-      <div class="tag">ROZKLAD: ČO ČLÁNOK ROBÍ (TECHNIKA)</div>
-      <ol>
-        <li><strong>Vymyslená kategória</strong>: “miliardári kryptotrhu” znie ako pevná trieda, ale je to marketingová nálepka.</li>
-        <li><strong>Emócia pred faktom</strong>: “krváčajú”, “bolestivé”, “zničil” – čitateľ má cítiť drámu ešte pred číslami.</li>
-        <li><strong>Zámena pojmov</strong>: “majetok” vs. “odhad majetku” vs. “realizovaná strata”. To sú tri rôzne veci.</li>
-        <li><strong>Bez kontextu</strong>: chýba referencia obdobia, benchmark, percentá, metodika odhadu.</li>
-      </ol>
-    </section>
+      <div class="section">
+        <div class="label">Citované tvrdenie</div>
+        <div class="quote">
+          „Miliardári kryptotrhu krvácajú. Rok 2025 zničil ich majetok, straty boli bolestivé.“
+        </div>
+        <p class="muted" style="margin-top:10px">
+          Poznámka: citujeme jadro tvrdenia (titulok + framing). Práve tam je manipulácia.
+        </p>
+      </div>
 
-    <section class="card">
-      <div class="tag">FAKTY A KONTEXT</div>
-      <p>
-        Ak článok operuje s “majetkom” (net worth), je korektné povedať, že ide o <strong>odhad</strong>,
-        ktorý sa prepočítava podľa trhovej ceny aktív. To nie je automaticky “zničil majetok” v zmysle,
-        že niekto prišiel o hotovosť alebo zrealizoval stratu. Je to skôr “graf prepočítal číslo”.
-      </p>
-      <p class="muted">
-        Bez konkrétnych čísel (percentá, časové okno, metodika) je z toho skôr dramatizácia než informácia.
-      </p>
-    </section>
+      <div class="grid">
+        <section class="mini">
+          <h3>Čo je na tom pravda</h3>
+          <ul>
+            <li>Trhové ceny kryptoaktív v niektorých obdobiach výrazne kolíšu (to je vlastnosť trhu, nie zázrak).</li>
+            <li>Ak cena aktíva klesne, <strong>odhadovaný majetok</strong> ľudí, ktorí ho držia, klesne tiež.</li>
+            <li>Niektoré rebríčky (napr. “billionaires index” a podobné metodiky) sledujú zmeny v odhadoch “net worth”.</li>
+          </ul>
+        </section>
 
-    <section class="card">
-      <div class="tag">ZDROJE</div>
-      <ul>
-        <li>Startitup (2026): predmetný článok – <a href="https://www.startitup.sk/miliardari-kryptotrhu-krvacaju-rok-2025-znicil-ich-majetok-straty-boli-bolestive/" target="_blank" rel="noopener">link</a></li>
-        <li>Bloomberg Billionaires Index – metodika/prehľady (ak je v článku citované)</li>
-        <li>Trhové dáta (BTC/ETH grafy) – na kontrolu “rok 2025…” tvrdení (konkrétne čísla doplníme, keď ich budeme citovať)</li>
-      </ul>
-      <p class="muted">
-        Poznámka: Keď doplníme konkrétne čísla, doplníme aj konkrétne odkazy (nie “nejaké zdroje”).
-      </p>
-    </section>
+        <section class="mini">
+          <h3>Čo je zavádzajúce</h3>
+          <ul>
+            <li><strong>„Krvácajú“</strong> = jazyk bolesti namiesto dát (kto presne? koľko? za aké obdobie?).</li>
+            <li><strong>„Rok 2025 zničil ich majetok“</strong> – “majetok” tu znie ako hotovosť; často ide len o zmenu <strong>odhadovanej hodnoty</strong>.</li>
+            <li>Bez rozlíšenia <strong>realizované</strong> vs. <strong>nerealizované</strong> straty je to skôr dramatizácia než informácia.</li>
+          </ul>
+        </section>
+      </div>
 
-    <section class="card verdict">
-      <div class="tag">VERDIKT</div>
-      <div class="pill">ZAVÁDZAJÚCE</div>
-      <p>
-        Tvrdenie stojí na emotívnych slovách (“krváčajú”, “zničil”) a mieša dokopy net worth odhady
-        s reálnymi stratami. Je to klikací dramatický framing, nie presný opis reality.
-      </p>
-    </section>
+      <div class="section">
+        <div class="label">Fakty a kontext</div>
+        <div class="mini">
+          <p>
+            Keď médiá píšu o tom, že “niekomu klesol majetok o X”, veľmi často ide o <strong>nerealizovaný</strong> pokles:
+            ak držíš akcie/krypto a cena klesne, hodnota portfólia klesne. 
+            Ale ak si nič nepredal, nešlo o “stratu hotovosti”, len o zmenu trhovej ceny.
+          </p>
+          <p>
+            Slová typu <strong>„krvácajú“</strong> a <strong>„bolestivé“</strong> sú typický clickbait framing:
+            vyvolajú emóciu a dávajú pocit, že sa deje katastrofa – aj keď ide o bežný trhový pohyb.
+          </p>
+          <p class="muted" style="margin-top:10px">
+            Preklad do normálnej reči: „Ceny kryptoaktív klesli, a preto klesli aj odhady hodnoty majetku ľudí, ktorí ich držia.“
+            To je celé. Zvyšok je emočný lak.
+          </p>
+        </div>
+      </div>
 
-    <p class="muted" style="margin-top:16px;">
-      Verdikt nie je názor. Je výsledkom rozkladu tvrdenia na overiteľné časti.
-    </p>
+      <div class="section">
+        <div class="label">Zdroje</div>
+        <div class="mini">
+          <ul>
+            <li>
+              Startitup: článok, ktorý pitváme —
+              <a href="https://www.startitup.sk/miliardari-kryptotrhu-krvacaju-rok-2025-znicil-ich-majetok-straty-boli-bolestive/" target="_blank" rel="noopener">link</a>
+            </li>
+            <li class="muted">
+              Poznámka: Ak chceš, doplníme sem aj primárny zdroj, ktorý článok cituje (napr. Bloomberg),
+              ale len po tom, čo si ho otvoríme a overíme konkrétne čísla a metodiku.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="hr"></div>
+
+      <div class="section">
+        <div class="label">Verdikt</div>
+        <div class="verdict">
+          <span class="badge mixed">Zavádzajúce</span>
+          <div>
+            Článok používa <strong>emočný framing</strong> („krvácajú“, „bolestivé“, „zničil“) bez toho,
+            aby čitateľovi dal základné rozlíšenie medzi <strong>poklesom odhadovanej hodnoty</strong> a <strong>reálnou realizovanou stratou</strong>.
+            <br><br>
+            <span class="muted">
+              Správny opis: ide o zmenu trhovej ceny aktív a prepočet odhadovaného “net worth”.
+              Bez metodiky, bez časového rámca a bez presných metrík je to skôr dramatizácia než informovanie.
+            </span>
+          </div>
+        </div>
+
+        <p class="muted" style="margin-top:12px">
+          Verdikt nie je názor. Je výsledok rozkladu tvrdenia na overiteľné časti.
+        </p>
+      </div>
+
+      <footer class="footer">
+        <span><a href="/">Domov</a></span>
+        <span class="muted">•</span>
+        <span><a href="mailto:kontakt@bez-bullshitu.org">kontakt@bez-bullshitu.org</a></span>
+        <span class="muted">•</span>
+        <span>Case #0002</span>
+      </footer>
+
+    </article>
+
   </main>
-
-  <footer class="footerline">
-    <span>Method over noise.</span>
-    <span>Evidence over vibes.</span>
-    <span>No ads. No agenda. No mercy for bullshit.</span>
-    <span>kontakt@bez-bullshitu.org</span>
-  </footer>
 </body>
 </html>
