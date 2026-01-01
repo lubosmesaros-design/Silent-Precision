@@ -329,3 +329,31 @@ main {
   .grid { grid-template-columns: 1fr; }
   .hero h1 { font-size: 40px; }
 }
+/* =========================
+   CASES LIST (index)
+   ========================= */
+
+.cases {
+  margin-top: 40px;
+}
+
+.cases-title {
+  font-size: 14px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #8b93a8;
+  margin-bottom: 12px;
+}
+
+.caseLink {
+  display: block;
+  margin-bottom: 6px;
+  color: #9bbcff;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.caseLink:hover {
+  text-decoration: underline;
+  color: #c5d4ff;
+}
