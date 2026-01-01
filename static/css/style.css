@@ -330,7 +330,7 @@ main {
   .hero h1 { font-size: 40px; }
 }
 /* =========================
-   CASES LIST (index)
+   CASES LIST (index page)
    ========================= */
 
 .cases {
@@ -341,19 +341,25 @@ main {
   font-size: 14px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #8b93a8;
-  margin-bottom: 12px;
+  color: #8ab3ff;
+  margin-bottom: 14px;
 }
 
 .caseLink {
-  display: block;
-  margin-bottom: 6px;
+  display: block;                 /* POD SEBA */
+  padding: 8px 0;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #1f2933;
   color: #9bbcff;
   text-decoration: none;
   font-size: 15px;
 }
 
+.caseLink:last-child {
+  border-bottom: none;
+}
+
 .caseLink:hover {
-  text-decoration: underline;
   color: #c5d4ff;
+  text-decoration: underline;
 }
