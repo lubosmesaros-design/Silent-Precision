@@ -1,1 +1,308 @@
 
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case #0003 – „Keď kovy rastú, systém krváca“ | bez-bullshitu.org</title>
+  <meta name="description" content="Pitva agentúrneho rámovania: drahé kovy na začiatku 2026 rastú po extrémnom roku 2025. Čo je fakt a čo je príbeh." />
+
+  <style>
+    :root {
+      --bg: #0b0e13;
+      --panel: rgba(18,21,28,0.86);
+      --border: rgba(120,140,255,0.22);
+      --text: #e6e9ef;
+      --muted: #9aa3b2;
+      --accent: #b9c4ff;
+
+      --good: #8ff0a4;
+      --bad: #ff7b7b;
+      --mid: #ffd37a;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 500px at 15% 20%, rgba(120,140,255,.12), transparent 55%),
+        radial-gradient(900px 600px at 85% 30%, rgba(180,120,255,.10), transparent 55%),
+        linear-gradient(180deg, #0a0c11 0%, var(--bg) 100%);
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: 980px; margin: 0 auto; padding: 44px 22px 72px; }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 18px 60px rgba(0,0,0,.55);
+      backdrop-filter: blur(10px);
+    }
+
+    h1 {
+      font-size: 32px;
+      line-height: 1.15;
+      letter-spacing: -0.4px;
+      margin-bottom: 10px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .chip {
+      border: 1px solid var(--border);
+      background: rgba(18,21,28,.6);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--accent);
+    }
+
+    .hr { height: 1px; background: rgba(255,255,255,0.06); margin: 20px 0; }
+
+    .section { margin-top: 16px; }
+
+    .label {
+      font-size: 12px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    p { line-height: 1.7; font-size: 15.5px; margin-bottom: 12px; }
+
+    ul { margin-left: 18px; }
+    li { margin: 7px 0; line-height: 1.6; font-size: 15px; }
+
+    .quote {
+      border-left: 3px solid rgba(185,196,255,0.35);
+      padding: 12px 14px;
+      background: rgba(0,0,0,0.16);
+      border-radius: 10px;
+      line-height: 1.65;
+      font-size: 15.5px;
+    }
+
+    .muted { color: var(--muted); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .mini {
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.14);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .mini h3 {
+      font-size: 14px;
+      color: var(--accent);
+      margin-bottom: 8px;
+      letter-spacing: .02em;
+    }
+
+    .verdict {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.16);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .badge {
+      font-weight: 800;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.16);
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .mixed { color: var(--mid); border-color: rgba(255,211,122,0.35); }
+
+    .footer {
+      margin-top: 22px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+      h1 { font-size: 28px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+
+    <div class="topbar">
+      <div><a href="/">bez-bullshitu.org</a></div>
+      <div>Case #0003</div>
+    </div>
+
+    <article class="card">
+      <h1>Reuters: Drahé kovy štartujú 2026 vyššie po extrémnom roku 2025</h1>
+
+      <div class="meta">
+        <span class="chip">Rámovanie</span>
+        <span class="chip">Makro</span>
+        <span class="chip">Kontext</span>
+        <span class="chip">Verdikt</span>
+      </div>
+
+      <div class="section">
+        <div class="label">Zdroj</div>
+        <p class="muted">
+          Agentúra: <strong>Reuters</strong><br>
+          Téma: <strong>Precious metals kick off the New Year higher after a robust 2025 rally</strong><br>
+          Publikované: <strong>2. januára 2026</strong><br>
+          URL: <strong>neuvedené</strong>
+        </p>
+      </div>
+
+      <div class="hr"></div>
+
+      <div class="section">
+        <div class="label">Prečo to pitváme</div>
+        <p>
+          Agentúrne texty často pôsobia neutrálne, no v skutočnosti nastavujú mentálny rámec: „silný štart“, „pokračovanie rally“
+          a „fundamenty v hre“. Pri extrémnych medziročných výnosoch však nejde o bežný trhový príbeh, ale o signál stresu systému.
+          Rozdiel medzi faktom a príbehom je v tom, čo sa do textu nedostane.
+        </p>
+      </div>
+
+      <div class="section">
+        <div class="label">Citované tvrdenie</div>
+        <div class="quote">
+          „Drahé kovy začali rok 2026 silno… geopolitické napätie a nádeje na nižšie sadzby udržujú dopyt po bezpečnom prístave…“
+          <br><br>
+          „Zlato v roku 2025 vzrástlo o 64 %… striebro o 147 %… platina o 127 %…“
+        </div>
+      </div>
+
+      <div class="grid">
+        <section class="mini">
+          <h3>Čo je na tom pravda</h3>
+          <ul>
+            <li>Zlato, striebro, platina a paládium skutočne vstúpili do roka 2026 rastom.</li>
+            <li>Text uvádza konkrétne úrovne cien a rekordné maximá z konca roka 2025.</li>
+            <li>Očakávania nižších sadzieb zvyknú podporovať neúročené aktíva, najmä pri poklese reálnych výnosov.</li>
+            <li>Geopolitické napätie typicky zvyšuje dopyt po „bezpečných prístavoch“.</li>
+          </ul>
+        </section>
+
+        <section class="mini">
+          <h3>Čo je zavádzajúce</h3>
+          <ul>
+            <li>Rámovanie „silného štartu“ ignoruje, že extrémne ročné výnosy bývajú symptómom systémového napätia, nie zdravého trhu.</li>
+            <li>Zoznam dôvodov (sadzby, konflikty, centrálne banky, ETF) je podaný bez váh a bez konfliktov medzi faktormi.</li>
+            <li>„Safe haven“ je prezentované ako bežná voľba, hoci v praxi ide o signál nedôvery v menu a stabilitu systému.</li>
+            <li>Chýba upozornenie, že parabolické fázy prinášajú prudké korekcie a „flush-outy“ aj v býčom trende.</li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="section">
+        <div class="label">Fakty a kontext</div>
+        <div class="mini">
+          <p>
+            Ak drahé kovy rastú o desiatky až stovky percent v krátkom období, ide o trhový režim, ktorý nevzniká v prostredí dôvery.
+            Takéto pohyby typicky znamenajú, že trh zaceňuje kombináciu: menového znehodnocovania, dlhového tlaku, politického rizika
+            a očakávania, že sadzby nemožno držať „vysoko“ bez poškodenia ekonomiky a finančného systému.
+          </p>
+          <p>
+            V tomto kontexte je slovo „bezpečný prístav“ eufemizmus. Nehovorí o istote. Hovorí o úteku.
+          </p>
+          <p class="muted" style="margin-top:10px">
+            Keď médiá zhrnú extrémny pohyb do príbehu o „fundamentoch“, čitateľ dostane pocit normality. Normalita to nie je.
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="label">Zdroje</div>
+        <div class="mini">
+          <ul>
+            <li>
+              Reuters (2. januára 2026): <strong>Precious metals kick off the New Year higher after a robust 2025 rally</strong>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="hr"></div>
+
+      <div class="section">
+        <div class="label">Verdikt</div>
+        <div class="verdict">
+          <span class="badge mixed">Zavádzajúce</span>
+          <div>
+            Fakty o cenách môžu sedieť, no rámovanie je problematické. Text prezentuje extrémny rast ako prirodzené pokračovanie trendu
+            a dáva mu „učebnicové“ vysvetlenia bez toho, aby pomenoval podstatu: pri takýchto výnosoch nejde o silu drahých kovov,
+            ale o slabosť dôvery v systém.
+            <br>
+            <span class="muted">Drahé kovy nie sú hrdina príbehu. Sú diagnostika.</span>
+          </div>
+        </div>
+
+        <p class="muted" style="margin-top:12px">
+          Verdikt nie je názor. Je výsledok rozkladu tvrdenia na overiteľné časti.
+        </p>
+      </div>
+
+      <footer class="footer">
+        <span><a href="/">Domov</a></span>
+        <span class="muted">•</span>
+        <span><a href="mailto:kontakt@bez-bullshitu.org">kontakt@bez-bullshitu.org</a></span>
+        <span class="muted">•</span>
+        <span>Case #0003</span>
+      </footer>
+
+    </article>
+
+  </main>
+</body>
+</html>
