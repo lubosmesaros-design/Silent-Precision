@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case #0007 – „Fontána mladosti“ | bez-bullshitu.org</title>
+  <meta name="description" content="Pitva článku: Startitup – 'stopa k fontáne mladosti' a ľudia po 110 rokoch života. Fakty, kontext, verdikt." />
+
+  <style>
+    :root {
+      --bg: #0b0e13;
+      --panel: rgba(18,21,28,0.86);
+      --border: rgba(120,140,255,0.22);
+      --text: #e6e9ef;
+      --muted: #9aa3b2;
+      --accent: #b9c4ff;
+
+      --good: #8ff0a4;
+      --bad: #ff7b7b;
+      --mid: #ffd37a;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 500px at 15% 20%, rgba(120,140,255,.12), transparent 55%),
+        radial-gradient(900px 600px at 85% 30%, rgba(180,120,255,.10), transparent 55%),
+        linear-gradient(180deg, #0a0c11 0%, var(--bg) 100%);
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: 980px; margin: 0 auto; padding: 44px 22px 72px; }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 18px 60px rgba(0,0,0,.55);
+      backdrop-filter: blur(10px);
+    }
+
+    h1 {
+      font-size: 32px;
+      line-height: 1.15;
+      letter-spacing: -0.4px;
+      margin-bottom: 10px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .chip {
+      border: 1px solid var(--border);
+      background: rgba(18,21,28,.6);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--accent);
+    }
+
+    .hr { height: 1px; background: rgba(255,255,255,0.06); margin: 20px 0; }
+
+    .section { margin-top: 16px; }
+
+    .label {
+      font-size: 12px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    p { line-height: 1.7; font-size: 15.5px; margin-bottom: 12px; }
+
+    ul { margin-left: 18px; }
+    li { margin: 7px 0; line-height: 1.6; font-size: 15px; }
+
+    .quote {
+      border-left: 3px solid rgba(185,196,255,0.35);
+      padding: 12px 14px;
+      background: rgba(0,0,0,0.16);
+      border-radius: 10px;
+      line-height: 1.65;
+      font-size: 15.5px;
+    }
+
+    .muted { color: var(--muted); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .mini {
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.14);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .mini h3 {
+      font-size: 14px;
+      color: var(--accent);
+      margin-bottom: 8px;
+      letter-spacing: .02em;
+    }
+
+    .verdict {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.16);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .badge {
+      font-weight: 800;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.16);
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .mixed { color: var(--mid); border-color: rgba(255,211,122,0.35); }
+
+    .footer {
+      margin-top: 22px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+      h1 { font-size: 28px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+
+    <div class="topbar">
+      <div><a href="/">bez-bullshitu.org</a></div>
+      <div>Case #0007</div>
+    </div>
+
+    <article class="card">
+      <h1>Startitup: „Stopa k fontáne mladosti“ a ľudia po 110 rokoch života</h1>
+
+      <div class="meta">
+        <span class="chip">Citácia</span>
+        <span class="chip">Dáta</span>
+        <span class="chip">Logika</span>
+        <span class="chip">Verdikt</span>
+      </div>
+
+      <div class="section">
+        <div class="label">Zdroj</div>
+        <p class="muted">
+          Médium: <strong>Startitup.sk</strong><br>
+          Článok: <strong>Vedci našli stopu k „fontáne mladosti“. Títo ľudia fungujú aj po 110 rokoch života</strong><br>
+          Publikované: <strong>8. januára 2026 (08:00)</strong><br>
+          URL: <a href="https://www.startitup.sk/vedci-nasli-stopu-k-fontane-mladosti-tito-ludia-funguju-aj-po-110-rokoch-zivota/" target="_blank" rel="noopener">otvoriť článok</a>
+        </p>
+      </div>
+
+      <div class="hr"></div>
+
+      <div class="section">
+        <div class="label">Prečo to pitváme</div>
+        <p>
+          Článok stojí na reálnej téme výskumu extrémnej dlhovekosti (ľudia nad 110 rokov),
+          no titulok používa rámovanie „fontána mladosti“. To vytvára dojem, že veda našla
+          priamu cestu k omladeniu alebo „návod“, ako sa dožiť 110+. V texte však ide o
+          opis pozorovaní a hypotéz, nie o prelomový recept.
+        </p>
+      </div>
+
+      <div class="section">
+        <div class="label">Citované tvrdenie</div>
+        <div class="quote">
+          „Vedci našli stopu k fontáne mladosti… Títo ľudia fungujú aj po 110 rokoch života.“
+        </div>
+        <p class="muted" style="margin-top:10px">
+          Poznámka: citujeme len jadro tvrdenia (nie celý článok).
+        </p>
+      </div>
+
+      <div class="grid">
+        <section class="mini">
+          <h3>Čo je na tom pravda</h3>
+          <ul>
+            <li>Superstoroční (110+) sú extrémne vzácna skupina a sú relevantní pre výskum starnutia.</li>
+            <li>Text opisuje možné biologické črty spájané s dlhovekosťou (imunitné bunky, proteazómy, autofágia, mitochondrie).</li>
+            <li>Článok uvádza, že výskum dlhovekosti môže trpieť tým, že genetické databázy sú často založené na homogénnejších populáciách.</li>
+          </ul>
+        </section>
+
+        <section class="mini">
+          <h3>Čo je zavádzajúce</h3>
+          <ul>
+            <li><strong>„Fontána mladosti“</strong> – výraz naznačuje riešenie alebo metódu, no text neprináša overený spôsob, ako tento stav dosiahnuť.</li>
+            <li>„Stopa“ je v texte zmes pozorovaní a interpretácií; nie je to jedna konkrétna príčina ani „objavený spínač“ dlhovekosti.</li>
+            <li>Formulácia „fungujú aj po 110 rokoch“ je nepresná skratka: ide o skupinu ľudí s rôznym zdravotným stavom, nie o univerzálnu normu.</li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="section">
+        <div class="label">Fakty a kontext</div>
+        <div class="mini">
+          <p>
+            Text opisuje, že superstoroční môžu mať špecifické znaky imunitného systému a bunkovej údržby
+            (napr. autofágia a proteazómy) a že tieto mechanizmy sú spájané s pomalším biologickým starnutím.
+            Zároveň sa odvoláva na výskumy z viacerých krajín a na argument, že geneticky rozmanitejšie populácie
+            môžu obsahovať ochranné varianty, ktoré sa v doteraz nadreprezentovaných databázach strácajú.
+          </p>
+          <p class="muted" style="margin-top:10px">
+            Inými slovami: článok hovorí o možných biologických faktoroch dlhovekosti a o potrebe širších dát,
+            ale titulok z toho robí „fontánu mladosti“. To je marketingová metafora, nie vedecký záver.
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="label">Zdroje</div>
+        <div class="mini">
+          <ul>
+            <li>
+              Startitup (2026): článok, ktorý pitváme —
+              <a href="https://www.startitup.sk/vedci-nasli-stopu-k-fontane-mladosti-tito-ludia-funguju-aj-po-110-rokoch-zivota/" target="_blank" rel="noopener">link</a>
+            </li>
+            <li>
+              V článku sú uvedené ako zdroje: <strong>Genomic Press</strong>, <strong>PubMed</strong>, <strong>Study Finds</strong> a citácie z médií typu <strong>MedicalXpress</strong>.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="hr"></div>
+
+      <div class="section">
+        <div class="label">Verdikt</div>
+        <div class="verdict">
+          <span class="badge mixed">Zavádzajúce</span>
+          <div>
+            Jadro témy je legitímne (výskum superstoročných a biologických faktorov dlhovekosti),
+            ale rámovanie ako <strong>„stopa k fontáne mladosti“</strong> vytvára dojem objaveného riešenia,
+            ktoré text nedodáva.
+            <br>
+            <span class="muted">Správny opis: popularizačný článok o možných mechanizmoch dlhovekosti; bez dôkazu o „návode“ na omladenie.</span>
+          </div>
+        </div>
+
+        <p class="muted" style="margin-top:12px">
+          Verdikt nie je názor. Je výsledok rozkladu tvrdenia na overiteľné časti.
+        </p>
+      </div>
+
+      <footer class="footer">
+        <span><a href="/">Domov</a></span>
+        <span class="muted">•</span>
+        <span><a href="mailto:kontakt@bez-bullshitu.org">kontakt@bez-bullshitu.org</a></span>
+        <span class="muted">•</span>
+        <span>Case #0007</span>
+      </footer>
+
+    </article>
+
+  </main>
+</body>
+</html>
