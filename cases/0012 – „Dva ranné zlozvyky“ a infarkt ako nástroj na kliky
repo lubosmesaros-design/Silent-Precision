@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case 0012 – „Dva ranné zlozvyky“ a infarkt ako nástroj na kliky</title>
+  <meta name="description" content="Pitva titulku: „dva ranné zlozvyky môžu viesť k infarktu“. Čo je fakt, čo je zveličenie a prečo sa riziko infarktu nedá zredukovať na dve ranné maličkosti." />
+
+  <meta property="og:title" content="Case 0012 – Dva ranné zlozvyky = infarkt?" />
+  <meta property="og:description" content="Bez-bullshitu analýza titulku, ktorý straší infarktom bez kontextu." />
+  <meta property="og:type" content="article" />
+
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --card:#0f1620;
+      --text:#e9f0f7;
+      --muted:#93a4b8;
+      --line:rgba(255,255,255,.08);
+      --chip:rgba(255,255,255,.06);
+      --accent:#a7c7ff;
+      --warn:#ffb4a7;
+      --shadow:0 18px 60px rgba(0,0,0,.45);
+      --radius:18px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      background:
+        radial-gradient(900px 600px at 15% -10%, rgba(167,199,255,.12), transparent 60%),
+        radial-gradient(900px 600px at 85% 10%, rgba(255,180,167,.08), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+
+    .wrap{max-width:980px;margin:0 auto;padding:28px 18px 64px}
+    .topbar{display:flex;justify-content:space-between;gap:12px;margin-bottom:18px}
+    .brand .title{font-weight:800;font-size:14px}
+    .brand .motto{font-size:12px;color:var(--muted)}
+    .pillrow{display:flex;gap:8px;flex-wrap:wrap}
+    .chip{
+      padding:7px 10px;
+      border:1px solid var(--line);
+      background:var(--chip);
+      border-radius:999px;
+      font-size:12px
+    }
+
+    .card{
+      background:linear-gradient(180deg,rgba(255,255,255,.03),transparent 55%),var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden
+    }
+
+    .hero{padding:22px;border-bottom:1px solid var(--line)}
+    .caseid{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(167,199,255,.25);
+      background:rgba(167,199,255,.1);
+      font-size:12px
+    }
+
+    h1{margin:12px 0 8px;font-size:26px}
+    .subtitle{color:var(--muted);max-width:75ch}
+
+    .content{padding:22px;display:grid;gap:16px}
+    section{
+      padding:16px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:rgba(255,255,255,.02)
+    }
+
+    h2{margin:0 0 10px;font-size:16px}
+    p{margin:0 0 10px}
+    ul{margin:0;padding-left:18px}
+    li{margin:6px 0}
+
+    blockquote{
+      margin:10px 0 0;
+      padding:12px 14px;
+      border-left:3px solid rgba(167,199,255,.55);
+      background:rgba(167,199,255,.06);
+      border-radius:12px
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      border:1px solid var(--line);
+      border-radius:12px;
+      overflow:hidden
+    }
+
+    th,td{
+      padding:12px;
+      border-bottom:1px solid var(--line);
+      font-size:13px;
+      vertical-align:top
+    }
+
+    th{background:rgba(255,255,255,.03);font-weight:800}
+    tr:last-child td{border-bottom:0}
+
+    .badge{
+      display:inline-block;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,180,167,.3);
+      background:rgba(255,180,167,.08);
+      font-size:12px;
+      margin-bottom:10px
+    }
+
+    .foot{font-size:12px;color:var(--muted)}
+    a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(167,199,255,.35)}
+    a:hover{border-bottom-color:rgba(167,199,255,.85)}
+  </style>
+</head>
+
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <div class="brand">
+      <div class="title">bez-bullshitu.org</div>
+      <div class="motto">Ticho. Precízne. Neodvratne.</div>
+    </div>
+    <div class="pillrow">
+      <span class="chip"><b>Typ:</b> Pitva titulku</span>
+      <span class="chip"><b>Téma:</b> zdravie / médiá</span>
+      <span class="chip"><b>Dátum:</b> január 2026</span>
+    </div>
+  </div>
+
+  <article class="card">
+    <header class="hero">
+      <span class="caseid">CASE 0012</span>
+      <h1>„Dva ranné zlozvyky“ a infarkt ako nástroj na kliky</h1>
+      <p class="subtitle">
+        Ak sa infarkt dá vraj spustiť dvoma rannými „zlozvykmi“, niečo je zle.
+        Nie s tvojím srdcom – s titulkom.
+      </p>
+    </header>
+
+    <div class="content">
+      <section>
+        <h2>Zdroj</h2>
+        <p>
+          cas.sk – „Lekárka bije na poplach: dva ranné zlozvyky môžu viesť k infarktu – robíte ich aj vy?“
+          (<a href="https://www.cas.sk/spravy/lekarka-bije-na-poplach-dva-ranne-zlozvyky-mozu-viest-k-infarktu-robite-ich-aj-vy" target="_blank" rel="noopener">odkaz</a>)
+        </p>
+      </section>
+
+      <section>
+        <h2>Prečo to pitváme</h2>
+        <ul>
+          <li>Titulok používa infarkt ako strašiaka bez definície rizika a bez mierky.</li>
+          <li>„Dva zlozvyky“ je lacné zjednodušenie komplexného medicínskeho problému.</li>
+          <li>„Robíte ich aj vy?“ je sugestívny háčik – cieľ je úzkosť a klik, nie informácia.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Citované tvrdenie</h2>
+        <blockquote>
+          „Dva ranné zlozvyky môžu viesť k infarktu.“
+        </blockquote>
+      </section>
+
+      <section>
+        <h2>Fakty</h2>
+        <ul>
+          <li>
+            Infarkt nevzniká z dvoch ranných drobností. Riziko je dlhodobo budované kombináciou faktorov
+            ako vysoký krvný tlak, vysoký LDL cholesterol, fajčenie, cukrovka, obezita, sedavý životný štýl,
+            chronický stres a genetika.
+          </li>
+          <li>
+            Ráno je pre srdce citlivejšie obdobie: po prebudení prirodzene rastie krvný tlak, pulz a aktivita stresových hormónov.
+            To však neznamená, že „ranný zvyk“ je priamou príčinou infarktu.
+          </li>
+          <li>
+            Správna formulácia v medicíne je „zvyšuje riziko“ a vždy v kontexte: u koho, o koľko, za akých podmienok,
+            a či ide o krátkodobý alebo dlhodobý efekt.
+          </li>
+          <li>
+            Ak niekto tvrdí „dve veci vedú k infarktu“, bez čísel a bez kontextu, nejde o zdravotnícke vzdelávanie.
+            Ide o dramatizáciu.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Verdikt</h2>
+        <span class="badge"><b>Hodnotenie:</b> zveličenie a manipulácia strachom</span>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Tvrdenie</th>
+              <th>Realita</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>„Dva ranné zlozvyky môžu viesť k infarktu“</td>
+              <td>
+                Bez kontextu je to zavádzajúce. Infarkt je multifaktoriálny problém a väčšina rizika sa tvorí dlhodobo.
+              </td>
+            </tr>
+            <tr>
+              <td>„Lekárka bije na poplach“</td>
+              <td>
+                Emócia a autorita v jednom balíčku. Bez dát a mierky je to rétorika, nie medicínska informácia.
+              </td>
+            </tr>
+            <tr>
+              <td>„Robíte ich aj vy?“</td>
+              <td>
+                Sugestívny trik na vyvolanie obáv, aby čitateľ otvoril článok.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          Bez bullshitu: ak článok reálne chce pomáhať, ukáže rizikové faktory, dá mierku a povie, čo má význam.
+          „Dva ranné zlozvyky“ je skratka pre kliky. Srdce si zaslúži viac než titulkový cirkus.
+        </p>
+
+        <p class="foot">
+          Poznámka: Text hodnotí formulácie a rámcovanie titulku. Nejde o individuálne lekárske odporúčanie.
+        </p>
+      </section>
+    </div>
+  </article>
+</div>
+</body>
+</html>
