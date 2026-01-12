@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case #0019 – „Sell America“: Keď politický nátlak rozbíja dôveru v systém | bez-bullshitu.org</title>
+  <meta name="description" content="Pitva článku: CNBC – ‘Sell America’ trade, tlak na Fed a trhová reakcia (dolár dole, zlato na rekordoch). Čo je fakt, čo je rámovanie a čo je len mediálny príbeh." />
+
+  <style>
+    :root {
+      --bg: #0b0e13;
+      --panel: rgba(18,21,28,0.86);
+      --border: rgba(120,140,255,0.22);
+      --text: #e6e9ef;
+      --muted: #9aa3b2;
+      --accent: #b9c4ff;
+
+      --good: #8ff0a4;
+      --bad: #ff7b7b;
+      --mid: #ffd37a;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 500px at 15% 20%, rgba(120,140,255,.12), transparent 55%),
+        radial-gradient(900px 600px at 85% 30%, rgba(180,120,255,.10), transparent 55%),
+        linear-gradient(180deg, #0a0c11 0%, var(--bg) 100%);
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: 980px; margin: 0 auto; padding: 44px 22px 72px; }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 18px 60px rgba(0,0,0,.55);
+      backdrop-filter: blur(10px);
+    }
+
+    h1 {
+      font-size: 32px;
+      line-height: 1.15;
+      letter-spacing: -0.4px;
+      margin-bottom: 10px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .chip {
+      border: 1px solid var(--border);
+      background: rgba(18,21,28,.6);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--accent);
+    }
+
+    .hr { height: 1px; background: rgba(255,255,255,0.06); margin: 20px 0; }
+
+    .section { margin-top: 16px; }
+
+    .label {
+      font-size: 12px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    p { line-height: 1.7; font-size: 15.5px; margin-bottom: 12px; }
+
+    ul { margin-left: 18px; }
+    li { margin: 7px 0; line-height: 1.6; font-size: 15px; }
+
+    .quote {
+      border-left: 3px solid rgba(185,196,255,0.35);
+      padding: 12px 14px;
+      background: rgba(0,0,0,0.16);
+      border-radius: 10px;
+      line-height: 1.65;
+      font-size: 15.5px;
+    }
+
+    .muted { color: var(--muted); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .mini {
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.14);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .mini h3 {
+      font-size: 14px;
+      color: var(--accent);
+      margin-bottom: 8px;
+      letter-spacing: .02em;
+    }
+
+    .verdict {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.16);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .badge {
+      font-weight: 800;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.16);
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .mixed { color: var(--mid); border-color: rgba(255,211,122,0.35); }
+
+    .footer {
+      margin-top: 22px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+      h1 { font-size: 28px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+
+    <div class="topbar">
+      <div><a href="/">bez-bullshitu.org</a></div>
+      <div>Case #0019</div>
+    </div>
+
+    <article class="card">
+      <h1>CNBC: „Sell America“ trade a tlak na Fed</h1>
+
+      <div class="meta">
+        <span class="chip">Citácia</span>
+        <span class="chip">Dáta</span>
+        <span class="chip">Logika</span>
+        <span class="chip">Verdikt</span>
+      </div>
+
+      <div class="section">
+        <div class="label">Zdroj</div>
+        <p class="muted">
+          Médium: <strong>CNBC</strong><br>
+          Článok: <strong>‘Sell America’ trade: Dollar drops, gold surges as Trump’s Fed pressure campaign raises fears about U.S. system</strong><br>
+          Publikované: <strong>12. januára 2026</strong><br>
+          Autor: <strong>Alex Harring</strong>
+        </p>
+      </div>
+
+      <div class="hr"></div>
+
+      <div class="section">
+        <div class="label">Prečo to pitváme</div>
+        <p>
+          CNBC tu skladá „dominantný príbeh dňa“: USA ako trh, ktorý treba predávať, lebo politika tlačí na Fed.
+          Problém nie je, že by sa o tom nemalo písať. Problém je, že text miesi <strong>pozorovanie pohybu cien</strong>
+          (dolár dole, zlato hore) s <strong>príčinným príbehom</strong>, ktorý sa tvári ako hotová vec.
+        </p>
+        <p>
+          Trh môže trestať dôveru v inštitúcie. Ale médiá majú slabosť robiť z každej sviečky <strong>manifesto</strong>.
+          A presne to tu uvidíš.
+        </p>
+      </div>
+
+      <div class="section">
+        <div class="label">Citované tvrdenie</div>
+        <div class="quote">
+          „Monday is all about the ‘Sell America’ trade after Federal Reserve Chair Jerome Powell’s bombshell announcement that he’s under criminal investigation…“
+        </div>
+        <p class="muted" style="margin-top:10px">
+          Poznámka: citujeme len jadro tvrdenia (nie celý článok).
+        </p>
+      </div>
+
+      <div class="grid">
+        <section class="mini">
+          <h3>Čo je na tom pravda</h3>
+          <ul>
+            <li>Článok popisuje klasický „risk-off“ obraz: <strong>dolár slabší</strong>, <strong>precious metals vyššie</strong>, akcie kolísajú.</li>
+            <li>Je legitímne, že trh môže prirátať rizikovú prirážku, ak má pocit, že sa rozkladá <strong>inštitucionálna dôveryhodnosť</strong>.</li>
+            <li>Je pravda, že naratív „Fed nezávislosť“ vie byť spúšťačom pre <strong>zlato</strong> a iné útočiská.</li>
+          </ul>
+        </section>
+
+        <section class="mini">
+          <h3>Čo je zavádzajúce</h3>
+          <ul>
+            <li>„Monday is all about…“ je absolútny výrok. Trhy nemajú jeden mozog ani jednu príčinu. Majú len jednu mediálnu vetu.</li>
+            <li>Text mieša <strong>ceny</strong> a <strong>príčinu</strong> – ako keby pohyb zlata automaticky dokazoval, že sa rozpadá „U.S. system“.</li>
+            <li>„Powell under criminal investigation“ je zásadné tvrdenie, ktoré v podklade nemáme overené nezávislým zdrojom; článok ho používa ako motor celého príbehu.</li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="section">
+        <div class="label">Fakty a kontext</div>
+        <div class="mini">
+          <p>
+            Aj keby boli všetky opísané udalosti presné, stále platí základ: <strong>cena nie je dôkaz príčiny</strong>.
+            Zlato môže rásť z viacerých dôvodov naraz (dolár, výnosy, riziková averzia, pozicioning, likvidita).
+            CNBC z toho skladá jeden príbeh: „politika tlačí na Fed → dôvera padá → Sell America“.
+          </p>
+          <p>
+            Problém je, že príbeh sa tvári, akoby bol trh jednotný aktér. V realite sú trhy:
+          </p>
+          <ul>
+            <li><strong>fragmentované</strong> (meny, dlhopisy, komodity, akcie môžu reagovať inak),</li>
+            <li><strong>časovo rozdelené</strong> (čo je ráno panika, môže byť poobede len vyberanie likvidity),</li>
+            <li><strong>náladové</strong> (médiá to zafarbia, bankové desk notes to zosilnia, a kruh sa uzavrie).</li>
+          </ul>
+          <p class="muted" style="margin-top:10px">
+            Inými slovami: trh môže mať obavy o nezávislosť Fedu. Ale „Sell America“ ako hotová diagnóza je často len pekný titulok pre chaotický deň.
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="label">Zdroje</div>
+        <div class="mini">
+          <ul>
+            <li>
+              CNBC (12. 1. 2026): ‘Sell America’ trade… (podklad dodaný používateľom – výňatok z článku).
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="hr"></div>
+
+      <div class="section">
+        <div class="label">Verdikt</div>
+        <div class="verdict">
+          <span class="badge mixed">Zmiešané</span>
+          <div>
+            CNBC správne zachytáva, že trh vie trestať <strong>inštitucionálne riziko</strong>. To je reálny mechanizmus.
+            Zároveň však tlačí absolútny príbeh „dnes je to celé o Sell America“ a podsúva príčinu ako fakt.
+            <br>
+            <span class="muted">
+              Bez overenia kľúčového spúšťača (vyšetrovanie) a bez rozlíšenia medzi koreláciou a príčinou je z toho skôr mediálny rám než čistá analýza.
+            </span>
+          </div>
+        </div>
+
+        <p class="muted" style="margin-top:12px">
+          Verdikt nie je názor. Je výsledok rozkladu tvrdenia na overiteľné časti.
+        </p>
+      </div>
+
+      <footer class="footer">
+        <span><a href="/">Domov</a></span>
+        <span class="muted">•</span>
+        <span><a href="mailto:kontakt@bez-bullshitu.org">kontakt@bez-bullshitu.org</a></span>
+        <span class="muted">•</span>
+        <span>Case #0019</span>
+      </footer>
+
+    </article>
+
+  </main>
+</body>
+</html>
