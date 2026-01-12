@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case 0013 – Powell „pod vyšetrovaním“: keď sa centrálna banka stane terčom nátlaku</title>
+  <meta name="description" content="Pitva tvrdení okolo trestného vyšetrovania šéfa Fedu Jeroma Powella a rizík pre nezávislosť menovej politiky USA." />
+  <meta name="robots" content="index,follow" />
+
+  <style>
+    :root{
+      --bg: #0b0f14;
+      --card: rgba(255,255,255,.04);
+      --card2: rgba(255,255,255,.06);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.68);
+      --faint: rgba(255,255,255,.50);
+      --line: rgba(255,255,255,.10);
+      --accent: #a6ffcb;
+      --accent2:#7dd3fc;
+      --warn: #ffd28a;
+      --bad: #ff6b6b;
+      --good:#7CFFB2;
+
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --max: 980px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 20% -10%, rgba(166,255,203,.10), transparent 60%),
+        radial-gradient(900px 600px at 110% 10%, rgba(125,211,252,.10), transparent 55%),
+        radial-gradient(900px 600px at 40% 120%, rgba(255,210,138,.08), transparent 55%),
+        var(--bg);
+      line-height:1.55;
+    }
+
+    a{color:inherit; text-decoration:none}
+    a:hover{ text-decoration:underline }
+
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:28px 18px 56px;
+    }
+
+    header{
+      margin: 10px 0 18px;
+      padding: 18px 18px 10px;
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+      box-shadow: var(--shadow);
+    }
+
+    .kicker{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:10px;
+    }
+
+    .brand{
+      font-family: var(--mono);
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+    .chip{
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.18);
+      padding:6px 10px;
+      border-radius: 999px;
+      font-size:12px;
+      color:var(--muted);
+    }
+    .chip strong{color:var(--text); font-weight:600}
+    .chip.accent{ border-color: rgba(166,255,203,.35); }
+    .chip.warn{ border-color: rgba(255,210,138,.35); }
+
+    h1{
+      margin: 8px 0 6px;
+      font-size: 28px;
+      line-height:1.2;
+    }
+    .sub{
+      margin:0 0 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:14px;
+      margin-top:14px;
+    }
+
+    section{
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .sec-h{
+      padding:14px 16px;
+      border-bottom:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+
+    .sec-h h2{
+      margin:0;
+      font-size:14px;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      font-family: var(--mono);
+      color: var(--muted);
+    }
+
+    .sec-b{
+      padding:16px;
+    }
+
+    .meta{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .meta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      padding:10px 12px;
+      border:1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(0,0,0,.16);
+    }
+    .meta-row .k{font-family:var(--mono); letter-spacing:.06em; text-transform:uppercase; font-size:12px; color:var(--faint)}
+    .meta-row .v{color:var(--text)}
+
+    blockquote{
+      margin:0;
+      padding:14px 14px 14px 16px;
+      border-left:3px solid rgba(166,255,203,.6);
+      background: rgba(166,255,203,.06);
+      border-radius: 14px;
+      color: var(--text);
+    }
+    blockquote p{margin:0}
+    .note{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    ul{ margin: 0; padding-left: 18px; }
+    li{ margin: 6px 0; }
+    .hr{
+      height:1px; background: var(--line);
+      margin: 14px 0;
+    }
+
+    .badge{
+      font-family: var(--mono);
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,.16);
+      color: var(--muted);
+      white-space:nowrap;
+    }
+    .badge.good{ border-color: rgba(124,255,178,.35); }
+    .badge.warn{ border-color: rgba(255,210,138,.35); }
+    .badge.bad{ border-color: rgba(255,107,107,.35); }
+
+    .verdict{
+      border:1px solid rgba(255,255,255,.12);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(0,0,0,.10));
+    }
+    .verdict .sec-h{
+      background: linear-gradient(180deg, rgba(166,255,203,.10), rgba(255,210,138,.06));
+    }
+    .verdict strong{color:var(--text)}
+
+    footer{
+      margin-top:14px;
+      padding: 14px 2px 0;
+      color: var(--faint);
+      font-size: 12px;
+      font-family: var(--mono);
+      letter-spacing:.04em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <header>
+      <div class="kicker">
+        <div class="brand">bez-bullshitu.org / Silent-Precision</div>
+        <div class="chips">
+          <span class="chip accent"><strong>Case</strong> 0013</span>
+          <span class="chip"><strong>Téma</strong> politika vs. centrálna banka</span>
+          <span class="chip warn"><strong>Riziko</strong> nezávislosť Fedu</span>
+          <span class="chip"><strong>Trhy</strong> USD / výnosy / zlato</span>
+        </div>
+      </div>
+
+      <h1>Powell „pod vyšetrovaním“: keď sa centrálna banka stane terčom nátlaku</h1>
+      <p class="sub">
+        Medzi „rekonštrukciou budovy“ a „kriminalizáciou menovej politiky“ je rozdiel. Tento Case rieši práve to.
+      </p>
+    </header>
+
+    <div class="grid">
+
+      <!-- ZDROJ -->
+      <section>
+        <div class="sec-h">
+          <h2>Zdroj</h2>
+          <span class="badge warn">aktuálne (január 2026)</span>
+        </div>
+        <div class="sec-b">
+          <div class="meta">
+            <div class="meta-row">
+              <span class="k">Primárne</span>
+              <span class="v">CNBC – „Fed Chair Powell says he’s under criminal investigation, won’t bow to Trump intimidation“ (11. január 2026)</span>
+            </div>
+            <div class="meta-row">
+              <span class="k">Sekundárne</span>
+              <span class="v">
+                Reuters (12. január 2026) • Bloomberg (12. január 2026) • CBS News (12. január 2026)
+              </span>
+            </div>
+            <div class="meta-row">
+              <span class="k">Linky</span>
+              <span class="v">
+                <a href="https://www.reuters.com/business/finance/feds-powell-says-administration-has-threatened-criminal-indictment-over-his-2026-01-12/" target="_blank" rel="noopener">Reuters</a>
+                ·
+                <a href="https://www.bloomberg.com/news/articles/2026-01-12/powell-says-justice-department-served-fed-with-subpoenas" target="_blank" rel="noopener">Bloomberg</a>
+                ·
+                <a href="https://www.cbsnews.com/news/doj-subpoenas-federal-reserve-building-renovations-jerome-powell/" target="_blank" rel="noopener">CBS News</a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PREČO TO PITVÁME -->
+      <section>
+        <div class="sec-h">
+          <h2>Prečo to pitváme</h2>
+          <span class="badge warn">systémové riziko</span>
+        </div>
+        <div class="sec-b">
+          <ul>
+            <li>Nie kvôli tomu, či je rekonštrukcia drahá. Drahé stavby sú bežné. Aj tie zbytočné.</li>
+            <li>Pitváme to, lebo ide o <strong>precedens</strong>: trestné nástroje štátu ako páka na menovú politiku.</li>
+            <li>Ak sa na trhu začne oceňovať „politický diktát sadzieb“, zvyšuje sa <strong>riziková prémia</strong> USA.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CITOVANÉ TVRDENIE -->
+      <section>
+        <div class="sec-h">
+          <h2>Citované tvrdenie</h2>
+          <span class="badge bad">ťažké tvrdenie</span>
+        </div>
+        <div class="sec-b">
+          <blockquote>
+            <p>
+              Federálni prokurátori vedú trestné vyšetrovanie šéfa Fedu Jeroma Powella pre rekonštrukciu (cca 2,5 mld. USD) a jeho svedectvo v Kongrese.
+              Powell tvrdí, že ide o <strong>pretext</strong> a nátlak spojený s tým, že Fed neurčuje sadzby podľa politických požiadaviek prezidenta.
+            </p>
+          </blockquote>
+          <p class="note">
+            Pointa Case: nie je to „kto má pravdu v hádke“. Je to „čo sa tým normalizuje“.
+          </p>
+        </div>
+      </section>
+
+      <!-- FAKTY -->
+      <section>
+        <div class="sec-h">
+          <h2>Fakty</h2>
+          <span class="badge good">overiteľné body</span>
+        </div>
+        <div class="sec-b">
+          <ul>
+            <li>Powell uviedol, že Fed dostal <strong>grand jury</strong> subpoény a hrozí mu trestné obvinenie v súvislosti s jeho júnovým svedectvom o rekonštrukcii sídla Fedu. (Reuters, Bloomberg)</li>
+            <li>Vyšetrovanie sa spája s projektom rekonštrukcie historických budov Fedu v DC, v mediálnych výstupoch uvádzaným okolo <strong>2,5 mld. USD</strong>. (Reuters, Bloomberg)</li>
+            <li>Republikánsky senátor <strong>Thom Tillis</strong> verejne vyhlásil, že bude blokovať potvrdenie nominácií do Fedu vrátane budúceho predsedu, kým sa vec nevyjasní. (CBS, Reuters)</li>
+            <li>Powellov mandát predsedu sa končí v <strong>máji 2026</strong>, no ako člen Rady guvernérov môže formálne zostať až do <strong>januára 2028</strong>. (Reuters)</li>
+            <li>Trhy reagovali rizikovým tónom (tlak na USD, „safe haven“), čo zodpovedá scenáru zvýšenej politickej neistoty okolo menovej politiky. (Reuters)</li>
+          </ul>
+
+          <div class="hr"></div>
+
+          <p class="note">
+            Tieto body samy osebe nedokazujú politickú motiváciu. Dokazujú, že situácia je bezprecedentná a že sa priamo spája
+            trestnoprávna hrozba s postavením šéfa centrálnej banky v aktívnom politickom konflikte.
+          </p>
+        </div>
+      </section>
+
+      <!-- ANALÝZA -->
+      <section>
+        <div class="sec-h">
+          <h2>Analýza</h2>
+          <span class="badge warn">čo z toho vyplýva</span>
+        </div>
+        <div class="sec-b">
+          <ul>
+            <li><strong>Formálny príbeh</strong> je o stavbe a svedectve. <strong>Ekonomický význam</strong> je o tom, či Fed ostáva štítom proti politickému cyklu.</li>
+            <li>Ak sa vytvorí precedens „neprispôsobíš sadzby → vyšetrujeme ťa“, výsledkom je <strong>nižšia dôvera</strong> v stabilitu politiky a vyššia volatilita.</li>
+            <li>Aj keby sa nič právne „nepreukázalo“, trh oceňuje <strong>pravdepodobnosť</strong> politického zásahu. To stačí na repricing.</li>
+            <li>Najtoxickejší dopad nie je na Powella. Je na <strong>inštitúcii</strong>. Lebo inštitúcie fungujú na reputácii a očakávaniach, nie na PR.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- VERDIKT -->
+      <section class="verdict">
+        <div class="sec-h">
+          <h2>Verdikt</h2>
+          <span class="badge bad">bez-bullshitu</span>
+        </div>
+        <div class="sec-b">
+          <p>
+            Toto nie je kauza „drahá rekonštrukcia“.
+            Toto je <strong>test hraníc</strong>: či sa dá centrálna banka tlačiť k rozhodnutiam cez trestnú hrozbu a zároveň to prejde ako normál.
+          </p>
+
+          <p>
+            Ak sa menová politika začne javiť ako politicky dirigovaná, trh to urobí jednoducho:
+            <strong>vyššia riziková prémia</strong> na americké aktíva, tlak na USD a únik do bezpečia pri každom ďalšom kole eskalácie.
+          </p>
+
+          <p class="note">
+            Záver bez dekorácie: keď sa nezávislosť Fedu mení na vyjednávací nástroj, nie je to „správa dňa“.
+            Je to štrukturálny problém.
+          </p>
+        </div>
+      </section>
+
+    </div>
+
+    <footer>
+      Case 0013 • bez-bullshitu.org • Ticho. Precízne. Neodvratne.
+    </footer>
+
+  </div>
+</body>
+</html>
