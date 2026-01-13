@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case #0021 – „Starshield ako zbraň USA“ | bez-bullshitu.org</title>
+  <meta name="description" content="Pitva článku: FonTech/Startitup – Starshield ako „najväčšia zbraň USA“ a „nemožno ju zničiť“. Fakty, kontext, verdikt." />
+
+  <style>
+    :root {
+      --bg: #0b0e13;
+      --panel: rgba(18,21,28,0.86);
+      --border: rgba(120,140,255,0.22);
+      --text: #e6e9ef;
+      --muted: #9aa3b2;
+      --accent: #b9c4ff;
+
+      --good: #8ff0a4;
+      --bad: #ff7b7b;
+      --mid: #ffd37a;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 500px at 15% 20%, rgba(120,140,255,.12), transparent 55%),
+        radial-gradient(900px 600px at 85% 30%, rgba(180,120,255,.10), transparent 55%),
+        linear-gradient(180deg, #0a0c11 0%, var(--bg) 100%);
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: 980px; margin: 0 auto; padding: 44px 22px 72px; }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 18px 60px rgba(0,0,0,.55);
+      backdrop-filter: blur(10px);
+    }
+
+    h1 {
+      font-size: 32px;
+      line-height: 1.15;
+      letter-spacing: -0.4px;
+      margin-bottom: 10px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .chip {
+      border: 1px solid var(--border);
+      background: rgba(18,21,28,.6);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--accent);
+    }
+
+    .hr { height: 1px; background: rgba(255,255,255,0.06); margin: 20px 0; }
+
+    .section { margin-top: 16px; }
+
+    .label {
+      font-size: 12px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    p { line-height: 1.7; font-size: 15.5px; margin-bottom: 12px; }
+
+    ul { margin-left: 18px; }
+    li { margin: 7px 0; line-height: 1.6; font-size: 15px; }
+
+    .quote {
+      border-left: 3px solid rgba(185,196,255,0.35);
+      padding: 12px 14px;
+      background: rgba(0,0,0,0.16);
+      border-radius: 10px;
+      line-height: 1.65;
+      font-size: 15.5px;
+    }
+
+    .muted { color: var(--muted); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .mini {
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.14);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .mini h3 {
+      font-size: 14px;
+      color: var(--accent);
+      margin-bottom: 8px;
+      letter-spacing: .02em;
+    }
+
+    .verdict {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.16);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .badge {
+      font-weight: 800;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.16);
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .mixed { color: var(--mid); border-color: rgba(255,211,122,0.35); }
+
+    .footer {
+      margin-top: 22px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+      h1 { font-size: 28px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+
+    <div class="topbar">
+      <div><a href="/">bez-bullshitu.org</a></div>
+      <div>Case #0021</div>
+    </div>
+
+    <article class="card">
+      <h1>FonTech: „Najväčšia zbraň USA“ menom Starshield</h1>
+
+      <div class="meta">
+        <span class="chip">Citácia</span>
+        <span class="chip">Dáta</span>
+        <span class="chip">Logika</span>
+        <span class="chip">Verdikt</span>
+      </div>
+
+      <div class="section">
+        <div class="label">Zdroj</div>
+        <p class="muted">
+          Médium: <strong>FonTech (Startitup.sk)</strong><br>
+          Článok: <strong>Koniec éry jadrových hrozieb. Najväčšia zbraň USA je tajný sen Rusov, nemožno ju zničiť</strong><br>
+          Autor: <strong>Roland Tököly</strong><br>
+          Publikované: <strong>11. januára 2026</strong><br>
+          URL: <a href="https://fontech.startitup.sk/muskov-starshield-zbran-usa/" target="_blank" rel="noopener">otvoriť článok</a>
+        </p>
+      </div>
+
+      <div class="hr"></div>
+
+      <div class="section">
+        <div class="label">Prečo to pitváme</div>
+        <p>
+          Tento text pracuje s masívnym rámcom „zbrane“ a „nezničiteľnosti“ pri systéme, ktorý je v jadre
+          <strong>komunikačná a dátová infraštruktúra</strong> pre štátne/obranné použitie. V realite je rozdiel medzi
+          <strong>zbraňou</strong> a <strong>sieťou</strong> zásadný: sieť prenáša dáta, zbraň vykonáva účinok na cieľ.
+          Keď sa tieto pojmy zmiešajú, čitateľ dostane skôr adrenalín než pravdu.
+        </p>
+      </div>
+
+      <div class="section">
+        <div class="label">Citované tvrdenie</div>
+        <div class="quote">
+          „…Najväčšia zbraň USA… nemožno ju zničiť…“
+        </div>
+        <p class="muted" style="margin-top:10px">
+          Poznámka: citujeme len jadro tvrdenia (nie celý článok).
+        </p>
+      </div>
+
+      <div class="grid">
+        <section class="mini">
+          <h3>Čo je na tom pravda</h3>
+          <ul>
+            <li><strong>Starshield existuje</strong> ako vládne/obranné portfólio SpaceX postavené na technológiách Starlinku.</li>
+            <li>Koncept „odolnosti v počte“ (proliferované LEO konštelácie) je reálna stratégia: viac lacnejších satelitov môže byť ťažšie „jedným úderom“ vyradiť.</li>
+            <li>Laserové prepojenia medzi satelitmi (optické intersatelitné linky) sú reálna technológia používaná aj v obranných architektúrach.</li>
+          </ul>
+        </section>
+
+        <section class="mini">
+          <h3>Čo je zavádzajúce</h3>
+          <ul>
+            <li><strong>„Najväčšia zbraň“</strong> – Starshield je primárne <strong>sieť</strong> (komunikácia, prenos dát, prípadne ISR), nie zbraňový systém s kinetickým/energetickým účinkom.</li>
+            <li><strong>„Nemožno ju zničiť“</strong> – odolnosť nie je absolútna. Konštelácie majú zraniteľnosti: rušenie, kybernetika, pozemný segment, terminály, logistika, aj antisatelitné kapacity.</li>
+            <li>Formulácie o „ukončení éry balistických rakiet“ sú <strong>špekulatívny marketing</strong>. Dátová sieť môže pomôcť senzorom a riadeniu obrany, ale sama o sebe „neruší fyziku“ balistických hrozieb.</li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="section">
+        <div class="label">Fakty a kontext</div>
+        <div class="mini">
+          <p>
+            SpaceX opisuje Starshield ako <strong>zabezpečenú satelitnú sieť</strong> pre vládne subjekty postavenú na Starlink technológiách,
+            určenú pre potreby národnej bezpečnosti. To je kľúč: ide o <strong>infrastruktúru</strong> (konektivita, prenos dát, integrácia payloadov),
+            nie o „zbraň“ v zmysle priameho útoku.
+          </p>
+          <p>
+            Paralelne existujú štátne programy, ktoré cielene budujú <strong>proliferované LEO vrstvy</strong> pre nízkolatenčný prenos dát.
+            Space Development Agency (SDA) napríklad popisuje svoju Transport Layer ako globálnu nízkolatenčnú vojenskú dátovú sieť,
+            prepojenú <strong>optickými intersatelitnými linkami</strong>. To je presne tá trieda riešení, do ktorej Starshield naratív zapadá:
+            „mesh sieť v LEO“ pre rýchle doručenie dát a redundanciu.
+          </p>
+          <p>
+            Reálne riziko, ktoré text len naznačuje, je inde: rastúca závislosť štátu od súkromného dodávateľa a koncentrácia kapacít.
+            Ale označiť sieť za „nezničiteľnú zbraň“ je skratka, ktorá vymieňa presnosť za efekt.
+          </p>
+          <p class="muted" style="margin-top:10px">
+            Inými slovami: Starshield môže byť strategicky dôležitý. To však nie je dôkaz, že je „najväčšia zbraň“ alebo „nemožné ho zničiť“.
+            Je to dôkaz, že moderný konflikt stojí na dátach – a titulky to využívajú.
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="label">Zdroje</div>
+        <div class="mini">
+          <ul>
+            <li>
+              FonTech (Startitup, 2026): článok, ktorý pitváme —
+              <a href="https://fontech.startitup.sk/muskov-starshield-zbran-usa/" target="_blank" rel="noopener">link</a>
+            </li>
+            <li>
+              SpaceX: Starshield (oficiálny popis produktu) —
+              <a href="https://www.spacex.com/starshield/" target="_blank" rel="noopener">link</a>
+            </li>
+            <li>
+              Space Development Agency: Transport Layer —
+              <a href="https://www.sda.mil/transport/" target="_blank" rel="noopener">link</a>
+            </li>
+            <li>
+              Space Development Agency: NDSA explainer (Transport Layer + optické intersatelitné linky) —
+              <a href="https://www.sda.mil/the-national-defense-space-architecture-ndsa-an-explainer/" target="_blank" rel="noopener">link</a>
+            </li>
+            <li>
+              Reuters (2024): NRO/SpaceX a výstavba spravodajskej satelitnej siete (kontext Starshield) —
+              <a href="https://www.reuters.com/technology/space/musks-spacex-is-building-spy-satellite-network-us-intelligence-agency-sources-2024-03-16/" target="_blank" rel="noopener">link</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="hr"></div>
+
+      <div class="section">
+        <div class="label">Verdikt</div>
+        <div class="verdict">
+          <span class="badge mixed">Zavádzajúce</span>
+          <div>
+            Článok mieša pojem <strong>sieť</strong> so slovom <strong>zbraň</strong> a pridáva absolútne tvrdenie typu
+            <strong>„nemožno ju zničiť“</strong>. Starshield je v jadre <strong>komunikačná/dátová infraštruktúra</strong> pre štátne použitie.
+            Strategicky to môže byť veľká vec, ale tvrdenia o „nezničiteľnosti“ a „konci éry balistických rakiet“ sú
+            skôr titulková chemoterapia reality než opis faktov.
+            <br>
+            <span class="muted">Správny opis: proliferovaná LEO sieť pre prenos dát a integráciu payloadov; odolnejšia než monolitické satelity, ale nie „absolútne nezničiteľná“ a už vôbec nie zbraň sama o sebe.</span>
+          </div>
+        </div>
+
+        <p class="muted" style="margin-top:12px">
+          Verdikt nie je názor. Je výsledok rozkladu tvrdenia na overiteľné časti.
+        </p>
+      </div>
+
+      <footer class="footer">
+        <span><a href="/">Domov</a></span>
+        <span class="muted">•</span>
+        <span><a href="mailto:kontakt@bez-bullshitu.org">kontakt@bez-bullshitu.org</a></span>
+        <span class="muted">•</span>
+        <span>Case #0021</span>
+      </footer>
+
+    </article>
+
+  </main>
+</body>
+</html>
