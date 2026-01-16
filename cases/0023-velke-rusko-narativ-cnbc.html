@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case 0023 – „Veľké Rusko“: mýtus strachu vs. audit reality (CNBC)</title>
+  <meta name="description" content="Bez-bullshitu pitva naratívu „Veľké Rusko“. Prečo je to generáciami pestovaný marketing strachu a prečo realita výkonu na Ukrajine rozbila mýtus na kúsky." />
+
+  <meta property="og:title" content="Case 0023 – „Veľké Rusko“: mýtus strachu vs. audit reality" />
+  <meta property="og:description" content="Keď sa z legendy stane len PR. Päť rokov reality (2014–2026), ktorá odhaľuje, že strach je produkt a „veľkosť“ je naratív." />
+  <meta property="og:type" content="article" />
+
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --card:#0f1620;
+      --card2:#0c121b;
+      --text:#e7edf5;
+      --muted:#a8b3c3;
+      --faint:#6f7c90;
+      --line:#233042;
+      --accent:#7bd3ff;
+      --accent2:#b8ffb0;
+      --danger:#ff6b6b;
+      --warn:#ffd166;
+      --shadow: 0 10px 30px rgba(0,0,0,.45);
+      --radius: 18px;
+      --radius2: 14px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background: radial-gradient(1200px 600px at 20% -10%, rgba(123,211,255,.12), transparent 55%),
+                  radial-gradient(900px 500px at 100% 0%, rgba(184,255,176,.09), transparent 50%),
+                  linear-gradient(180deg, #070a0f 0%, var(--bg) 45%, #070a0f 100%);
+      color:var(--text);
+      font-family:var(--sans);
+      line-height:1.55;
+    }
+
+    a{color:var(--accent); text-decoration:none}
+    a:hover{ text-decoration:underline }
+
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 26px 16px 80px;
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding: 14px 16px;
+      border: 1px solid rgba(35,48,66,.6);
+      background: rgba(12,18,27,.65);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+      min-width: 240px;
+    }
+
+    .brand .site{
+      font-weight:800;
+      letter-spacing:.4px;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .brand .tag{
+      font-size:12px;
+      color: var(--muted);
+    }
+
+    .chiprow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      justify-content:flex-end;
+    }
+
+    .chip{
+      font-size:12px;
+      color: var(--muted);
+      border:1px solid rgba(35,48,66,.8);
+      background: rgba(15,22,32,.65);
+      padding: 6px 10px;
+      border-radius: 999px;
+      white-space:nowrap;
+    }
+
+    .chip strong{ color: var(--text); font-weight:700 }
+
+    .card{
+      margin-top: 16px;
+      border: 1px solid rgba(35,48,66,.6);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(15,22,32,.92) 0%, rgba(12,18,27,.9) 100%);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .hero{
+      padding: 22px 22px 16px;
+      border-bottom: 1px solid rgba(35,48,66,.6);
+      background:
+        radial-gradient(900px 500px at 10% 0%, rgba(255,107,107,.08), transparent 55%),
+        radial-gradient(1000px 450px at 70% -10%, rgba(123,211,255,.09), transparent 55%),
+        rgba(12,18,27,.6);
+    }
+
+    .kicker{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      margin-bottom: 10px;
+    }
+
+    .caseid{
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .9px;
+      color: var(--accent2);
+      border: 1px solid rgba(184,255,176,.35);
+      background: rgba(184,255,176,.06);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+
+    .severity{
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .9px;
+      color: var(--danger);
+      border: 1px solid rgba(255,107,107,.35);
+      background: rgba(255,107,107,.06);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+
+    h1{
+      margin: 8px 0 10px;
+      font-size: 28px;
+      line-height: 1.18;
+      letter-spacing: -0.3px;
+    }
+
+    .sub{
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 78ch;
+    }
+
+    .content{
+      padding: 18px 22px 22px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    section{
+      border: 1px solid rgba(35,48,66,.55);
+      background: rgba(15,22,32,.55);
+      border-radius: var(--radius2);
+      padding: 16px 16px 14px;
+    }
+
+    section h2{
+      margin: 0 0 10px;
+      font-size: 16px;
+      letter-spacing: .2px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .dot{
+      width:10px;
+      height:10px;
+      border-radius:999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(123,211,255,.12);
+      flex: 0 0 auto;
+    }
+
+    .dot.red{ background: var(--danger); box-shadow: 0 0 0 4px rgba(255,107,107,.12); }
+    .dot.green{ background: var(--accent2); box-shadow: 0 0 0 4px rgba(184,255,176,.12); }
+    .dot.yellow{ background: var(--warn); box-shadow: 0 0 0 4px rgba(255,209,102,.12); }
+
+    p{ margin: 0 0 10px; color: var(--text); }
+    p:last-child{ margin-bottom:0 }
+    ul{ margin: 8px 0 0 18px; color: var(--text); }
+    li{ margin: 6px 0; color: var(--text); }
+    .muted{ color: var(--muted); }
+
+    .quote{
+      border-left: 3px solid rgba(255,209,102,.75);
+      background: rgba(255,209,102,.06);
+      padding: 12px 12px 12px 12px;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+    .quote p{
+      margin:0;
+      color: var(--text);
+      font-style: italic;
+    }
+
+    .factgrid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .fact{
+      border: 1px solid rgba(35,48,66,.6);
+      background: rgba(12,18,27,.55);
+      border-radius: 14px;
+      padding: 12px 12px 10px;
+    }
+
+    .fact .label{
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing:.8px;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .fact .text{ color: var(--text); }
+
+    .verdict{
+      border: 1px solid rgba(255,107,107,.45);
+      background: linear-gradient(180deg, rgba(255,107,107,.08), rgba(12,18,27,.55));
+    }
+
+    .stamp{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 10px;
+    }
+
+    .stamp span{
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(35,48,66,.8);
+      background: rgba(15,22,32,.55);
+      color: var(--muted);
+    }
+
+    footer{
+      margin-top: 16px;
+      padding: 0 6px;
+      color: var(--faint);
+      font-size: 12px;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .hr{
+      height:1px;
+      background: rgba(35,48,66,.6);
+      margin: 10px 0;
+    }
+
+    .source-list a{ word-break: break-word; }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="site">
+          <a href="https://bez-bullshitu.org" rel="noopener">bez-bullshitu.org</a>
+        </div>
+        <div class="tag">Silent-Precision • pitva naratívov • bez PR</div>
+      </div>
+
+      <div class="chiprow">
+        <div class="chip"><strong>Médium:</strong> CNBC (spúšťač)</div>
+        <div class="chip"><strong>Téma:</strong> „Veľké Rusko“</div>
+        <div class="chip"><strong>Režim:</strong> kriticky</div>
+      </div>
+    </header>
+
+    <article class="card">
+      <div class="hero">
+        <div class="kicker">
+          <div class="caseid">CASE 0023</div>
+          <div class="severity">SEVERITA: ČERVENÁ KONTROLKA</div>
+        </div>
+        <h1>„Veľké Rusko“: mýtus strachu vs. audit reality</h1>
+        <p class="sub">
+          Nie je to o Grónsku. Nie je to o Trumpovi. Je to o tom, ako sa z generáciami pestovaného naratívu robí univerzálny strašiak,
+          aj keď výkon v realite už dávno nekrýje vlastné slová.
+        </p>
+      </div>
+
+      <div class="content">
+
+        <section>
+          <h2><span class="dot"></span>Zdroj</h2>
+          <div class="source-list">
+            <p class="muted">
+              Spúšťačom je mediálny rámec „čo na to Rusko“ v arktickej téme, kde sa Rusko objavuje ako automatický strašiak.
+            </p>
+            <ul>
+              <li><a href="https://www.cnbc.com/2026/01/16/greenland-russia-trump-takeover-threats-annex-denmark.html" rel="noopener">CNBC (16. 1. 2026): Greenland, Russia, Trump takeover threats…</a></li>
+              <li><a href="https://www.reuters.com/world/china/russia-says-west-should-stop-claiming-moscow-wants-occupy-greenland-2026-01-15/" rel="noopener">Reuters (15. 1. 2026): Rusko odmieta tvrdenia, že chce „obsadiť“ Grónsko</a></li>
+              <li><a href="https://apnews.com/article/9d24bac57acc1c6e88fb73840ebe0720" rel="noopener">AP (15. 1. 2026): „V ich slovách“ – reakcie obyvateľov Grónska</a></li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2><span class="dot yellow"></span>Prečo to pitváme</h2>
+          <p>
+            Lebo existuje jav, ktorý sa v médiách správa ako reflex: <strong>„Čo na to Rusko?“</strong>
+            A keď sa ten reflex opakuje roky, prestane byť informáciou a stane sa <strong>údržbou mýtu</strong>.
+          </p>
+          <p>
+            Tento Case nie je o tom, či je Rusko „dobré“ alebo „zlé“. To je detské.
+            Je o niečom tvrdšom: <strong>o výkone vs. o PR.</strong>
+          </p>
+          <p class="muted">
+            Ak výkon nedrží krok s rečami, potom „veľkosť“ nie je realita. Je to produkt.
+          </p>
+        </section>
+
+        <section>
+          <h2><span class="dot"></span>Citované tvrdenie (naratív)</h2>
+          <p>
+            „Veľké Rusko“ je predstava, že Rusko je prirodzene dominantná sila, pred ktorou sa má svet správať opatrne,
+            lebo inak „príde trest“. V praxi sa to prejavuje tak, že Rusko je často spomínané ako
+            <strong>automatická hrozba</strong> aj tam, kde na to nie sú priame dôkazy – stačí, že sa hodí do rámca.
+          </p>
+
+          <div class="quote">
+            <p>„Chceme, aby sa nás báli. Vždy. Za každých okolností.“</p>
+          </div>
+
+          <p class="muted" style="margin-top:10px;">
+            Toto nie je citát z jedného článku. Toto je destilát dlhodobého komunikačného štýlu: hrozba ako identita.
+          </p>
+        </section>
+
+        <section>
+          <h2><span class="dot green"></span>Fakty (audit reality)</h2>
+          <p>
+            Ak chce niekto, aby sa ho svet bál, musí to vedieť podložiť výkonom. Inak ide o marketing.
+            Pozrime sa na tvrdé míľniky:
+          </p>
+
+          <div class="factgrid">
+            <div class="fact">
+              <div class="label">2014 → 2026: „dĺžka testu reality“</div>
+              <div class="text">
+                Vojna Ruska proti Ukrajine nezačala v roku 2022 z ničoho nič. Rok 2014 (Krym) je štart dlhého konfliktu,
+                ktorý v roku 2022 eskaloval do plnohodnotnej invázie. Z pohľadu výsledku je to viac než „pár mesiacov operácie“ –
+                je to <strong>roky trvajúci stres test</strong> naratívu „veľkosti“.
+              </div>
+            </div>
+
+            <div class="fact">
+              <div class="label">24. 2. 2022: plnohodnotná invázia</div>
+              <div class="text">
+                Ruská armáda spustila plnohodnotnú inváziu 24. februára 2022. To je dátum, ktorý pozná celý svet.
+                Problém pre mýtus je, že <strong>rýchle zrútenie Ukrajiny nenastalo</strong>.
+                <span class="muted">(UK Parliament research timeline; Britannica)</span>
+              </div>
+            </div>
+
+            <div class="fact">
+              <div class="label">Kyjev: cieľ, ktorý nepadol</div>
+              <div class="text">
+                Rusi zlyhali v základnom scenári: získať Kyjev a zlomiť vládu. Po ukrajinských protiútokoch v marci 2022
+                začalo Rusko sťahovanie síl z okolia Kyjeva (koniec marca).
+                Aj oficiálne americké hodnotenia uvádzali, že Rusko nedokázalo Kyjev získať a zlomiť Ukrajinu.
+                <span class="muted">(Battle of Kyiv 2022; U.S. DoD, 24. 2. 2024)</span>
+              </div>
+            </div>
+
+            <div class="fact">
+              <div class="label">„Stovky ton železa“ ≠ moderná schopnosť</div>
+              <div class="text">
+                Objem techniky je lacná metrika. Dôležitá je <strong>logistika, údržba, koordinácia, adaptácia</strong>.
+                Keď sa vojna naťahuje roky, ukazuje to, že „veľkosť“ nie je o počte kusov, ale o schopnosti dodávať výsledok.
+              </div>
+            </div>
+
+            <div class="fact">
+              <div class="label">Afganistan: koniec legendy už raz prišiel</div>
+              <div class="text">
+                Sovietsky zväz sa z Afganistanu stiahol v rokoch 1988–1989 (formálne do 15. februára 1989).
+                Dlhá vojna vyžrala zdroje aj prestíž. História pozná tento vzorec: veľké reči, dlhý výkonový úpadok.
+                <span class="muted">(Soviet withdrawal from Afghanistan)</span>
+              </div>
+            </div>
+
+            <div class="fact">
+              <div class="label">Gruzínsko & Sýria: lokálne úspechy ≠ globálna „veľkosť“</div>
+              <div class="text">
+                Gruzínsko 2008 bolo krátke (dni), s regionálnym efektom a dlhodobými následkami (Abcházsko/Južné Osetsko).
+                Sýria od 2015 bola intervencia, kde Rusko pomohlo režimu prežiť, ale neznamená to automaticky
+                schopnosť viesť modernú, rozsiahlu, dlhodobú pozemnú vojnu proti odhodlanému protivníkovi.
+                <span class="muted">(Russo-Georgian War; Russian intervention in Syrian civil war)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hr"></div>
+
+          <p>
+            Najväčší problém pre „Veľké Rusko“ nie je to, čo sa o ňom píše.
+            Najväčší problém je, že <strong>audit reality beží naživo</strong> – a výsledok je viditeľný aj bez propagandy.
+          </p>
+        </section>
+
+        <section class="verdict">
+          <h2><span class="dot red"></span>Verdikt</h2>
+          <p>
+            „Veľké Rusko“ je v jadre <strong>projekt strachu</strong>: udržať váhu slov tým, že sa svet bude báť už len pri vyslovení mena.
+            Lenže strach má jednu slabinu – <strong>potrebuje dôkaz</strong>.
+          </p>
+          <p>
+            A keď sa roky ukazuje, že „veľkosť“ nedokáže doručiť rozhodujúci výsledok proti menšiemu štátu,
+            potom to nie je veľkosť. Je to <strong>náramne hlasná snaha vyzerať veľko</strong>.
+          </p>
+          <p>
+            Toto je tá červená kontrolka: keď mýtus potrebuje stále viac titulkov, aby prežil, je už v štádiu
+            <strong>udržiavaného klamu</strong>.
+          </p>
+
+          <div class="stamp">
+            <span>PR ≠ výkon</span>
+            <span>strach ≠ sila</span>
+            <span>názov ≠ výsledok</span>
+          </div>
+
+          <div class="hr"></div>
+
+          <p>
+            A teraz tá jediná veta, ktorú tento Case dlží Ukrajincom:
+            <strong>Ak by „Veľké Rusko“ bolo realita, Ukrajina by už dávno neexistovala ako slobodný štát.</strong>
+            To, že existuje, nie je náhoda. Je to dôkaz.
+          </p>
+        </section>
+
+        <section>
+          <h2><span class="dot"></span>Poznámka k časovej osi (aby sa neklamalo ani omylom)</h2>
+          <p>
+            Keď povieš „päť rokov“, dáva to zmysel dvomi spôsobmi:
+          </p>
+          <ul>
+            <li><strong>Od 24. 2. 2022</strong> (plnohodnotná invázia) do januára 2026 sú to takmer štyri roky – stále brutálne dlhý čas na „rýchlu operáciu“.</li>
+            <li><strong>Od 2014</strong> (Krym a začiatok širšieho konfliktu) je to vyše dekády. A „veľkosť“, ktorá potrebuje dekádu konfliktu, je mýtus, nie dominancia.</li>
+          </ul>
+          <p class="muted">
+            Tento Case sa drží faktov a dátumov: 2014 ako začiatok konfliktu, 24. 2. 2022 ako začiatok plnohodnotnej invázie.
+          </p>
+        </section>
+
+      </div>
+    </article>
+
+    <footer>
+      <div>© bez-bullshitu.org • Case 0023 • „Ticho. Precízne. Neodvratne.“</div>
+      <div class="muted">Súbory: /cases/0023-velke-rusko-narativ-cnbc.html • Index riadok: <span style="font-family:var(--mono);color:var(--text);">Case 0023 – „Veľké Rusko“: mýtus strachu vs. audit reality</span></div>
+    </footer>
+  </div>
+
+  <!-- Zdroje (doplnené odkazy v texte):
+       - UK Parliament Commons Library: Conflict in Ukraine timeline (24 Feb 2022)
+       - Britannica: 2022 Russian invasion of Ukraine (24 Feb 2022)
+       - Battle of Kyiv (withdrawal late March 2022)
+       - U.S. DoD: Two years in, Russia failed to capture Kyiv / stifle Ukraine (24 Feb 2024)
+       - Soviet withdrawal from Afghanistan (15 Feb 1989)
+       - Russo-Georgian War (2008)
+       - Russian intervention in Syrian civil war (2015)
+  -->
+</body>
+</html>
