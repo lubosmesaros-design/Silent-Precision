@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case #0026 – Čínsky laser na ukrajinskom fronte | bez-bullshitu.org</title>
+  <meta name="description" content="Pitva článku: FonTech – „Rusi testujú na fronte extrémne výkonný laser z Číny“. Čo je overiteľné, čo je domnienka a čo je len efektný rámec." />
+
+  <style>
+    :root {
+      --bg: #0b0e13;
+      --panel: rgba(18,21,28,0.86);
+      --border: rgba(120,140,255,0.22);
+      --text: #e6e9ef;
+      --muted: #9aa3b2;
+      --accent: #b9c4ff;
+
+      --good: #8ff0a4;
+      --bad: #ff7b7b;
+      --mid: #ffd37a;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 500px at 15% 20%, rgba(120,140,255,.12), transparent 55%),
+        radial-gradient(900px 600px at 85% 30%, rgba(180,120,255,.10), transparent 55%),
+        linear-gradient(180deg, #0a0c11 0%, var(--bg) 100%);
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: 980px; margin: 0 auto; padding: 44px 22px 72px; }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 18px 60px rgba(0,0,0,.55);
+      backdrop-filter: blur(10px);
+    }
+
+    h1 {
+      font-size: 32px;
+      line-height: 1.15;
+      letter-spacing: -0.4px;
+      margin-bottom: 10px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .chip {
+      border: 1px solid var(--border);
+      background: rgba(18,21,28,.6);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--accent);
+    }
+
+    .hr { height: 1px; background: rgba(255,255,255,0.06); margin: 20px 0; }
+
+    .section { margin-top: 16px; }
+
+    .label {
+      font-size: 12px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    p { line-height: 1.7; font-size: 15.5px; margin-bottom: 12px; }
+
+    ul { margin-left: 18px; }
+    li { margin: 7px 0; line-height: 1.6; font-size: 15px; }
+
+    .quote {
+      border-left: 3px solid rgba(185,196,255,0.35);
+      padding: 12px 14px;
+      background: rgba(0,0,0,0.16);
+      border-radius: 10px;
+      line-height: 1.65;
+      font-size: 15.5px;
+    }
+
+    .muted { color: var(--muted); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .mini {
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.14);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .mini h3 {
+      font-size: 14px;
+      color: var(--accent);
+      margin-bottom: 8px;
+      letter-spacing: .02em;
+    }
+
+    .verdict {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.16);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .badge {
+      font-weight: 800;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.16);
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .mixed { color: var(--mid); border-color: rgba(255,211,122,0.35); }
+
+    .footer {
+      margin-top: 22px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+      h1 { font-size: 28px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+
+    <div class="topbar">
+      <div><a href="https://bez-bullshitu.org">bez-bullshitu.org</a></div>
+      <div>Case #0026</div>
+    </div>
+
+    <article class="card">
+      <h1>FonTech: Čínsky laser na ukrajinskom fronte</h1>
+
+      <div class="meta">
+        <span class="chip">Citácia</span>
+        <span class="chip">Dáta</span>
+        <span class="chip">Logika</span>
+        <span class="chip">Verdikt</span>
+      </div>
+
+      <div class="section">
+        <div class="label">Zdroj</div>
+        <p class="muted">
+          Médium: <strong>FonTech / Startitup.sk</strong><br>
+          Článok: <strong>Ukrajina v pozore: Rusi testujú na fronte extrémne výkonný laser z Číny, drony sú bez šance</strong><br>
+          Autor: <strong>Michal Rychtárik</strong><br>
+          Publikované: <strong>20. januára 2026</strong><br>
+          URL: <a href="https://fontech.startitup.sk/cinska-vojenska-technologia-na-ukrajine/" target="_blank" rel="noopener">otvoriť článok</a>
+        </p>
+      </div>
+
+      <div class="hr"></div>
+
+      <div class="section">
+        <div class="label">Prečo to pitváme</div>
+        <p>
+          Titulok je postavený ako definitívna veta: „drony sú bez šance“. Lenže vojna nie je trailer a realita nie je PR brožúra.
+          Pri takýchto tvrdeniach sú podstatné tri veci: <strong>zdroj záberov</strong>, <strong>identifikácia systému</strong> a <strong>limity technológie</strong>.
+          Ak niekde zlyhá dôkazný reťazec, z „nasadili“ sa stáva „možno“, a z „bez šance“ sa stáva „závisí od počasia, vzdialenosti a cieľa“.
+        </p>
+        <p class="muted">
+          Toto je Case o disciplíne: čo vieme, čo nevieme a čo sa len dobre číta.
+        </p>
+      </div>
+
+      <div class="section">
+        <div class="label">Citované tvrdenie</div>
+        <div class="quote">
+          „Najnovšie zábery z ruskej Belgorodskej oblasti naznačujú, že ruské jednotky už aktívne používajú čínsky laserový systém určený na likvidáciu bezpilotných lietadiel.“<br><br>
+          „Analýza záberov naznačuje, že ide o systém známy ako ‚Low Altitude Laser Defending System‘, označovaný aj ako Silent Hunter… s laserovým žiaričom s výkonom približne 10 kilowattov.“<br><br>
+          „…Silent Hunter zostrelil ukrajinský dron… drony sú bez šance.“
+        </div>
+        <p class="muted" style="margin-top:10px">
+          Poznámka: citujeme len jadro tvrdenia (nie celý článok).
+        </p>
+      </div>
+
+      <div class="grid">
+        <section class="mini">
+          <h3>Čo je na tom pravda</h3>
+          <ul>
+            <li>Lasery na bojisku proti dronom sú reálna kategória zbraní (directed-energy), ktorú vyvíja viacero armád a má jasné plusy (nízka cena za „výstrel“, „neobmedzená munícia“ pri dostatku energie).</li>
+            <li>Silent Hunter/LASS je v otvorených zdrojoch opisovaný ako čínsky proti-dronový laserový systém; existujú zmienky o exporte do zahraničia.</li>
+            <li>Článok uvádza konkrétny kontext: video zohrávajúce sa v Belgorodskej oblasti a tvrdenie, že systém má byť použitý pri hranici s Ukrajinou.</li>
+          </ul>
+        </section>
+
+        <section class="mini">
+          <h3>Čo je zavádzajúce</h3>
+          <ul>
+            <li>„Drony sú bez šance“ je absolútna formulácia bez podmienok. V praxi závisí účinnosť laserov od <strong>dosahu, viditeľnosti, atmosféry, typu cieľa a času pôsobenia</strong>.</li>
+            <li>Identifikácia systému je postavená na „analýze záberov“. Bez nezávislej verifikácie (sériové čísla, oficiálne potvrdenie, viac zdrojov) ide o <strong>pravdepodobnú, nie definitívnu</strong> identifikáciu.</li>
+            <li>Uvádzaný výkon „~10 kW“ je citovaný z článku; v otvorených zdrojoch sa pri Silent Hunter/LASS objavujú aj vyššie výkonové varianty. Bez presnej špecifikácie konkrétneho kusu je výkon v texte len orientačný.</li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="section">
+        <div class="label">Fakty a kontext</div>
+        <div class="mini">
+          <p>
+            Čo je najviac „z ostra“: laser nie je magická guma na drony. Je to nástroj s jasnými prednosťami aj stenami.
+            Štátne a odborné zdroje k directed-energy zbraniam opakovane uvádzajú limity: počasie, kratší dosah oproti tradičným zbraniam,
+            vysoké nároky na energiu a chladenie, a celkovo citlivosť na podmienky použitia.
+          </p>
+          <p>
+            Ak teda video skutočne ukazuje laserový zásah dronu, je to zaujímavý signál o vývoji boja proti bezpilotným prostriedkom.
+            Nie je to však dôkaz, že „drony sú bez šance“. V realite sa mení len jedna vec: <strong>ďalšia vrstva protidronovej obrany</strong> vstupuje do hry.
+            A ako vždy: protiopatrenia (taktika, roje, materiály, letové profily, nasadenie v hmle/dymových podmienkach) prídu rýchlo.
+          </p>
+          <p class="muted" style="margin-top:10px">
+            Najdôležitejšie: článok mieša „naznačujú“ s „bez šance“. Prvá časť je opatrná. Druhá je marketing.
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="label">Zdroje</div>
+        <div class="mini">
+          <ul>
+            <li>
+              FonTech (20. 1. 2026): článok, ktorý pitváme —
+              <a href="https://fontech.startitup.sk/cinska-vojenska-technologia-na-ukrajine/" target="_blank" rel="noopener">link</a>
+            </li>
+            <li>
+              Defence Blog: zdroj uvedený priamo v článku FonTech —
+              <a href="https://defence-blog.com/" target="_blank" rel="noopener">link</a>
+            </li>
+            <li>
+              GAO (2023): Science & Tech Spotlight – Directed Energy Weapons (limity, dosah, počasie) —
+              <a href="https://www.gao.gov/products/gao-23-106717" target="_blank" rel="noopener">link</a>
+            </li>
+            <li>
+              CRS (2024): Department of Defense Directed Energy Weapons (prehľad a otázky nasadenia) —
+              <a href="https://www.congress.gov/crs-product/R46925" target="_blank" rel="noopener">link</a>
+            </li>
+            <li>
+              The War Zone (2024): Chinese laser anti-drone system spotted in Iran (proliferácia/kontext) —
+              <a href="https://www.twz.com/air/chinese-laser-anti-drone-system-spotted-in-iran" target="_blank" rel="noopener">link</a>
+            </li>
+            <li>
+              U.S. Army TRADOC (2026): prehľad o čínskych SHORAD riešeniach a „Silent Hunter“ v otvorenom zdroji —
+              <a href="https://oe.t2com.army.mil/product/saudi-arabia-turns-to-china-for-low-altitude-air-defense/" target="_blank" rel="noopener">link</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="hr"></div>
+
+      <div class="section">
+        <div class="label">Verdikt</div>
+        <div class="verdict">
+          <span class="badge mixed">Zveličené</span>
+          <div>
+            Článok stojí na reálnej technológii (anti-dronové lasery existujú) a na tvrdení o videu, ktoré „naznačuje“ nasadenie čínskeho systému pri hranici.
+            Problém je v tom, že z náznaku sa v titulku a závere robí istota a absolútna veta: <strong>„drony sú bez šance“</strong>.
+            To nie je fakt, to je efekt.
+            <br>
+            <span class="muted">Správny opis: pravdepodobná identifikácia laserového systému podľa záberov, bez nezávislého potvrdenia; aj keby išlo o Silent Hunter/LASS, ide o nástroj s limitmi (počasie, dosah, energia), nie o koniec dronov.</span>
+          </div>
+        </div>
+
+        <p class="muted" style="margin-top:12px">
+          Verdikt nie je názor. Je výsledok rozkladu tvrdenia na overiteľné časti.
+        </p>
+      </div>
+
+      <footer class="footer">
+        <span><a href="/">Domov</a></span>
+        <span class="muted">•</span>
+        <span><a href="mailto:kontakt@bez-bullshitu.org">kontakt@bez-bullshitu.org</a></span>
+        <span class="muted">•</span>
+        <span>Case #0026</span>
+      </footer>
+
+    </article>
+
+  </main>
+</body>
+</html>
