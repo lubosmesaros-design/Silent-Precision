@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case #0025 – „Digitálny kotol“ zarába peniaze? | bez-bullshitu.org</title>
+  <meta name="description" content="Pitva článku: FonTech / Startitup – digitálny kotol, ktorý má Slovákom zarábať peniaze. Fakty, technický kontext a verdikt." />
+
+  <style>
+    :root {
+      --bg: #0b0e13;
+      --panel: rgba(18,21,28,0.86);
+      --border: rgba(120,140,255,0.22);
+      --text: #e6e9ef;
+      --muted: #9aa3b2;
+      --accent: #b9c4ff;
+
+      --good: #8ff0a4;
+      --bad: #ff7b7b;
+      --mid: #ffd37a;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 500px at 15% 20%, rgba(120,140,255,.12), transparent 55%),
+        radial-gradient(900px 600px at 85% 30%, rgba(180,120,255,.10), transparent 55%),
+        linear-gradient(180deg, #0a0c11 0%, var(--bg) 100%);
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: 980px; margin: 0 auto; padding: 44px 22px 72px; }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 18px 60px rgba(0,0,0,.55);
+      backdrop-filter: blur(10px);
+    }
+
+    h1 {
+      font-size: 32px;
+      line-height: 1.15;
+      letter-spacing: -0.4px;
+      margin-bottom: 10px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .chip {
+      border: 1px solid var(--border);
+      background: rgba(18,21,28,.6);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--accent);
+    }
+
+    .hr { height: 1px; background: rgba(255,255,255,0.06); margin: 20px 0; }
+
+    .section { margin-top: 16px; }
+
+    .label {
+      font-size: 12px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    p { line-height: 1.7; font-size: 15.5px; margin-bottom: 12px; }
+
+    ul { margin-left: 18px; }
+    li { margin: 7px 0; line-height: 1.6; font-size: 15px; }
+
+    .quote {
+      border-left: 3px solid rgba(185,196,255,0.35);
+      padding: 12px 14px;
+      background: rgba(0,0,0,0.16);
+      border-radius: 10px;
+      line-height: 1.65;
+      font-size: 15.5px;
+    }
+
+    .muted { color: var(--muted); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .mini {
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.14);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .mini h3 {
+      font-size: 14px;
+      color: var(--accent);
+      margin-bottom: 8px;
+      letter-spacing: .02em;
+    }
+
+    .verdict {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.16);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .badge {
+      font-weight: 800;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.16);
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .mixed { color: var(--mid); border-color: rgba(255,211,122,0.35); }
+
+    .footer {
+      margin-top: 22px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+      h1 { font-size: 28px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+
+    <div class="topbar">
+      <div><a href="/">bez-bullshitu.org</a></div>
+      <div>Case #0025</div>
+    </div>
+
+    <article class="card">
+      <h1>FonTech: „Digitálny kotol“, ktorý má zarábať peniaze</h1>
+
+      <div class="meta">
+        <span class="chip">Citácia</span>
+        <span class="chip">Dáta</span>
+        <span class="chip">Logika</span>
+        <span class="chip">Verdikt</span>
+      </div>
+
+      <div class="section">
+        <div class="label">Zdroj</div>
+        <p class="muted">
+          Médium: <strong>FonTech / Startitup.sk</strong><br>
+          Článok: <strong>Digitálny kotol zarába Slovákom peniaze</strong><br>
+          Publikované: <strong>január 2026</strong><br>
+          URL: <a href="https://fontech.startitup.sk/digitalny-kotol-zaraba-slovakom-peniaze/" target="_blank" rel="noopener">otvoriť článok</a>
+        </p>
+      </div>
+
+      <div class="hr"></div>
+
+      <div class="section">
+        <div class="label">Prečo to pitváme</div>
+        <p>
+          Článok tvrdí, že tzv. „digitálny kotol“ dokáže premeniť kúrenie z nákladu na zdroj príjmu. Ide o silné tvrdenie,
+          ktoré zasahuje do energetiky, financií aj technológie. Preto je nutné oddeliť <strong>technický koncept využitia
+          odpadového tepla</strong> od marketingového rámca „zarábania peňazí“.
+        </p>
+      </div>
+
+      <div class="section">
+        <div class="label">Citované tvrdenie</div>
+        <div class="quote">
+          „Digitálny kotol dokáže domácnostiam nielen ušetriť za kúrenie, ale dokonca im aj zarábať peniaze.“
+        </div>
+        <p class="muted" style="margin-top:10px">
+          Poznámka: citujeme len jadro tvrdenia (nie celý článok).
+        </p>
+      </div>
+
+      <div class="grid">
+        <section class="mini">
+          <h3>Čo je na tom pravda</h3>
+          <ul>
+            <li>Odpadové teplo z výpočtovej techniky (servery, dátové centrá) je reálny a známy fyzikálny jav.</li>
+            <li>Teplo zo serverov sa dá technicky využiť na ohrev vody alebo vykurovanie objektov.</li>
+            <li>Koncept opisovaný v článku bol reálne použitý na vyhrievanie bazéna.</li>
+          </ul>
+        </section>
+
+        <section class="mini">
+          <h3>Čo je zavádzajúce</h3>
+          <ul>
+            <li>Článok neuvádza <strong>žiadne konkrétne čísla</strong>: výkon, náklady, návratnosť, čistý zisk.</li>
+            <li>Nie je vysvetlené, kto platí elektrinu, servis, infraštruktúru a riziko prevádzky.</li>
+            <li>„Zarábanie peňazí“ je prezentované bez rozlíšenia medzi <strong>úsporou nákladov</strong> a <strong>reálnym príjmom</strong>.</li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="section">
+        <div class="label">Fakty a kontext</div>
+        <div class="mini">
+          <p>
+            Server vždy premieňa elektrickú energiu takmer výhradne na teplo. Ak niekto toto teplo využije,
+            nejde o výrobu novej energie, ale o <strong>recykláciu už zaplatenej elektriny</strong>.
+            Ekonomický prínos preto závisí od toho, <strong>kto platí vstupnú energiu</strong> a
+            <strong>kto inkasuje výpočtový výkon</strong>.
+          </p>
+          <p>
+            V článku chýba jasná odpoveď na základnú otázku: či domácnosť funguje ako pasívny odberateľ tepla,
+            alebo ako aktívny prevádzkovateľ výpočtovej infraštruktúry so všetkými rizikami.
+            Bez tejto informácie nie je možné hovoriť o „zarábaní“, iba o potenciálnej optimalizácii nákladov.
+          </p>
+          <p class="muted" style="margin-top:10px">
+            Technológia môže mať zmysel v špecifických prípadoch, no bez dát zostáva tvrdenie článku
+            na úrovni marketingového sľubu.
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="label">Zdroje</div>
+        <div class="mini">
+          <ul>
+            <li>
+              FonTech / Startitup (2026): článok, ktorý pitváme —
+              <a href="https://fontech.startitup.sk/digitalny-kotol-zaraba-slovakom-peniaze/" target="_blank" rel="noopener">link</a>
+            </li>
+            <li>
+              Uptime Institute: Data Center Energy Efficiency – základný princíp premeny energie na teplo —
+              <a href="https://uptimeinstitute.com/" target="_blank" rel="noopener">link</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="hr"></div>
+
+      <div class="section">
+        <div class="label">Verdikt</div>
+        <div class="verdict">
+          <span class="badge mixed">Zavádzajúce</span>
+          <div>
+            Koncept využitia odpadového tepla zo serverov je reálny a technicky zmysluplný.
+            Tvrdenie, že „digitálny kotol zarába peniaze“, však článok <strong>nedokladá dátami</strong>.
+            Bez jasných čísiel, rozdelenia nákladov a rizík ide o marketingové zjednodušenie,
+            ktoré mieša úsporu s príjmom.
+            <br>
+            <span class="muted">
+              Správny opis: potenciálna optimalizácia nákladov na teplo v špecifických podmienkach,
+              nie univerzálny zdroj zisku pre domácnosti.
+            </span>
+          </div>
+        </div>
+
+        <p class="muted" style="margin-top:12px">
+          Verdikt nie je názor. Je výsledok rozkladu tvrdenia na overiteľné časti.
+        </p>
+      </div>
+
+      <footer class="footer">
+        <span><a href="/">Domov</a></span>
+        <span class="muted">•</span>
+        <span><a href="mailto:kontakt@bez-bullshitu.org">kontakt@bez-bullshitu.org</a></span>
+        <span class="muted">•</span>
+        <span>Case #0025</span>
+      </footer>
+
+    </article>
+
+  </main>
+</body>
+</html>
