@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case 0032 – „NIČÍME SI MOZOG?“ (Short-form videá / FonTech)</title>
+  <meta name="description" content="Faktická pitva úvodu článku: short-form videá, algoritmy, dopamín a pozornosť. Čo je doložené dátami, čo je zveličená rétorika a kde končí kauzalita." />
+
+  <meta property="og:title" content="Case 0032 – NIČÍME SI MOZOG?" />
+  <meta property="og:description" content="Bez-bullshitu faktická analýza: krátke videá, pozornosť, scroll, závislostné prvky a psychika. Merania vs. interpretácie." />
+  <meta property="og:type" content="article" />
+
+  <style>
+    :root{
+      --bg: #0b0f14;
+      --card: #0f1620;
+      --muted: #93a4b8;
+      --text: #e9f0f7;
+      --line: rgba(255,255,255,.08);
+      --chip: rgba(255,255,255,.06);
+      --accent: #a7c7ff;
+      --danger: #ffb4a7;
+      --ok: #b7ffda;
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+    }
+
+    *{ box-sizing: border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(1000px 600px at 20% -10%, rgba(167,199,255,.14), transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, rgba(183,255,218,.10), transparent 55%),
+        radial-gradient(800px 520px at 50% 120%, rgba(255,180,167,.08), transparent 55%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 18px 64px;
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+      opacity:.95;
+    }
+
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+      text-decoration: none;
+      border-bottom: 0;
+    }
+    .brand:hover{ border-bottom: 0; }
+    .brand .title{
+      font-weight: 800;
+      letter-spacing: .2px;
+      font-size: 14px;
+      color: rgba(233,240,247,.95);
+    }
+    .brand .motto{
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: .3px;
+    }
+
+    .pillrow{ display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end; }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      background: var(--chip);
+      border-radius: 999px;
+      font-size: 12px;
+      color: rgba(233,240,247,.9);
+      backdrop-filter: blur(6px);
+    }
+    .chip b{ font-weight: 700; color: rgba(233,240,247,.95); }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.03), transparent 55%), var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero{
+      padding: 22px 22px 18px;
+      border-bottom: 1px solid var(--line);
+    }
+    .caseid{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 7px 10px;
+      background: rgba(167,199,255,.10);
+      border: 1px solid rgba(167,199,255,.22);
+      border-radius: 999px;
+      color: rgba(233,240,247,.95);
+      font-size: 12px;
+      letter-spacing: .25px;
+    }
+    .hero h1{
+      margin: 12px 0 8px;
+      font-size: 26px;
+      line-height: 1.2;
+      letter-spacing: .2px;
+    }
+    .subtitle{
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 78ch;
+    }
+
+    .content{
+      padding: 18px 22px 22px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    section{
+      padding: 16px 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255,255,255,.02);
+    }
+
+    h2{
+      margin: 0 0 10px;
+      font-size: 16px;
+      letter-spacing: .2px;
+    }
+
+    p{ margin: 0 0 10px; color: rgba(233,240,247,.92); }
+    p:last-child{ margin-bottom:0; }
+
+    ul{ margin: 0; padding-left: 18px; }
+    li{ margin: 6px 0; color: rgba(233,240,247,.92); }
+
+    a{
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(167,199,255,.35);
+    }
+    a:hover{ border-bottom-color: rgba(167,199,255,.8); }
+
+    blockquote{
+      margin: 10px 0 0;
+      padding: 12px 14px;
+      border-left: 3px solid rgba(167,199,255,.55);
+      background: rgba(167,199,255,.06);
+      border-radius: 12px;
+      color: rgba(233,240,247,.95);
+    }
+
+    .verdict{
+      display:grid;
+      gap: 10px;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      width: fit-content;
+    }
+    .badge.ok{ border-color: rgba(183,255,218,.25); background: rgba(183,255,218,.06); color: rgba(233,240,247,.95); }
+    .badge.warn{ border-color: rgba(255,180,167,.22); background: rgba(255,180,167,.06); color: rgba(233,240,247,.95); }
+    .badge b{ font-weight: 800; }
+
+    .table{
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,.12);
+    }
+    .table th, .table td{
+      padding: 12px 12px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      font-size: 13px;
+      color: rgba(233,240,247,.92);
+    }
+    .table th{
+      text-align: left;
+      color: rgba(233,240,247,.96);
+      background: rgba(255,255,255,.03);
+      font-weight: 800;
+      letter-spacing: .2px;
+    }
+    .table tr:last-child td{ border-bottom: 0; }
+
+    .foot{
+      margin-top: 14px;
+      color: rgba(147,164,184,.9);
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <a class="brand" href="https://bez-bullshitu.org" aria-label="bez-bullshitu.org">
+        <div class="title">bez-bullshitu.org</div>
+        <div class="motto">Ticho. Precízne. Neodvratne.</div>
+      </a>
+      <div class="pillrow">
+        <span class="chip"><b>Typ:</b> Faktická pitva (úvod + tvrdenia)</span>
+        <span class="chip"><b>Téma:</b> pozornosť / psychika / algoritmy</span>
+        <span class="chip"><b>Publikované:</b> 24. januára 2026</span>
+      </div>
+    </div>
+
+    <article class="card">
+      <header class="hero">
+        <span class="caseid">CASE 0032</span>
+        <h1>NIČÍME SI MOZOG?</h1>
+        <p class="subtitle">
+          Článok je PREMIUM, takže verejne je dostupný len úvod. V úvode však zaznieva viacero silných tvrdení
+          o krátkych videách, dopamíne a ničení pozornosti. Toto je pitva výhradne týchto tvrdení: čo má oporu v dátach,
+          čo je prehnaná metafora a kde sa mieša korelácia s kauzalitou.
+        </p>
+      </header>
+
+      <div class="content">
+        <section>
+          <h2>Zdroj</h2>
+          <p>
+            FonTech.startitup.sk – <a href="https://fontech.startitup.sk/najhorsi-internetovy-obsah-sledujeme-pravidelne/" target="_blank" rel="noopener">
+              „Slováci si ničia mozog každý deň. Psychológovia varujú pred vážnymi dôsledkami dnešnej doby“
+            </a> (Roland Tököly, 24. januára 2026).
+          </p>
+          <p>
+            Porovnávacie vedecké zdroje (otvorené/primárne alebo akademické):<br />
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12230358/" target="_blank" rel="noopener">Short-form video media use a nepozornosť (2025)</a> ·
+            <a href="https://www.sciencedirect.com/science/article/abs/pii/S0191886924003799" target="_blank" rel="noopener">Doomscrolling a psychické zdravie (2025)</a> ·
+            <a href="https://www.nature.com/articles/s41562-024-02065-6" target="_blank" rel="noopener">Web-browsing a nálada/mentálne zdravie (Nature Human Behaviour, 2025)</a>.
+          </p>
+        </section>
+
+        <section>
+          <h2>Prečo to pitváme</h2>
+          <ul>
+            <li><b>„Ničíme si mozog“</b> je extrémne tvrdenie – ak je pravda, potrebuje dôkazy typu longitudinálne štúdie, nie len pocit.</li>
+            <li><b>„Algoritmy hackujú dopamín“</b> je lákavá metafora, ale dopamín nie je vypínač závislosti. Závislostné mechanizmy sú komplexnejšie.</li>
+            <li><b>„Krátky formát ničí sústredenie“</b> sa dá testovať – tu vieme pracovať s výskumom o pozornosti, nepozornosti a návykoch.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Citované tvrdenia (z verejného úvodu)</h2>
+          <blockquote>
+            „…nekonečný prúd vertikálnych videí…“<br />
+            „…vrcholné dielo inžinierstva zameraného na totálnu extrakciu ľudskej pozornosti…“<br />
+            „…hacknúť náš dopamínový systém…“<br />
+            „Krátky formát zásadne mení štruktúru nášho myslenia. Ničí schopnosť sústrediť sa…“
+          </blockquote>
+        </section>
+
+        <section>
+          <h2>Fakty</h2>
+          <ul>
+            <li>
+              <b>Short-form video a pozornosť: existujú dáta o asociáciách.</b><br />
+              Výskum (2025) našiel štatistickú asociáciu medzi používaním krátkych videí a vyššími ukazovateľmi nepozornosti
+              (najmä u mladších účastníkov). Dôležité: ide primárne o asociáciu, nie automaticky dôkaz priamej príčiny.
+            </li>
+
+            <li>
+              <b>„Ničiť schopnosť sústrediť sa“ je príliš absolútne.</b><br />
+              Výskumy typicky hovoria o zhoršení udržanej pozornosti, vyššej rozptýliteľnosti, návykových vzorcoch alebo subjektívnych ťažkostiach.
+              „Ničí“ je jazykový extrém – vedecky sa takto kategórie zvyčajne neformulujú.
+            </li>
+
+            <li>
+              <b>Dopamín: správna intuícia, zlá skratka.</b><br />
+              Platformy optimalizujú odmeňovanie (novosť, variabilná odmena, nekonečný scroll), čo vie podporovať kompulzívne správanie.
+              Ale veta „hacknúť dopamín“ je metafora – dopamín nie je jednorozmerný „hormón šťastia“ ani jediný mechanizmus závislosti.
+            </li>
+
+            <li>
+              <b>Doomscrolling a psychika: rizikový vzorec, nie mýtus.</b><br />
+              Výskum (2025) spája doomscrolling s horšími psychologickými ukazovateľmi (napr. vyššia úzkosť),
+              často cez mechanizmus „negatívny obsah → negatívna nálada → ďalšie vyhľadávanie negatívneho obsahu“.
+            </li>
+
+            <li>
+              <b>„Extrakcia pozornosti“ nie je konšpirácia, je to obchodný model.</b><br />
+              Optimalizácia engagementu je merateľná a platformy majú incentívy zvyšovať čas a interakcie.
+              To však neznamená, že každý používateľ musí skončiť s rozpadnutou pozornosťou – efekt závisí od dávky, veku, spánku,
+              komorbidít, typu obsahu a režimu používania.
+            </li>
+
+            <li>
+              <b>U detí je riziko vyššie (princíp, nie senzácia).</b><br />
+              Vývojová neuropsychológia všeobecne uznáva, že exekutívne funkcie a sebakontrola dozrievajú.
+              Preto je pri deťoch vyššia citlivosť na návykové dizajny. To je dôvod pre opatrnosť, nie dôkaz „civilizačného konca“.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Verdikt</h2>
+          <div class="verdict">
+            <span class="badge warn"><b>Hodnotenie:</b> jadro pravdivé, rétorika prehnaná</span>
+
+            <table class="table" aria-label="Verdiktová tabuľka">
+              <thead>
+                <tr>
+                  <th>Tvrdenie</th>
+                  <th>Faktický stav</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>„Krátky formát ničí schopnosť sústrediť sa“</td>
+                  <td>
+                    Existujú dáta o asociáciách so zhoršenou udržanou pozornosťou/vyššou nepozornosťou, najmä u mladších.
+                    Slovo „ničí“ je absolútne a vedecky prehnané.
+                  </td>
+                </tr>
+                <tr>
+                  <td>„Algoritmy hackujú dopamínový systém“</td>
+                  <td>
+                    Platformy optimalizujú odmeňovanie a kompulzívne vzorce, ale „hack dopamínu“ je metafora.
+                    Mechanizmy sú zložitejšie než jeden neurotransmiter.
+                  </td>
+                </tr>
+                <tr>
+                  <td>„Totálna extrakcia pozornosti“</td>
+                  <td>
+                    Obchodný model engagementu je reálny, ale dopady sú heterogénne: závisia od dávky, veku, spánku a individuálnej zraniteľnosti.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>
+              Zhrnutie bez teatrálnosti: <b>krátke videá a nekonečný scroll sú dizajnované na maximalizáciu pozornosti</b> a výskum ukazuje
+              súvislosti s problémami pozornosti a psychickou záťažou u časti populácie. Článok má pravdivé jadro, ale
+              používa slovník „apokalypsy mozgu“, ktorý mieša dôkazy s emóciou.
+            </p>
+
+            <p class="foot">
+              Poznámka: Case hodnotí tvrdenia z verejne dostupného úvodu (zvyšok článku je PREMIUM). Výskum v tejto téme často ukazuje asociácie;
+              príčinnosť vyžaduje prísnejšie dizajny a dlhodobé dáta.
+            </p>
+          </div>
+        </section>
+      </div>
+    </article>
+  </div>
+</body>
+</html>
