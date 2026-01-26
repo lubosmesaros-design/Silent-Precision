@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case 0041 – „5G A ZDRAVIE: KONEČNE ZDRAVÝ ROZUM“ (EÚ test)</title>
+  <meta name="description" content="Referenčný case: čo ukázali európske testy 5G, aké sú reálne úrovne expozície a prečo sa tu končí priestor pre hystériu." />
+
+  <meta property="og:title" content="Case 0041 – 5G A ZDRAVIE: KONEČNE ZDRAVÝ ROZUM" />
+  <meta property="og:description" content="Bez-bullshitu referenčný rozbor: merania, limity, fyzika. Žiadne reptílie, žiadna hystéria – len dáta." />
+  <meta property="og:type" content="article" />
+
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --card:#0f1620;
+      --muted:#93a4b8;
+      --text:#e9f0f7;
+      --line:rgba(255,255,255,.08);
+      --chip:rgba(255,255,255,.06);
+      --accent:#a7c7ff;
+      --ok:#b7ffda;
+      --shadow:0 18px 60px rgba(0,0,0,.45);
+      --radius:18px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      background:
+        radial-gradient(1000px 600px at 20% -10%, rgba(167,199,255,.14), transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, rgba(183,255,218,.10), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+
+    .wrap{max-width:980px;margin:0 auto;padding:28px 18px 64px}
+
+    .topbar{
+      display:flex;justify-content:space-between;align-items:center;
+      margin-bottom:18px
+    }
+
+    .brand{display:flex;flex-direction:column;text-decoration:none}
+    .brand .title{font-weight:800;font-size:14px}
+    .brand .motto{font-size:12px;color:var(--muted)}
+
+    .pillrow{display:flex;gap:8px;flex-wrap:wrap}
+    .chip{
+      padding:7px 10px;border-radius:999px;
+      border:1px solid var(--line);
+      background:var(--chip);
+      font-size:12px
+    }
+
+    .card{
+      background:linear-gradient(180deg,rgba(255,255,255,.03),transparent 55%),var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow)
+    }
+
+    .hero{padding:22px;border-bottom:1px solid var(--line)}
+    .caseid{
+      display:inline-flex;padding:7px 10px;
+      border-radius:999px;
+      background:rgba(183,255,218,.12);
+      border:1px solid rgba(183,255,218,.25);
+      font-size:12px
+    }
+
+    h1{margin:12px 0 8px;font-size:26px}
+    .subtitle{color:var(--muted);font-size:14px;max-width:78ch}
+
+    .content{padding:22px;display:grid;gap:16px}
+
+    section{
+      padding:16px;border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.02)
+    }
+
+    h2{margin:0 0 10px;font-size:16px}
+
+    p{margin:0 0 10px}
+    ul{margin:0;padding-left:18px}
+    li{margin:6px 0}
+
+    blockquote{
+      margin:10px 0 0;padding:12px 14px;
+      border-left:3px solid rgba(183,255,218,.6);
+      background:rgba(183,255,218,.08);
+      border-radius:12px
+    }
+
+    .verdict{display:grid;gap:10px}
+
+    .badge{
+      display:inline-flex;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(183,255,218,.3);
+      background:rgba(183,255,218,.08);
+      font-size:12px
+    }
+
+    .table{
+      width:100%;border-collapse:collapse;
+      border:1px solid var(--line);
+      border-radius:12px;overflow:hidden
+    }
+    .table th,.table td{
+      padding:12px;border-bottom:1px solid var(--line);
+      font-size:13px;vertical-align:top
+    }
+    .table th{font-weight:800;background:rgba(255,255,255,.03)}
+    .table tr:last-child td{border-bottom:0}
+
+    .foot{font-size:12px;color:var(--muted);margin-top:14px}
+  </style>
+</head>
+
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a class="brand" href="https://bez-bullshitu.org">
+      <div class="title">bez-bullshitu.org</div>
+      <div class="motto">Ticho. Precízne. Neodvratne.</div>
+    </a>
+    <div class="pillrow">
+      <span class="chip"><b>Typ:</b> Referenčný case</span>
+      <span class="chip"><b>Téma:</b> 5G / zdravie / fyzika</span>
+      <span class="chip"><b>Publikované:</b> 26. januára 2026</span>
+    </div>
+  </div>
+
+  <article class="card">
+    <header class="hero">
+      <span class="caseid">CASE 0041</span>
+      <h1>5G A ZDRAVIE: KONEČNE ZDRAVÝ ROZUM</h1>
+      <p class="subtitle">
+        Európske testy 5G. Reálne merania. Reálne limity.
+        Tento case nie je reakcia na konšpirácie – je to referenčný bod reality.
+      </p>
+    </header>
+
+    <div class="content">
+      <section>
+        <h2>Zdroj</h2>
+        <p>
+          FonTech / Startitup.sk –
+          <a href="https://fontech.startitup.sk/eu-test-5g-vysledky/" target="_blank" rel="noopener">
+            „EÚ otestovala 5G: výsledky hovoria jasne“
+          </a>
+          (Európske merania expozície 5G).
+        </p>
+      </section>
+
+      <section>
+        <h2>Prečo tento case existuje</h2>
+        <ul>
+          <li><b>Téma 5G je zahltená hlukom:</b> emócie nahrádzajú fyziku.</li>
+          <li><b>Toto je opačný pól:</b> merania, metodika, čísla.</li>
+          <li><b>Cieľ:</b> uzavrieť tému faktami, nie ju živiť sporom.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Čo sa reálne testovalo</h2>
+        <ul>
+          <li>Meranie expozície rádiofrekvenčnému žiareniu pri 5G.</li>
+          <li>Testy na dobrovoľníkoch v realistických podmienkach.</li>
+          <li>Porovnanie s bezpečnostnými limitmi EÚ (ICNIRP).</li>
+          <li>Sledovanie fyziologických parametrov (teplota, stres, srdcová činnosť).</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Fakty</h2>
+        <ul>
+          <li><b>Namerané hodnoty sú výrazne pod limitmi:</b> aj pri maximálnych scenároch.</li>
+          <li><b>Nezistené žiadne škodlivé účinky:</b> žiadne zmeny fyziologických parametrov.</li>
+          <li><b>5G je neionizujúce žiarenie:</b> nemá energiu poškodzovať DNA ani bunky.</li>
+          <li><b>Bezpečnostné limity majú veľkú rezervu:</b> sú nastavené hlboko pod rizikovými úrovňami.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Čo z toho nevyplýva</h2>
+        <ul>
+          <li>Že „výskum skončil“ – dlhodobé sledovanie pokračuje.</li>
+          <li>Že existujú skryté mechanizmy bez fyzikálneho základu.</li>
+          <li>Že bežná 5G expozícia predstavuje zdravotné riziko.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Verdikt</h2>
+        <div class="verdict">
+          <span class="badge"><b>Hodnotenie:</b> potvrdený zdravý rozum</span>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Téma</th>
+                <th>Realita</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Úroveň žiarenia</td>
+                <td>Výrazne pod bezpečnostnými limitmi EÚ.</td>
+              </tr>
+              <tr>
+                <td>Zdravotné účinky</td>
+                <td>Žiadne preukázané negatívne efekty.</td>
+              </tr>
+              <tr>
+                <td>Fyzikálny mechanizmus</td>
+                <td>Neexistuje mechanizmus na „spaľovanie“ alebo poškodenie DNA.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            Zhrnutie bez emócií: <b>5G je technológia fungujúca v rámci fyziky, regulácie a meraní</b>.
+            Tento case uzatvára tému na úrovni faktov. Zvyšok je hluk.
+          </p>
+
+          <p class="foot">
+            Poznámka: Tento case slúži ako referenčný bod reality pre tému 5G a zdravia.
+          </p>
+        </div>
+      </section>
+    </div>
+  </article>
+</div>
+</body>
+</html>
