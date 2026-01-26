@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case 0037 – „AMINOKYSELINA ROZHODUJE O PREŽITÍ“ (Startitup)</title>
+  <meta name="description" content="Pitva titulku: „Bežná aminokyselina dokáže rozhodnúť o prežití“. Čo presne ukázala štúdia, čo tvrdí titulok a kde sa stráca mierka." />
+
+  <meta property="og:title" content="Case 0037 – AMINOKYSELINA ROZHODUJE O PREŽITÍ" />
+  <meta property="og:description" content="Bez-bullshitu analýza: zápal, myšací model a ako sa z laboratórneho výsledku robí všeobecná pravda." />
+  <meta property="og:type" content="article" />
+
+  <style>
+    :root{
+      --bg: #0b0f14;
+      --card: #0f1620;
+      --muted: #93a4b8;
+      --text: #e9f0f7;
+      --line: rgba(255,255,255,.08);
+      --chip: rgba(255,255,255,.06);
+      --accent: #a7c7ff;
+      --danger: #ffb4a7;
+      --ok: #b7ffda;
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+    }
+
+    *{ box-sizing: border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(1000px 600px at 20% -10%, rgba(167,199,255,.14), transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, rgba(183,255,218,.10), transparent 55%),
+        radial-gradient(800px 520px at 50% 120%, rgba(255,180,167,.08), transparent 55%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 18px 64px;
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+      opacity:.95;
+    }
+
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+      text-decoration: none;
+      border-bottom: 0;
+    }
+    .brand .title{
+      font-weight: 800;
+      letter-spacing: .2px;
+      font-size: 14px;
+      color: rgba(233,240,247,.95);
+    }
+    .brand .motto{
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: .3px;
+    }
+
+    .pillrow{ display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end; }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      background: var(--chip);
+      border-radius: 999px;
+      font-size: 12px;
+      color: rgba(233,240,247,.9);
+    }
+    .chip b{ font-weight: 700; }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.03), transparent 55%), var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero{
+      padding: 22px 22px 18px;
+      border-bottom: 1px solid var(--line);
+    }
+    .caseid{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 7px 10px;
+      background: rgba(167,199,255,.10);
+      border: 1px solid rgba(167,199,255,.22);
+      border-radius: 999px;
+      font-size: 12px;
+    }
+    .hero h1{
+      margin: 12px 0 8px;
+      font-size: 26px;
+      line-height: 1.2;
+    }
+    .subtitle{
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 78ch;
+    }
+
+    .content{
+      padding: 18px 22px 22px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    section{
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255,255,255,.02);
+    }
+
+    h2{
+      margin: 0 0 10px;
+      font-size: 16px;
+    }
+
+    p{ margin: 0 0 10px; }
+    ul{ margin: 0; padding-left: 18px; }
+    li{ margin: 6px 0; }
+
+    blockquote{
+      margin: 10px 0 0;
+      padding: 12px 14px;
+      border-left: 3px solid rgba(167,199,255,.55);
+      background: rgba(167,199,255,.06);
+      border-radius: 12px;
+    }
+
+    .verdict{
+      display:grid;
+      gap: 10px;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      width: fit-content;
+    }
+    .badge.warn{ border-color: rgba(255,180,167,.22); background: rgba(255,180,167,.06); }
+
+    .table{
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .table th, .table td{
+      padding: 12px;
+      border-bottom: 1px solid var(--line);
+      font-size: 13px;
+    }
+    .table th{
+      font-weight: 800;
+      background: rgba(255,255,255,.03);
+    }
+
+    .foot{
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <a class="brand" href="https://bez-bullshitu.org">
+        <div class="title">bez-bullshitu.org</div>
+        <div class="motto">Ticho. Precízne. Neodvratne.</div>
+      </a>
+      <div class="pillrow">
+        <span class="chip"><b>Typ:</b> Pitva titulku</span>
+        <span class="chip"><b>Téma:</b> medicína / zápal / veda</span>
+        <span class="chip"><b>Publikované:</b> 26. januára 2026</span>
+      </div>
+    </div>
+
+    <article class="card">
+      <header class="hero">
+        <span class="caseid">CASE 0037</span>
+        <h1>AMINOKYSELINA „ROZHODUJE O PREŽITÍ“</h1>
+        <p class="subtitle">
+          Titulok sľubuje existenčný verdikt. Realita je laboratórna štúdia na myšiach, úzka hypotéza a jeden z mnohých mechanizmov zápalu.
+        </p>
+      </header>
+
+      <div class="content">
+        <section>
+          <h2>Zdroj</h2>
+          <p>
+            Startitup.sk –
+            <a href="https://www.startitup.sk/bezna-aminokyselina-dokaze-rozhodnut-o-preziti-tvrdia-vedci-zapal-sposobuje-viac-umrti-nez-infekcia/" target="_blank" rel="noopener">
+              „Bežná aminokyselina dokáže rozhodnúť o prežití, tvrdia vedci“
+            </a>
+            (26. januára 2026).
+          </p>
+        </section>
+
+        <section>
+          <h2>Prečo to pitváme</h2>
+          <ul>
+            <li><b>Absolútny jazyk:</b> „rozhodnúť o prežití“ je konečný verdikt, nie opis experimentu.</li>
+            <li><b>Zámena mierky:</b> myšací model ≠ ľudská klinická realita.</li>
+            <li><b>Vedecký výsledok vs. mediálny dojem:</b> medzi nimi je veľká medzera.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Citované tvrdenie</h2>
+          <blockquote>
+            „Bežná aminokyselina dokáže rozhodnúť o prežití.“
+          </blockquote>
+        </section>
+
+        <section>
+          <h2>Čo titulok reálne tvrdí</h2>
+          <p>
+            Titulok tvrdí, že existuje jednoduchý, takmer binárny faktor – jedna aminokyselina – ktorá rozhoduje o tom,
+            či organizmus prežije alebo zomrie. Bez uvedenia kontextu to pôsobí ako univerzálny biologický spínač.
+          </p>
+        </section>
+
+        <section>
+          <h2>Fakty</h2>
+          <ul>
+            <li><b>Štúdia prebehla na zvieracom modeli:</b> ide o kontrolovaný experiment, nie klinickú štúdiu na ľuďoch.</li>
+            <li><b>Zápal môže byť smrteľný:</b> v ťažkých prípadoch je nadmerná imunitná reakcia sama o sebe zdrojom poškodenia.</li>
+            <li><b>Aminokyselina ovplyvnila jeden mechanizmus:</b> nešlo o „záchranu života“, ale o moduláciu zápalovej odpovede.</li>
+            <li><b>Nejde o univerzálne riešenie:</b> výsledok je špecifický pre daný model, podmienky a dávkovanie.</li>
+            <li><b>Preklad do praxe je otvorená otázka:</b> medzi experimentom a liečbou je dlhá cesta.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Verdikt</h2>
+          <div class="verdict">
+            <span class="badge warn"><b>Hodnotenie:</b> zavádzajúce zovšeobecnenie</span>
+
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Titulok</th>
+                  <th>Realita</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>„Aminokyselina rozhoduje o prežití“</td>
+                  <td>
+                    Aminokyselina ovplyvnila zápalový mechanizmus v jednom experimente na myšiach.
+                    Nejde o univerzálny faktor prežitia.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Implicitná jednoduchá odpoveď</td>
+                  <td>
+                    Biológia zápalu je komplexná a viacfaktorová. Jeden parameter nikdy nerozhoduje sám.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>
+              Zhrnutie bez pozlátka: <b>štúdia je zaujímavá, titulok nie je poctivý</b>.
+              Z laboratórneho výsledku sa vyrába univerzálne tvrdenie, ktoré realita nepodporuje.
+            </p>
+
+            <p class="foot">
+              Poznámka: Tento case hodnotí mediálne rámovanie a mierku tvrdenia, nie samotnú vedeckú prácu.
+            </p>
+          </div>
+        </section>
+      </div>
+    </article>
+  </div>
+</body>
+</html>
