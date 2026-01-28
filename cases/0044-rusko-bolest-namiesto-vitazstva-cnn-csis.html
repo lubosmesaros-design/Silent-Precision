@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case 0044 – RUSKO: BOLESŤ NAMIETO VÍŤAZSTVA (CNN/CSIS)</title>
+  <meta name="description" content="Pitva reality: Rusko dosiahlo za obrovskú cenu len obmedzené zisky. Čo hovoria dáta CSIS o stratách, čo hovoria mapy o území a prečo svet cynicky čaká, kým sa to vyčerpá samo." />
+
+  <meta property="og:title" content="Case 0044 – RUSKO: BOLESŤ NAMIETO VÍŤAZSTVA" />
+  <meta property="og:description" content="Bez-bullshitu analýza: obete vs. výsledok. Definície, fakty, logika a verdikt – bez emócií, bez únikov." />
+  <meta property="og:type" content="article" />
+
+  <style>
+    :root{
+      --bg: #0b0f14;
+      --card: #0f1620;
+      --muted: #93a4b8;
+      --text: #e9f0f7;
+      --line: rgba(255,255,255,.08);
+      --chip: rgba(255,255,255,.06);
+      --accent: #a7c7ff;
+      --danger: #ff4d4d;
+      --ok: #b7ffda;
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+    }
+
+    *{ box-sizing: border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(1000px 600px at 20% -10%, rgba(167,199,255,.14), transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, rgba(183,255,218,.10), transparent 55%),
+        radial-gradient(800px 520px at 50% 120%, rgba(255,77,77,.10), transparent 55%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 18px 64px;
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+      opacity:.95;
+    }
+
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+      text-decoration: none;
+      border-bottom: 0;
+    }
+    .brand:hover{ border-bottom: 0; }
+    .brand .title{
+      font-weight: 800;
+      letter-spacing: .2px;
+      font-size: 14px;
+      color: rgba(233,240,247,.95);
+    }
+    .brand .motto{
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: .3px;
+    }
+
+    .pillrow{ display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end; }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      background: var(--chip);
+      border-radius: 999px;
+      font-size: 12px;
+      color: rgba(233,240,247,.9);
+      backdrop-filter: blur(6px);
+    }
+    .chip b{ font-weight: 700; color: rgba(233,240,247,.95); }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.03), transparent 55%), var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero{
+      padding: 22px 22px 18px;
+      border-bottom: 1px solid var(--line);
+    }
+    .caseid{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 7px 10px;
+      background: rgba(255,77,77,.10);
+      border: 1px solid rgba(255,77,77,.22);
+      border-radius: 999px;
+      color: rgba(233,240,247,.95);
+      font-size: 12px;
+      letter-spacing: .25px;
+    }
+    .hero h1{
+      margin: 12px 0 8px;
+      font-size: 26px;
+      line-height: 1.2;
+      letter-spacing: .2px;
+      color: var(--danger);
+    }
+    .subtitle{
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 78ch;
+    }
+
+    .content{
+      padding: 18px 22px 22px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    section{
+      padding: 16px 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255,255,255,.02);
+    }
+
+    h2{
+      margin: 0 0 10px;
+      font-size: 16px;
+      letter-spacing: .2px;
+    }
+
+    p{ margin: 0 0 10px; color: rgba(233,240,247,.92); }
+    p:last-child{ margin-bottom:0; }
+
+    ul{ margin: 0; padding-left: 18px; }
+    li{ margin: 6px 0; color: rgba(233,240,247,.92); }
+
+    a{
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(167,199,255,.35);
+    }
+    a:hover{ border-bottom-color: rgba(167,199,255,.8); }
+
+    blockquote{
+      margin: 10px 0 0;
+      padding: 12px 14px;
+      border-left: 3px solid rgba(255,77,77,.70);
+      background: rgba(255,77,77,.06);
+      border-radius: 12px;
+      color: rgba(233,240,247,.95);
+    }
+
+    .verdict{
+      display:grid;
+      gap: 10px;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      width: fit-content;
+    }
+    .badge.red{
+      border-color: rgba(255,77,77,.28);
+      background: rgba(255,77,77,.08);
+      color: rgba(233,240,247,.96);
+    }
+    .badge b{ font-weight: 800; }
+
+    .table{
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,.12);
+    }
+    .table th, .table td{
+      padding: 12px 12px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      font-size: 13px;
+      color: rgba(233,240,247,.92);
+    }
+    .table th{
+      text-align: left;
+      color: rgba(233,240,247,.96);
+      background: rgba(255,255,255,.03);
+      font-weight: 800;
+      letter-spacing: .2px;
+    }
+    .table tr:last-child td{ border-bottom: 0; }
+
+    .foot{
+      margin-top: 14px;
+      color: rgba(147,164,184,.9);
+      font-size: 12px;
+    }
+
+    .redtitle{ color: var(--danger); }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <a class="brand" href="https://bez-bullshitu.org" aria-label="bez-bullshitu.org">
+        <div class="title">bez-bullshitu.org</div>
+        <div class="motto">Ticho. Precízne. Neodvratne.</div>
+      </a>
+      <div class="pillrow">
+        <span class="chip"><b>Typ:</b> Pitva reality</span>
+        <span class="chip"><b>Téma:</b> vojna / výsledok vs. cena / propaganda</span>
+        <span class="chip"><b>Publikované:</b> 28. januára 2026</span>
+      </div>
+    </div>
+
+    <article class="card">
+      <header class="hero">
+        <span class="caseid">CASE 0044</span>
+        <h1>RUSKO: BOLESŤ NAMIETO VÍŤAZSTVA</h1>
+        <p class="subtitle">
+          Nie je to Case o „tom, kto má pravdu“. Je to Case o tom, čo je viditeľné v číslach a v mape:
+          Rusko platí extrémnu cenu a výsledok je dlhodobo neúmerne malý. Ak je jediným stabilným výstupom bolesť, smrť a ruinovanie,
+          nejde o „silnú stratégiu“. Ide o spotrebu ľudí a krajiny na udržanie veľkého príbehu.
+        </p>
+      </header>
+
+      <div class="content">
+        <section>
+          <h2>Zdroj</h2>
+          <p>
+            CNN – <a href="https://edition.cnn.com/2026/01/28/europe/russia-ukraine-casualties-csis-report-intl-hnk-ml" target="_blank" rel="noopener">správa o odhadoch CSIS k vojenským stratám</a> (28. januára 2026).
+          </p>
+          <p>
+            CSIS – <a href="https://www.csis.org/analysis/russias-grinding-war-ukraine" target="_blank" rel="noopener">Russia’s Grinding War in Ukraine</a> (analýza, január 2026).
+            Doplnkové fakty o civilných obetiach: <a href="https://www.reuters.com/world/civilian-casualties-ukraine-up-sharply-2025-un-monitor-says-2026-01-12/" target="_blank" rel="noopener">Reuters (UN monitor, 12. januára 2026)</a>.
+            Kontext územia: <a href="https://www.reuters.com/world/americas/how-much-territory-does-russia-control-ukraine-2025-08-14/" target="_blank" rel="noopener">Reuters (kontrola územia, 15. august 2025)</a>.
+          </p>
+        </section>
+
+        <section>
+          <h2>Prečo to pitváme</h2>
+          <ul>
+            <li><b>„Vyhrávame“ je slogan.</b> Výhra je súlad medzi cieľom, výsledkom a cenou.</li>
+            <li><b>Čísla obetí samy o sebe nič nedokazujú.</b> Dokazuje to až pomer: <b>čo bolo získané</b> vs. <b>čo bolo spálené</b>.</li>
+            <li><b>Vojna sa dá klamať slovami.</b> Mapa a straty sa klamú ťažšie.</li>
+            <li><b>Svet často nezasahuje „dramaticky“.</b> Niekedy len čaká, kým sa agresia vyčerpá v čase. To nie je romantika. To je geopolitika.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Citované tvrdenie</h2>
+          <blockquote>
+            „Rusko tam nič nedokázalo – iba rozosieva bolesť a smrť za cenu minimálnych ziskov.“
+          </blockquote>
+        </section>
+
+        <section>
+          <h2>Čo tvrdenie reálne hovorí (bez pátosu)</h2>
+          <p>
+            Toto tvrdenie nestojí na emócii, ale na dvoch merateľných veciach:
+            <b>(1) vojenské straty</b> a <b>(2) teritoriálny a strategický výsledok</b>.
+          </p>
+          <p>
+            Ak sa ukáže, že straty sú extrémne a výsledok je dlhodobo obmedzený, potom je „úspech“ len PR.
+            A ak je stabilným výstupom najmä ničenie civilného priestoru, tak hlavný produkt vojny je bolesť.
+          </p>
+        </section>
+
+        <section>
+          <h2>Fakty</h2>
+          <ul>
+            <li>
+              <b>CSIS pracuje s odhadmi vojenských „casualties“</b> (zabití + zranení + nezvestní).
+              Podľa medializovaných súhrnov CSIS sa kombinované straty blížia k <b>~1,8 milióna</b> a môžu smerovať k <b>~2 miliónom</b> do jari 2026.
+              Pre Rusko sa uvádza približne <b>~1,2 milióna</b> a pre Ukrajinu <b>~500–600 tisíc</b>.
+            </li>
+            <li>
+              <b>CSIS explicitne pomenúva „minimálne zisky za mimoriadnu cenu“</b> a opisuje konflikt ako opotrebovaciu vojnu,
+              v ktorej sa výsledok meria skôr vyčerpaním než manévrom.
+            </li>
+            <li>
+              <b>Územná realita:</b> podľa Reuters (na základe otvorených máp) Rusko kontroluje približne <b>~19 % územia Ukrajiny</b>
+              (vrátane Krymu) a zmeny v čase sú často <b>pomalé</b> v porovnaní s cenou v ľudských životoch.
+            </li>
+            <li>
+              <b>„Bolesť“ nie je metafora:</b> UN monitor (cez Reuters) uvádza za rok 2025 <b>2 514 zabitých civilistov</b> a <b>12 142 zranených</b>,
+              s tým, že drvivá väčšina verifikovaných obetí vznikla na území pod kontrolou ukrajinskej vlády v dôsledku útokov z ruskej strany.
+            </li>
+            <li>
+              <b>Maximalistické požiadavky pokračujú:</b> Reuters informuje o trvaní ruských požiadaviek na zásadné územné ústupky Ukrajiny v rokovaniach.
+              To znamená, že cieľ nie je „stabilita“, ale pokračovanie tlaku – aj po rokoch strát.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="redtitle">Verdikt</h2>
+          <div class="verdict">
+            <span class="badge red"><b>Hodnotenie:</b> vecne podložené (výsledok je neúmerný cene)</span>
+
+            <table class="table" aria-label="Verdiktová tabuľka">
+              <thead>
+                <tr>
+                  <th>Téza</th>
+                  <th>Čo na to fakty</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>„Rusko dosiahlo málo“</td>
+                  <td>
+                    CSIS opisuje mimoriadnu cenu za obmedzené zisky; otvorené mapy a správy Reuters ukazujú pomalé zmeny územnej kontroly
+                    v porovnaní s rozsahom mobilizácie, strát a času.
+                  </td>
+                </tr>
+                <tr>
+                  <td>„Hlavný produkt je bolesť“</td>
+                  <td>
+                    UN monitor eviduje prudký nárast civilných obetí v roku 2025; dlhodobé útoky na civilný priestor znamenajú,
+                    že utrpenie civilistov nie je „vedľajší šum“, ale stabilná súčasť reality konfliktu.
+                  </td>
+                </tr>
+                <tr>
+                  <td>„Svet iba čaká“</td>
+                  <td>
+                    Z pohľadu faktov je viditeľné opotrebovanie a vyčerpávanie v čase. Geopoliticky to často vedie k stratégii „udržať, podporovať, neeskalovať naplno“:
+                    nie preto, že by bol konflikt malý, ale preto, že agresor sa vyčerpáva dlhým trvaním a nákladmi.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>
+              Zhrnutie bez obalu: <b>ak sa po rokoch vojny dá ukázať obrovská cena a obmedzený strategický výsledok, „úspech“ je len marketing</b>.
+              A ak zároveň rastú civilné obete a devastácia, tak najkonzistentnejší výstup je: <b>smrť, bolesť, ruiny</b>.
+              To nie je „moc“. To je <b>neefektívna brutalita</b> – drahá, dlhá a samo-ničivá.
+            </p>
+
+            <p class="foot">
+              Poznámka: Tento Case stojí na verejne citovaných analýzach (CSIS) a na otvorených mapových súhrnoch (Reuters), plus na verifikovaných civilných obetiach (UN monitor).
+              Nejde o emóciu. Ide o pomer „cena vs. výsledok“.
+            </p>
+          </div>
+        </section>
+      </div>
+    </article>
+  </div>
+</body>
+</html>
