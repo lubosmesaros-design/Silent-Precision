@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case 0045 – „Maďari za Dunaj“: ukážkový bullshit (Postoj)</title>
+  <meta name="description" content="Bez-bullshitu pitva textu o Štúrove a Benešových dekrétoch: keď sa historické fakty používajú ako kulisa, no význam sa tlačí cez emóciu, skratky a právne slová bez disciplíny." />
+
+  <meta property="og:title" content="Case 0045 – „Maďari za Dunaj“: ukážkový bullshit" />
+  <meta property="og:description" content="Historické fakty sú reálne. Problém je, čo sa s nimi urobí: rám, jazyk, skoky bez mostov, „ťažké“ slová bez testu a výsledok – pocit namiesto overiteľnosti." />
+  <meta property="og:type" content="article" />
+
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --card:#0f1620;
+      --card2:#0c121b;
+      --text:#e7edf5;
+      --muted:#a8b3c3;
+      --faint:#6f7c90;
+      --line:#233042;
+      --accent:#7bd3ff;
+      --accent2:#b8ffb0;
+      --danger:#ff6b6b;
+      --warn:#ffd166;
+      --shadow: 0 10px 30px rgba(0,0,0,.45);
+      --radius: 18px;
+      --radius2: 14px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background: radial-gradient(1200px 600px at 20% -10%, rgba(123,211,255,.12), transparent 55%),
+                  radial-gradient(900px 500px at 100% 0%, rgba(184,255,176,.09), transparent 50%),
+                  linear-gradient(180deg, #070a0f 0%, var(--bg) 45%, #070a0f 100%);
+      color:var(--text);
+      font-family:var(--sans);
+      line-height:1.55;
+    }
+
+    a{color:var(--accent); text-decoration:none}
+    a:hover{ text-decoration:underline }
+
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 26px 16px 80px;
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding: 14px 16px;
+      border: 1px solid rgba(35,48,66,.6);
+      background: rgba(12,18,27,.65);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+      min-width: 240px;
+    }
+
+    .brand .site{
+      font-weight:800;
+      letter-spacing:.4px;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .brand .tag{
+      font-size:12px;
+      color: var(--muted);
+    }
+
+    .chiprow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      justify-content:flex-end;
+    }
+
+    .chip{
+      font-size:12px;
+      color: var(--muted);
+      border:1px solid rgba(35,48,66,.8);
+      background: rgba(15,22,32,.65);
+      padding: 6px 10px;
+      border-radius: 999px;
+      white-space:nowrap;
+    }
+
+    .chip strong{ color: var(--text); font-weight:700 }
+
+    .card{
+      margin-top: 16px;
+      border: 1px solid rgba(35,48,66,.6);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(15,22,32,.92) 0%, rgba(12,18,27,.9) 100%);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .hero{
+      padding: 22px 22px 16px;
+      border-bottom: 1px solid rgba(35,48,66,.6);
+      background:
+        radial-gradient(900px 500px at 10% 0%, rgba(255,107,107,.08), transparent 55%),
+        radial-gradient(1000px 450px at 70% -10%, rgba(123,211,255,.09), transparent 55%),
+        rgba(12,18,27,.6);
+    }
+
+    .kicker{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      margin-bottom: 10px;
+    }
+
+    .caseid{
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .9px;
+      color: var(--accent2);
+      border: 1px solid rgba(184,255,176,.35);
+      background: rgba(184,255,176,.06);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+
+    .severity{
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .9px;
+      color: var(--danger);
+      border: 1px solid rgba(255,107,107,.35);
+      background: rgba(255,107,107,.06);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+
+    h1{
+      margin: 8px 0 10px;
+      font-size: 28px;
+      line-height: 1.18;
+      letter-spacing: -0.3px;
+    }
+
+    .sub{
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 78ch;
+    }
+
+    .content{
+      padding: 18px 22px 22px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    section{
+      border: 1px solid rgba(35,48,66,.55);
+      background: rgba(15,22,32,.55);
+      border-radius: var(--radius2);
+      padding: 16px 16px 14px;
+    }
+
+    section h2{
+      margin: 0 0 10px;
+      font-size: 16px;
+      letter-spacing: .2px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .dot{
+      width:10px;
+      height:10px;
+      border-radius:999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(123,211,255,.12);
+      flex: 0 0 auto;
+    }
+
+    .dot.red{ background: var(--danger); box-shadow: 0 0 0 4px rgba(255,107,107,.12); }
+    .dot.green{ background: var(--accent2); box-shadow: 0 0 0 4px rgba(184,255,176,.12); }
+    .dot.yellow{ background: var(--warn); box-shadow: 0 0 0 4px rgba(255,209,102,.12); }
+
+    p{ margin: 0 0 10px; color: var(--text); }
+    p:last-child{ margin-bottom:0 }
+    ul{ margin: 8px 0 0 18px; color: var(--text); }
+    li{ margin: 6px 0; color: var(--text); }
+    .muted{ color: var(--muted); }
+
+    .quote{
+      border-left: 3px solid rgba(255,209,102,.75);
+      background: rgba(255,209,102,.06);
+      padding: 12px 12px 12px 12px;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+    .quote p{
+      margin:0;
+      color: var(--text);
+      font-style: italic;
+    }
+
+    .factgrid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .fact{
+      border: 1px solid rgba(35,48,66,.6);
+      background: rgba(12,18,27,.55);
+      border-radius: 14px;
+      padding: 12px 12px 10px;
+    }
+
+    .fact .label{
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing:.8px;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .fact .text{ color: var(--text); }
+
+    .verdict{
+      border: 1px solid rgba(255,107,107,.45);
+      background: linear-gradient(180deg, rgba(255,107,107,.08), rgba(12,18,27,.55));
+    }
+
+    .stamp{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 10px;
+    }
+
+    .stamp span{
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(35,48,66,.8);
+      background: rgba(15,22,32,.55);
+      color: var(--muted);
+    }
+
+    footer{
+      margin-top: 16px;
+      padding: 0 6px;
+      color: var(--faint);
+      font-size: 12px;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .hr{
+      height:1px;
+      background: rgba(35,48,66,.6);
+      margin: 10px 0;
+    }
+
+    .source-list a{ word-break: break-word; }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="site">
+          <a href="https://bez-bullshitu.org" rel="noopener">bez-bullshitu.org</a>
+        </div>
+        <div class="tag">Silent-Precision • pitva naratívov • bez PR</div>
+      </div>
+
+      <div class="chiprow">
+        <div class="chip"><strong>Médium:</strong> Postoj</div>
+        <div class="chip"><strong>Téma:</strong> Štúrovo / Benešove dekréty</div>
+        <div class="chip"><strong>Režim:</strong> kriticky</div>
+      </div>
+    </header>
+
+    <article class="card">
+      <div class="hero">
+        <div class="kicker">
+          <div class="caseid">CASE 0045</div>
+          <div class="severity">Ukážkový bullshit: história ako palivo</div>
+        </div>
+        <h1>„Maďari za Dunaj“: ukážkový bullshit</h1>
+        <p class="sub">
+          Historické fakty môžu byť pravdivé – a zároveň sa s nimi dá robiť nepoctivá rétorika.
+          Tento text je presne ten prípad: fakty sú kulisa, význam sa tlačí cez emóciu, skratky a „ťažké“ slová bez testu.
+        </p>
+      </div>
+
+      <div class="content">
+
+        <section>
+          <h2><span class="dot"></span>Zdroj</h2>
+          <div class="source-list">
+            <ul>
+              <li><a href="https://www.postoj.sk/188563/sturovo-zostalo-zabudnute-aj-po-benesovych-dekretoch" rel="noopener">Postoj (10. 12. 2025): Maďari za Dunaj! Benešove dekréty im pristavili dobytčiaky, potom prišiel aj Štúr</a></li>
+              <li><a href="https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/1946/145/" rel="noopener">Slov-Lex: 145/1946 Zb. – Dohoda medzi Československom a Maďarskom o výmene obyvateľstva</a></li>
+              <li><a href="https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2025/416/vyhlasene_znenie" rel="noopener">Slov-Lex: 416/2025 Z. z. – doplnenie § 417f (trestný čin „popierania/spochybňovania“ povojnového usporiadania)</a></li>
+              <li><a href="https://dennikn.sk/5029489/benesovska-novela-trestneho-zakona-vyvola-prekvapivy-posun-vpred-v-diskusii-o-povojnovom-usporiadani/" rel="noopener">Denník N (16. 12. 2025): „Benešovská“ novela Trestného zákona – rozbor dopadov na slobodu prejavu</a></li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2><span class="dot yellow"></span>Prečo to pitváme</h2>
+          <p>
+            Lebo ide o typ textu, ktorý sa tvári ako „historické objasnenie“ – ale v skutočnosti je to
+            <strong>rámovanie</strong>. Čitateľ dostane emóciu, morálny tlak a pocit, že „už je jasno“.
+          </p>
+          <p>
+            Problém nie je, že sa hovorí o citlivej téme. Problém je metodika: miešanie faktu a interpretácie,
+            selekcia, skoky bez mostov a právne slová používané ako kladivo.
+          </p>
+          <p class="muted">
+            Ak text chce robiť závery o vine, práve, trestnosti a „zločinoch“, musí uniesť dôkazový štandard.
+            Tu sa to nedeje.
+          </p>
+        </section>
+
+        <section>
+          <h2><span class="dot"></span>Citované tvrdenie (jadro naratívu)</h2>
+          <p>
+            Nosný naratív je jednoduchý: „dekréty“ ako živá hrozba, „premenovávanie“ ako vymazávanie identity,
+            a súčasnosť ako pokračovanie minulosti – s pridanou pointou, že kritika môže byť trestná.
+          </p>
+
+          <div class="quote">
+            <p>„Duch dekrétov stále žije.“</p>
+          </div>
+
+          <div class="quote">
+            <p>„Nedávna novela slovenského Trestného zákona… verejná kritika tzv. Benešových dekrétov… stala trestným činom.“</p>
+          </div>
+
+          <div class="quote">
+            <p>„Porušenie sa trestá odňatím slobody až na šesť mesiacov.“</p>
+          </div>
+
+          <div class="quote">
+            <p>„Podľa niektorých toto premenovávanie bolo genocídou maďarských toponým.“</p>
+          </div>
+
+          <p class="muted" style="margin-top:10px;">
+            Citácie sú krátke a jadrové – presne tie miesta, kde sa z histórie vyrába okamžitý verdikt.
+          </p>
+        </section>
+
+        <section>
+          <h2><span class="dot green"></span>Fakty (audit reality)</h2>
+          <p>
+            Tu je minimum overiteľného, ktoré stojí pod nosnými časťami textu – oddelené od emócie.
+          </p>
+
+          <div class="factgrid">
+            <div class="fact">
+              <div class="label">1948: premenovanie Štúrova</div>
+              <div class="text">
+                Štúrovo bolo premenované v roku 1948; článok výslovne uvádza, že pomenovanie po Ľudovítovi Štúrovi
+                prišlo napriek tomu, že Štúr mesto nenavštívil. (Postoj)
+              </div>
+            </div>
+
+            <div class="fact">
+              <div class="label">1948: vlna premenovávania miest a obcí</div>
+              <div class="text">
+                Článok uvádza, že vyhláška zmenila názvy „viac ako siedmim stovkám“ miest, obcí a osád – vrátane veľkej skupiny na juhu Slovenska. (Postoj)
+              </div>
+            </div>
+
+            <div class="fact">
+              <div class="label">1946: výmena obyvateľstva – existujúci právny akt</div>
+              <div class="text">
+                Dohoda medzi Československom a Maďarskom o výmene obyvateľstva je publikovaná ako 145/1946 Zb.
+                (Slov-Lex)
+              </div>
+            </div>
+
+            <div class="fact">
+              <div class="label">§ 417f: text normy (trestnosť do 6 mesiacov)</div>
+              <div class="text">
+                V decembri 2025 bolo doplnené ustanovenie „§ 417f“, ktoré hovorí o treste až na šesť mesiacov
+                za verejné popieranie alebo spochybňovanie povojnového usporiadania po druhej svetovej vojne.
+                (Slov-Lex, Denník N)
+              </div>
+            </div>
+
+            <div class="fact">
+              <div class="label">1991: miestne referendum v Štúrove</div>
+              <div class="text">
+                Článok uvádza referendum (17. 11. 1991), platnú účasť a výsledok v prospech názvu Parkan,
+                ktorý však Ministerstvo vnútra nezohľadnilo. (Postoj)
+              </div>
+            </div>
+          </div>
+
+          <div class="hr"></div>
+
+          <p class="muted">
+            Poznámka: tieto fakty samy osebe neprodukujú jediný „správny“ morálny výklad. Produkujú len to, čo sú: opora pre diskusiu.
+          </p>
+        </section>
+
+        <section>
+          <h2><span class="dot yellow"></span>Čo článok robí (techniky bullshit-u)</h2>
+          <ul>
+            <li><strong>Miešanie kategórií:</strong> komentár sa tvári ako historická analýza – no chýbajú zdrojové testy, alternatívne výklady a metodika.</li>
+            <li><strong>Skoky bez mostov:</strong> z opisu udalosti sa rovno vyrába záver o „vymazávaní“, „genocíde toponým“ či „zločine proti ľudskosti“ bez presného testu pojmov.</li>
+            <li><strong>Právne slová ako kladivo:</strong> keď sa používa „trestnosť“, „zločin“, „proti ľudskosti“, treba nasledovať právna analýza (skutkové znaky, jurisdikcia, porovnanie). Tu nie je.</li>
+            <li><strong>Emócia ako dôkaz:</strong> osobná skúsenosť je silná – ale nesmie suplovať argument. V texte sa často stáva nosičom významu.</li>
+            <li><strong>Rozmazané subjekty:</strong> „slovenskí politici“ či „priaznivci“ ako amorfný blok – bez rozlíšenia času, aktérov a konkrétnych rozhodnutí.</li>
+          </ul>
+        </section>
+
+        <section class="verdict">
+          <h2><span class="dot red"></span>Verdikt</h2>
+          <p>
+            <strong>UKÁŽKOVÝ BULLSHIT.</strong> Nie preto, že by sa v texte nevyskytovali reálne udalosti.
+            Ale preto, že text robí klasickú operáciu: fakty si nechá ako dekoráciu – a význam doručí cez emóciu,
+            skratky a „ťažké slová“ bez disciplíny.
+          </p>
+          <p>
+            Výsledok je predvídateľný: čitateľ neodchádza s nástrojmi na overenie,
+            ale s pocitom, že „už vie, kto je vinný“. To nie je analýza. To je výroba verdiktu.
+          </p>
+
+          <div class="stamp">
+            <span>fakt ≠ rám</span>
+            <span>emócia ≠ dôkaz</span>
+            <span>právne slovo ≠ právny test</span>
+          </div>
+
+          <div class="hr"></div>
+
+          <p>
+            Ak chce niekto robiť serióznu debatu o Benešových dekrétoch, menšinách a pomenovaniach,
+            musí prestať s marketingom krivdy a začať s disciplínou: zdroje, definície, porovnania, kontext.
+            Inak je to len ďalší konfliktný produkt.
+          </p>
+        </section>
+
+      </div>
+    </article>
+
+    <footer>
+      <div>© bez-bullshitu.org • Case 0045 • „Ticho. Precízne. Neodvratne.“</div>
+      <div class="muted">Súbory: /cases/0045-madari-za-dunaj-ukazkovy-bullshit-postoj.html • Index riadok: <span style="font-family:var(--mono);color:var(--text);">Case 0045 – „Maďari za Dunaj“: ukážkový bullshit</span></div>
+    </footer>
+  </div>
+</body>
+</html>
