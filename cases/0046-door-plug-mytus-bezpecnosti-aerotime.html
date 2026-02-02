@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case 0046 – Door-plug blowout: mýtus bezpečnosti vs. audit korporátnej zodpovednosti (AeroTime)</title>
+  <meta name="description" content="Bez-bullshitu pitva reflexu korporátu po incidente Alaska 1282: keď zlyhá výroba, systém sa pokúsi presunúť vinu na tých, čo nemajú PR. Audit reality podľa NTSB, FAA a súdnych podaní." />
+
+  <meta property="og:title" content="Case 0046 – Door-plug blowout: mýtus bezpečnosti vs. audit korporátnej zodpovednosti" />
+  <meta property="og:description" content="Nie je to o paneli. Je to o mechanizme: zlyhanie v procese, chýbajúca stopa, a následný pokus presunúť zodpovednosť mimo výrobcu." />
+  <meta property="og:type" content="article" />
+
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --card:#0f1620;
+      --card2:#0c121b;
+      --text:#e7edf5;
+      --muted:#a8b3c3;
+      --faint:#6f7c90;
+      --line:#233042;
+      --accent:#7bd3ff;
+      --accent2:#b8ffb0;
+      --danger:#ff6b6b;
+      --warn:#ffd166;
+      --shadow: 0 10px 30px rgba(0,0,0,.45);
+      --radius: 18px;
+      --radius2: 14px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background: radial-gradient(1200px 600px at 20% -10%, rgba(123,211,255,.12), transparent 55%),
+                  radial-gradient(900px 500px at 100% 0%, rgba(184,255,176,.09), transparent 50%),
+                  linear-gradient(180deg, #070a0f 0%, var(--bg) 45%, #070a0f 100%);
+      color:var(--text);
+      font-family:var(--sans);
+      line-height:1.55;
+    }
+
+    a{color:var(--accent); text-decoration:none}
+    a:hover{ text-decoration:underline }
+
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 26px 16px 80px;
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding: 14px 16px;
+      border: 1px solid rgba(35,48,66,.6);
+      background: rgba(12,18,27,.65);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+      min-width: 240px;
+    }
+
+    .brand .site{
+      font-weight:800;
+      letter-spacing:.4px;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .brand .tag{
+      font-size:12px;
+      color: var(--muted);
+    }
+
+    .chiprow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      justify-content:flex-end;
+    }
+
+    .chip{
+      font-size:12px;
+      color: var(--muted);
+      border:1px solid rgba(35,48,66,.8);
+      background: rgba(15,22,32,.65);
+      padding: 6px 10px;
+      border-radius: 999px;
+      white-space:nowrap;
+    }
+
+    .chip strong{ color: var(--text); font-weight:700 }
+
+    .card{
+      margin-top: 16px;
+      border: 1px solid rgba(35,48,66,.6);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(15,22,32,.92) 0%, rgba(12,18,27,.9) 100%);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .hero{
+      padding: 22px 22px 16px;
+      border-bottom: 1px solid rgba(35,48,66,.6);
+      background:
+        radial-gradient(900px 500px at 10% 0%, rgba(255,107,107,.10), transparent 55%),
+        radial-gradient(1000px 450px at 70% -10%, rgba(123,211,255,.09), transparent 55%),
+        rgba(12,18,27,.6);
+    }
+
+    .kicker{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      margin-bottom: 10px;
+    }
+
+    .caseid{
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .9px;
+      color: var(--accent2);
+      border: 1px solid rgba(184,255,176,.35);
+      background: rgba(184,255,176,.06);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+
+    .severity{
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .9px;
+      color: var(--danger);
+      border: 1px solid rgba(255,107,107,.35);
+      background: rgba(255,107,107,.06);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+
+    h1{
+      margin: 8px 0 10px;
+      font-size: 28px;
+      line-height: 1.18;
+      letter-spacing: -0.3px;
+    }
+
+    .sub{
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 78ch;
+    }
+
+    .content{
+      padding: 18px 22px 22px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    section{
+      border: 1px solid rgba(35,48,66,.55);
+      background: rgba(15,22,32,.55);
+      border-radius: var(--radius2);
+      padding: 16px 16px 14px;
+    }
+
+    section h2{
+      margin: 0 0 10px;
+      font-size: 16px;
+      letter-spacing: .2px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .dot{
+      width:10px;
+      height:10px;
+      border-radius:999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(123,211,255,.12);
+      flex: 0 0 auto;
+    }
+
+    .dot.red{ background: var(--danger); box-shadow: 0 0 0 4px rgba(255,107,107,.12); }
+    .dot.green{ background: var(--accent2); box-shadow: 0 0 0 4px rgba(184,255,176,.12); }
+    .dot.yellow{ background: var(--warn); box-shadow: 0 0 0 4px rgba(255,209,102,.12); }
+
+    p{ margin: 0 0 10px; color: var(--text); }
+    p:last-child{ margin-bottom:0 }
+    ul{ margin: 8px 0 0 18px; color: var(--text); }
+    li{ margin: 6px 0; color: var(--text); }
+    .muted{ color: var(--muted); }
+
+    .quote{
+      border-left: 3px solid rgba(255,209,102,.75);
+      background: rgba(255,209,102,.06);
+      padding: 12px 12px 12px 12px;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+    .quote p{
+      margin:0;
+      color: var(--text);
+      font-style: italic;
+    }
+
+    .factgrid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .fact{
+      border: 1px solid rgba(35,48,66,.6);
+      background: rgba(12,18,27,.55);
+      border-radius: 14px;
+      padding: 12px 12px 10px;
+    }
+
+    .fact .label{
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing:.8px;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .fact .text{ color: var(--text); }
+
+    .verdict{
+      border: 1px solid rgba(255,107,107,.45);
+      background: linear-gradient(180deg, rgba(255,107,107,.08), rgba(12,18,27,.55));
+    }
+
+    .stamp{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 10px;
+    }
+
+    .stamp span{
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(35,48,66,.8);
+      background: rgba(15,22,32,.55);
+      color: var(--muted);
+    }
+
+    footer{
+      margin-top: 16px;
+      padding: 0 6px;
+      color: var(--faint);
+      font-size: 12px;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .hr{
+      height:1px;
+      background: rgba(35,48,66,.6);
+      margin: 10px 0;
+    }
+
+    .source-list a{ word-break: break-word; }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="site">
+          <a href="https://bez-bullshitu.org" rel="noopener">bez-bullshitu.org</a>
+        </div>
+        <div class="tag">Silent-Precision • pitva naratívov • bez PR</div>
+      </div>
+
+      <div class="chiprow">
+        <div class="chip"><strong>Médium:</strong> AeroTime (spúšťač)</div>
+        <div class="chip"><strong>Téma:</strong> Door-plug blowout / zodpovednosť</div>
+        <div class="chip"><strong>Režim:</strong> kriticky</div>
+      </div>
+    </header>
+
+    <article class="card">
+      <div class="hero">
+        <div class="kicker">
+          <div class="caseid">CASE 0046</div>
+          <div class="severity">Červená kontrolka v letectve</div>
+        </div>
+        <h1><span style="color:var(--danger)">Door-plug blowout:</span> mýtus bezpečnosti vs. audit korporátnej zodpovednosti</h1>
+        <p class="sub">
+          Nie je to o jednom paneli. Je to o mechanizme, ktorý sa spustí po zlyhaní výroby:
+          <strong>minimalizovať vlastnú stopu</strong> a <strong>presunúť vinu mimo výrobcu</strong>.
+          A keď sa to deje v letectve, nejde o reputáciu. Ide o pravidlá pre život a smrť.
+        </p>
+      </div>
+
+      <div class="content">
+
+        <section>
+          <h2><span class="dot"></span>Zdroj</h2>
+          <div class="source-list">
+            <p class="muted">
+              Spúšťačom je žaloba kapitána letu Alaska Airlines 1282, ktorý tvrdí, že výrobca sa po incidente pokúsil
+              presunúť zodpovednosť mimo vlastnú výrobu.
+            </p>
+            <ul>
+              <li><a href="https://www.aerotime.aero/articles/lawsuit-alleges-boeing-737-captain-door-plug-blowout" rel="noopener">AeroTime (5. 1. 2026): Lawsuit alleges Boeing 737 captain…</a></li>
+              <li><a href="https://www.cbsnews.com/news/alaska-airlines-pilot-jet-panel-blew-out-sues-boeing/" rel="noopener">CBS News / AP (7. 1. 2026): Pilot tvrdí „obetného baránka“</a></li>
+              <li><a href="https://www.businessinsider.com/boeing-sued-for-10-million-captain-alaska-airlines-flight-1282-2026-1" rel="noopener">Business Insider (január 2026): prehľad žaloby + kontext vyšetrovania</a></li>
+              <li><a href="https://www.ntsb.gov/investigations/AccidentReports/Reports/AIR2504.pdf" rel="noopener">NTSB (24. 6. 2025): Accident Report AIR-25/04</a></li>
+              <li><a href="https://www.faa.gov/newsroom/updates-boeing-737-9-max-aircraft" rel="noopener">FAA (január 2024): Updates on Boeing 737-9 MAX Aircraft</a></li>
+              <li><a href="https://www.federalregister.gov/documents/2024/01/18/2024-00993/airworthiness-directives-the-boeing-company-airplanes" rel="noopener">Federal Register / FAA AD (18. 1. 2024): Airworthiness Directive pre 737-9</a></li>
+              <li><a href="https://www.ntsb.gov/investigations/Pages/DCA24MA063.aspx" rel="noopener">NTSB prípad (DCA24MA063): základné fakty incidentu</a></li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2><span class="dot yellow"></span>Prečo to pitváme</h2>
+          <p>
+            Lebo existuje reflex, ktorý je pre moderný korporát typický: <strong>keď zlyhá systém, hľadá sa jednotlivec</strong>.
+            A keď sa tento reflex presadí v letectve, posúva sa hranica toho, čo je „normálne“.
+          </p>
+          <p>
+            Tento Case nie je o emóciách. Je o mechanike moci:
+            <strong>kto má stopu v procese</strong>, <strong>kto má právnikov</strong>, <strong>kto má PR</strong>,
+            a kto je v praxi len „premenná“, ktorú možno obetovať, aby sa stabilizovala dôvera investorov.
+          </p>
+          <p class="muted">
+            Keď sa z bezpečnosti stane slogan, a zodpovednosť sa presúva mimo výrobu, vzniká systém, ktorý sa učí,
+            že pravda je náklad a ľudia sú riziko na účtovnej strane.
+          </p>
+        </section>
+
+        <section>
+          <h2><span class="dot"></span>Citované tvrdenie (naratív)</h2>
+          <p>
+            Naratív, ktorý sa objavuje v podobných sporoch, býva vždy rovnaký:
+            výrobca naznačí, že problém mohol vzniknúť „nesprávnou údržbou“, „nesprávnym používaním“ alebo konaním niekoho iného
+            po dodaní lietadla. V tejto konkrétnej žalobe pilot tvrdí, že výrobca ho chcel vykresliť ako
+            <strong>obeť na odvedenie pozornosti</strong>.
+          </p>
+
+          <div class="quote">
+            <p>„Nebola to naša chyba. Niekto iný to pokazil po dodaní.“</p>
+          </div>
+
+          <p class="muted" style="margin-top:10px;">
+            Toto nie je citát z jednej vety. Toto je destilát obranného vzorca: znížiť vlastnú zodpovednosť tým,
+            že sa rozriedi stopa viny.
+          </p>
+        </section>
+
+        <section>
+          <h2><span class="dot green"></span>Fakty (audit reality)</h2>
+          <p>
+            V letectve nerozhoduje rétorika. Rozhoduje záznam, mechanika a reťaz zodpovednosti.
+            Preto je kľúčové, čo uvádza vyšetrovanie a regulátor.
+          </p>
+
+          <div class="factgrid">
+            <div class="fact">
+              <div class="label">5. 1. 2024: incident Alaska Airlines 1282</div>
+              <div class="text">
+                Pri stúpaní po štarte z Portlandu došlo k oddeleniu ľavého „mid exit door plug“ a k rýchlej dekompresii.
+                NTSB uvádza výšku okolo <strong>14 830 ft</strong> a <strong>menšie zranenia</strong> u časti osôb na palube.
+                <span class="muted">(NTSB prípad DCA24MA063)</span>
+              </div>
+            </div>
+
+            <div class="fact">
+              <div class="label">NTSB: chýbali štyri poistné skrutky (bolts)</div>
+              <div class="text">
+                NTSB vo svojej správe konštatuje, že štyri skrutky, ktoré mali zabrániť vertikálnemu pohybu plug-u,
+                boli <strong>v čase udalosti chýbajúce</strong>.
+                Vyšetrovanie rieši aj výrobnú históriu: plug bol počas výroby otvorený kvôli ďalším prácam,
+                pričom v dokumentácii chýbala požadovaná stopa o odstránení a opätovnej montáži.
+                <span class="muted">(NTSB AIR-25/04)</span>
+              </div>
+            </div>
+
+            <div class="fact">
+              <div class="label">Pilot ≠ výrobná kontrola</div>
+              <div class="text">
+                Žaloba stojí na elementárnej realite: posádka nevie „predletovou obhliadkou“ overiť prítomnosť interných
+                poistných skrutiek plug-u za interiérom a konštrukciou. Ak zlyhá tento typ upevnenia,
+                ide o <strong>výrobnú/údržbovú stopu</strong> – nie o pilotný vstup.
+                <span class="muted">(žaloba podľa AeroTime/CBS; technický kontext podľa NTSB)</span>
+              </div>
+            </div>
+
+            <div class="fact">
+              <div class="label">December 2025 – január 2026: žaloba o „presun viny“</div>
+              <div class="text">
+                Kapitán, ktorý lietadlo bezpečne vrátil na zem, podal žalobu (Oregon) a žiada náhradu škody.
+                Tvrdí, že výrobca sa pokúsil naznačiť, že príčina mohla byť „nesprávna údržba alebo použitie“,
+                čím ho mal poškodiť profesionálne aj osobne.
+                <span class="muted">(AeroTime; CBS/AP; Business Insider)</span>
+              </div>
+            </div>
+
+            <div class="fact">
+              <div class="label">Regulátor: uzemnenie + povinné inšpekcie</div>
+              <div class="text">
+                FAA po udalosti držal dotknuté 737-9 MAX s plugmi mimo prevádzky, kým nebol schválený proces
+                inšpekcií a údržby. Následne boli vydané regulačné kroky (AD) pre kontrolu a návrat do služby.
+                <span class="muted">(FAA newsroom; Federal Register AD)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hr"></div>
+
+          <p>
+            Kľúčový bod: v tejto udalosti nie je „najdôležitejšie“, že odletel panel.
+            Najdôležitejšie je, že <strong>chýbala stopa zodpovednosti</strong> pre kritické upevnenie,
+            a následne sa rozbehol <strong>spor o presun viny</strong>.
+            To je presne ten typ mechanizmu, ktorý sa nesmie normalizovať.
+          </p>
+        </section>
+
+        <section class="verdict">
+          <h2><span class="dot red"></span>Verdikt</h2>
+          <p>
+            „Bezpečnosť je priorita“ je v korporátnej reči často fráza.
+            Realita sa pozná až vtedy, keď nastane zlyhanie: <strong>kto nesie zodpovednosť</strong> a <strong>kto ju presúva</strong>.
+          </p>
+          <p>
+            Tento Case je červená kontrolka, lebo ukazuje dvojitý problém:
+            <strong>zlyhanie v procese</strong> (chýbajúce kritické upevnenie, nedokumentovaná manipulácia)
+            a <strong>zlyhanie v správaní</strong> (pokus rozriediť vinu mimo výroby).
+          </p>
+          <p>
+            Ak sa v letectve pripustí logika „kto je slabší, ten to zoberie“, potom sa bezpečnosť mení na marketing
+            a ľudský život na štatistiku. A to je presne to, čo tento projekt odmieta:
+            <strong>pravda nesmie byť obetovaná, aby boli čísla zelené</strong>.
+          </p>
+
+          <div class="stamp">
+            <span>proces ≠ slogan</span>
+            <span>zodpovednosť ≠ PR</span>
+            <span>bezpečnosť ≠ graf</span>
+          </div>
+
+          <div class="hr"></div>
+
+          <p>
+            Jedna veta, ktorú tento Case potrebuje povedať nahlas:
+            <strong>Ak by bola zodpovednosť v systéme nastavená správne, neexistuje priestor na hľadanie obetí mimo výroby.</strong>
+            V letectve je to buď pravda, alebo je to hazard.
+          </p>
+        </section>
+
+        <section>
+          <h2><span class="dot"></span>Poznámka k časovej osi (aby sa neklamalo ani omylom)</h2>
+          <p>
+            Tento Case stojí na konkrétnych dátumoch a dokumentoch:
+          </p>
+          <ul>
+            <li><strong>5. 1. 2024</strong> – incident Alaska Airlines 1282 (NTSB prípadová stránka).</li>
+            <li><strong>12.–18. 1. 2024</strong> – regulačné kroky FAA: uzemnenie a rámce inšpekcií (FAA newsroom; AD vo Federal Register).</li>
+            <li><strong>24. 6. 2025</strong> – NTSB Accident Report AIR-25/04 (zistenia k chýbajúcim skrutkám a výrobnej histórii).</li>
+            <li><strong>30. 12. 2025</strong> – podanie žaloby (uvádzané médiami v januári 2026).</li>
+          </ul>
+          <p class="muted">
+            Toto nie je „dojem“. Toto je záznam: udalosť → vyšetrovanie → regulácia → právny spor o presun viny.
+          </p>
+        </section>
+
+      </div>
+    </article>
+
+    <footer>
+      <div>© bez-bullshitu.org • Case 0046 • „Ticho. Precízne. Neodvratne.“</div>
+      <div class="muted">Súbory: /cases/0046-door-plug-mytus-bezpecnosti-aerotime.html • Index riadok: <span style="font-family:var(--mono);color:var(--text);">Case 0046 – Door-plug blowout: mýtus bezpečnosti vs. audit korporátnej zodpovednosti</span></div>
+    </footer>
+  </div>
+
+  <!-- Zdroje (odkazy priamo v texte):
+       - AeroTime (5. 1. 2026): žaloba kapitána
+       - CBS News / AP (7. 1. 2026): prehľad sporu
+       - Business Insider (január 2026): žaloba + kontext vyšetrovania
+       - NTSB AIR-25/04 (24. 6. 2025): zistenia k chýbajúcim skrutkám + výrobná stopa
+       - NTSB DCA24MA063: základné fakty incidentu
+       - FAA newsroom (január 2024): uzemnenie / proces inšpekcií
+       - Federal Register (18. 1. 2024): Airworthiness Directive
+  -->
+</body>
+</html>
