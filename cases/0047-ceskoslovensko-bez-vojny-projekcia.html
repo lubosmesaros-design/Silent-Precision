@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Case 0047 – Československo bez 2. svetovej vojny: realistická ekonomická projekcia (1938–2026)</title>
+  <meta name="description" content="Kontrafaktuálna projekcia ekonomiky Československa bez 2. svetovej vojny a bez komunistického zlomu. Jednoduchý model s jasnými predpokladmi, tabuľkami a záverom." />
+
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1620;
+      --panel2:#0c121a;
+      --text:#e9eef6;
+      --muted:#aab6c6;
+      --line:rgba(255,255,255,.10);
+      --accent:#66e3ff;
+      --good:#6dffb3;
+      --warn:#ffd166;
+      --bad:#ff6b6b;
+      --chip:#131e2b;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 700px at 20% -10%, rgba(102,227,255,.12), transparent 60%),
+                  radial-gradient(1200px 700px at 80% 0%, rgba(109,255,179,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .wrap{
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 28px 18px 60px;
+    }
+    header{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), transparent);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px 22px 18px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow:hidden;
+    }
+    header:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background: radial-gradient(800px 400px at 15% 15%, rgba(102,227,255,.18), transparent 60%),
+                  radial-gradient(700px 350px at 85% 10%, rgba(109,255,179,.14), transparent 55%);
+      z-index:0;
+      filter: blur(12px);
+      opacity:.8;
+    }
+    header > *{position:relative; z-index:1}
+
+    .kicker{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      margin-bottom: 10px;
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,.18);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 12.5px;
+      white-space:nowrap;
+    }
+    .tag b{color:var(--text); font-weight:600}
+    h1{
+      margin: 6px 0 8px;
+      font-size: clamp(22px, 3vw, 34px);
+      line-height: 1.12;
+      letter-spacing: .2px;
+    }
+    .sub{
+      margin: 0;
+      color: var(--muted);
+      max-width: 75ch;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    @media (max-width: 980px){
+      .grid{grid-template-columns:1fr}
+    }
+
+    .card{
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border-radius: var(--radius);
+      padding: 18px 18px 16px;
+      box-shadow: var(--shadow);
+    }
+    .card h2{
+      margin: 0 0 8px;
+      font-size: 18px;
+      letter-spacing: .2px;
+    }
+    .card h3{
+      margin: 14px 0 8px;
+      font-size: 15px;
+      color: var(--text);
+    }
+    .muted{color:var(--muted)}
+    .hr{
+      height:1px; background: var(--line);
+      margin: 14px 0;
+    }
+
+    .callout{
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(102,227,255,.08), rgba(0,0,0,.18));
+      padding: 14px 14px 12px;
+      border-radius: 14px;
+    }
+    .callout b{color: var(--text)}
+    .callout .big{
+      font-size: 22px;
+      font-weight: 750;
+      letter-spacing: .2px;
+      margin-top: 6px;
+    }
+
+    .list{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--text);
+    }
+    .list li{margin: 6px 0}
+    .pillrow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top: 10px;
+    }
+    .pill{
+      padding: 6px 10px;
+      background: var(--chip);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 12.5px;
+    }
+    .pill.good{color: rgba(109,255,179,.95); border-color: rgba(109,255,179,.22)}
+    .pill.warn{color: rgba(255,209,102,.95); border-color: rgba(255,209,102,.22)}
+    .pill.bad{color: rgba(255,107,107,.95); border-color: rgba(255,107,107,.22)}
+
+    table{
+      width:100%;
+      border-collapse: collapse;
+      overflow:hidden;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,.18);
+    }
+    th, td{
+      padding: 10px 10px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: middle;
+      font-size: 13.5px;
+    }
+    th{
+      text-align:left;
+      color: var(--muted);
+      font-weight: 650;
+      background: rgba(255,255,255,.03);
+    }
+    tr:last-child td{border-bottom:none}
+
+    .num{text-align:right; font-variant-numeric: tabular-nums}
+    .delta{
+      font-weight:700;
+      font-variant-numeric: tabular-nums;
+      padding: 4px 8px;
+      border-radius: 999px;
+      display:inline-block;
+      border: 1px solid;
+      white-space: nowrap;
+    }
+    .delta.up{color: rgba(109,255,179,.95); border-color: rgba(109,255,179,.22); background: rgba(109,255,179,.08)}
+    .delta.flat{color: rgba(255,209,102,.95); border-color: rgba(255,209,102,.22); background: rgba(255,209,102,.08)}
+    .delta.down{color: rgba(255,107,107,.95); border-color: rgba(255,107,107,.22); background: rgba(255,107,107,.08)}
+
+    .note{
+      font-size: 12.5px;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    .verdict{
+      border: 1px solid rgba(102,227,255,.25);
+      background: linear-gradient(180deg, rgba(102,227,255,.12), rgba(0,0,0,.20));
+      border-radius: var(--radius);
+      padding: 16px 16px 14px;
+    }
+    .verdict h2{margin:0 0 8px; font-size: 18px}
+    .verdict .lead{
+      margin:0;
+      color: var(--text);
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .verdict .lead span{color: var(--accent)}
+    footer{
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 12.5px;
+      text-align:center;
+    }
+
+    .kbd{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12.5px;
+      color: var(--text);
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 2px 7px;
+      white-space:nowrap;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="kicker">
+        <span class="tag"><b>Case 0047</b></span>
+        <span class="tag">Téma: <b>kontrafaktuálna projekcia</b></span>
+        <span class="tag">Rozsah: <b>1938–2026</b></span>
+        <span class="tag">Štýl: <b>bez PR</b></span>
+      </div>
+
+      <h1>Československo bez 2. svetovej vojny: realistická ekonomická projekcia (1938–2026)</h1>
+      <p class="sub">
+        Toto nie je „mýtus o veľkosti“. Je to jednoduchý model s jasnými predpokladmi: ak by neprišla vojna a následný politicko-ekonomický zlom,
+        akú veľkú ekonomiku by mohlo mať Československo dnes? Výsledok nie je veštba — je to merateľný odhad.
+      </p>
+    </header>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Čo presne rátame</h2>
+        <p class="muted">
+          Používame kontrafaktuálny (alternatívny) scenár. Neprerábame históriu do rozprávky — iba vymeníme trajektóriu rastu za „západný vzor“
+          a ukážeme rozdiel voči realite.
+        </p>
+
+        <div class="hr"></div>
+
+        <h3>Vstupy (dáta)</h3>
+        <ul class="list">
+          <li><b>Maddison Project Database (MPD)</b> — časové rady HDP na hlavu a populácie (PPP, 2011 international-$).</li>
+          <li>Štart používame <b>1937</b> (posledný stabilný predvojnový bod v mnohých radoch).</li>
+          <li>Na roky po 2022 (do 2026) použijeme konzervatívny pás rastu <b>1–2 % ročne</b>.</li>
+        </ul>
+
+        <div class="hr"></div>
+
+        <h3>Model (jedna veta)</h3>
+        <div class="callout">
+          <b>Československo kopíruje rast Rakúska na obyvateľa,</b> pričom si zachová svoj štartovací odstup/náskok z roku 1937.
+          <div class="big">GDPpc(CSK,t) = 0,913 × GDPpc(AUT,t)</div>
+          <div class="note">
+            0,913 je pomer: CSK GDPpc 1937 / AUT GDPpc 1937 v MPD (v rovnakých jednotkách).
+          </div>
+        </div>
+
+        <div class="pillrow">
+          <span class="pill good">Jasné pravidlá</span>
+          <span class="pill good">Žiadne „pocity“ v číslach</span>
+          <span class="pill warn">Závislé od predpokladu „západnej trajektórie“</span>
+          <span class="pill bad">Nie je to historická istota</span>
+        </div>
+      </section>
+
+      <aside class="card">
+        <h2>Prečo práve Rakúsko</h2>
+        <p class="muted">
+          Rakúsko je regionálne blízky benchmark: stredná Európa, podobné technologické prostredie, malá/ stredná ekonomika a „západná“ inštitucionálna trajektória.
+          Zmyslom nie je tvrdiť, že by sme boli identickí — zmyslom je mať <b>porovnateľnú referenciu</b>.
+        </p>
+
+        <div class="hr"></div>
+
+        <h3>Čomu sa model vyhýba</h3>
+        <ul class="list">
+          <li>Neodhadujeme „koľko ľudí by žilo“ bez vojny.</li>
+          <li>Neodhadujeme nové hranice, obete, migrácie ani geopolitické odchýlky.</li>
+          <li>Nehrá sa tu hra „keby bolo keby“ bez čísel.</li>
+        </ul>
+
+        <div class="hr"></div>
+
+        <h3>Najdôležitejší výstup</h3>
+        <div class="verdict">
+          <h2>Verdikt v jednej vete</h2>
+          <p class="lead">
+            Pri konzervatívnom západnom scenári by bolo Československo dnes <span>približne o ~30 % väčšie</span> než v reálnej trajektórii (v PPP jednotkách MPD).
+          </p>
+        </div>
+      </aside>
+    </div>
+
+    <section class="card" style="margin-top:16px">
+      <h2>Tabuľka: realita vs „bez vojny / bez zlomu“</h2>
+      <p class="muted">
+        Jednotky: <b>GDPpc</b> = HDP na obyvateľa (2011 international-$ PPP), <b>HDP</b> = celkové (mld. 2011 int-$ PPP).
+        Čísla sú zaokrúhlené. Rozdiely sú informatívne, nie „posledná desatina pravdy“.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Rok</th>
+            <th class="num">GDPpc realita</th>
+            <th class="num">GDPpc bez vojny (model)</th>
+            <th class="num">HDP realita</th>
+            <th class="num">HDP bez vojny (model)</th>
+            <th class="num">Rozdiel HDP</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>1937</b></td>
+            <td class="num">4 594</td>
+            <td class="num">4 594</td>
+            <td class="num">66,3</td>
+            <td class="num">66,3</td>
+            <td class="num"><span class="delta flat">0 %</span></td>
+          </tr>
+          <tr>
+            <td><b>1950</b></td>
+            <td class="num">5 581</td>
+            <td class="num">5 394</td>
+            <td class="num">69,1</td>
+            <td class="num">66,8</td>
+            <td class="num"><span class="delta down">−3 %</span></td>
+          </tr>
+          <tr>
+            <td><b>1973</b></td>
+            <td class="num">11 223</td>
+            <td class="num">16 352</td>
+            <td class="num">163,3</td>
+            <td class="num">237,9</td>
+            <td class="num"><span class="delta up">+46 %</span></td>
+          </tr>
+          <tr>
+            <td><b>1990</b></td>
+            <td class="num">13 570</td>
+            <td class="num">24 591</td>
+            <td class="num">211,3</td>
+            <td class="num">382,9</td>
+            <td class="num"><span class="delta up">+81 %</span></td>
+          </tr>
+          <tr>
+            <td><b>2004</b></td>
+            <td class="num">18 389</td>
+            <td class="num">33 747</td>
+            <td class="num">285,0</td>
+            <td class="num">523,1</td>
+            <td class="num"><span class="delta up">+84 %</span></td>
+          </tr>
+          <tr>
+            <td><b>2022</b></td>
+            <td class="num">30 641</td>
+            <td class="num">39 989</td>
+            <td class="num">493,3</td>
+            <td class="num">643,8</td>
+            <td class="num"><span class="delta up">+30 %</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="note">
+        Poznámka: Záporný rozdiel v roku 1950 je efekt zvoleného benchmarku a konkrétnej predvojnovoj povojnovej dynamiky v dátach MPD; kľúčová je dlhodobá divergencia po 60.–70. rokoch.
+      </p>
+    </section>
+
+    <section class="grid" style="margin-top:16px">
+      <section class="card">
+        <h2>Odhad 2026 (mimo datasetu MPD)</h2>
+        <p class="muted">
+          MPD má oficiálne hodnoty po <b>2022</b>. Na rok 2026 uvádzame pásmo podľa konzervatívneho rastu na obyvateľa <b>1–2 % ročne</b>
+          (typické pre vyspelé západné ekonomiky v dlhom období).
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Scenár rastu (2023–2026)</th>
+              <th class="num">GDPpc 2026 (bez vojny)</th>
+              <th class="num">HDP 2026 (bez vojny)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>1,0 % ročne</b> (konzervatívne)</td>
+              <td class="num">≈ 41 600</td>
+              <td class="num">≈ 670 mld.</td>
+            </tr>
+            <tr>
+              <td><b>1,5 % ročne</b> (stred)</td>
+              <td class="num">≈ 42 400</td>
+              <td class="num">≈ 683 mld.</td>
+            </tr>
+            <tr>
+              <td><b>2,0 % ročne</b> (optimistické)</td>
+              <td class="num">≈ 43 300</td>
+              <td class="num">≈ 697 mld.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="note">
+          Jednotky sú stále 2011 international-$ PPP. Pre bežné „dnešné“ USD/EUR by bolo nutné ďalšie prepočty (a tie vnášajú ďalšiu neistotu).
+        </p>
+      </section>
+
+      <aside class="card">
+        <h2>Čo z toho vyplýva (bez omáčky)</h2>
+
+        <h3>1) Najväčšia strata nebola „jedna udalosť“</h3>
+        <p class="muted">
+          Najväčší rozdiel generuje <b>dlhá produktivitná divergencia</b> medzi Západom a východným blokom: technológie, kapitál, inovácie, manažment,
+          otvorenosť trhov a incentívy.
+        </p>
+
+        <h3>2) „Neboli by sme superveľmoc“ — ale neboli by sme ani periféria</h3>
+        <p class="muted">
+          Model ukazuje skôr scenár typu <b>Belgicko/Holandsko</b> v stredoeurópskom kontexte: silná priemyselná ekonomika s vyššou mierou blahobytu,
+          nie geopolitická veľmoc.
+        </p>
+
+        <h3>3) Dôležitý detail</h3>
+        <p class="muted">
+          Tento výpočet je zámerne „čistý“: <b>nezapočítava demografický efekt</b> (koľko ľudí by žilo bez vojny a migrácií).
+          Ak by populácia bola vyššia, celkové HDP by mohlo byť vyššie aj pri rovnakom GDPpc.
+        </p>
+
+        <div class="hr"></div>
+
+        <div class="verdict">
+          <h2>Záver</h2>
+          <p class="lead">
+            Ak by Československo kopírovalo západnú trajektóriu (benchmark Rakúsko), v roku <span>2026</span> by sa ekonomika pohybovala približne v pásme
+            <span>~670–700 mld.</span> (PPP, 2011 int-$) a dlhodobo by bola viditeľne väčšia než reálna povojnová trajektória.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="card" style="margin-top:16px">
+      <h2>Transparentnosť: predpoklady a limity</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Oblasť</th>
+            <th>Čo robíme</th>
+            <th>Čo nerobíme</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Inštitúcie</b></td>
+            <td>Predpoklad „západného“ rámca (právo, trhy, kapitál)</td>
+            <td>Nerobíme politickú simuláciu ani alternatívne režimy</td>
+          </tr>
+          <tr>
+            <td><b>Benchmark</b></td>
+            <td>Rakúsko ako regionálne porovnateľná trajektória</td>
+            <td>Nevyhlasujeme, že by CSK bolo „ako Rakúsko“ vo všetkom</td>
+          </tr>
+          <tr>
+            <td><b>Demografia</b></td>
+            <td>Pre jednoduchosť držíme populáciu pri reálnom rade</td>
+            <td>Nepočítame obete/migrácie/horizonty hraníc</td>
+          </tr>
+          <tr>
+            <td><b>Jednotky</b></td>
+            <td>PPP (2011 international-$) kvôli porovnateľnosti v čase</td>
+            <td>Nerobíme prepočet na „dnešné eurá“ bez ďalšej vrstvy neistoty</td>
+          </tr>
+          <tr>
+            <td><b>2023–2026</b></td>
+            <td>Pásmo rastu 1–2 % ročne (konzervatívne)</td>
+            <td>Nerobíme detailný forecast podľa cyklu, šokov a politík</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="note">
+        Ak chcete prísnejšiu verziu, dá sa spraviť aj „pásmo benchmarkov“: Rakúsko vs Nemecko vs Benelux.
+        To by rozšírilo interval výsledkov, ale pridalo by robustnosť.
+      </p>
+    </section>
+
+    <section class="card" style="margin-top:16px">
+      <h2>Zdroje (dáta)</h2>
+      <ul class="list">
+        <li>Maddison Project Database 2023 (MPD): <a href="https://www.rug.nl/ggdc/historicaldevelopment/maddison/" target="_blank" rel="noopener">GGDC / Maddison Project</a></li>
+        <li>Maddison Project Database – citácia/DOI: <a href="https://doi.org/10.34894/INZBF2" target="_blank" rel="noopener">doi:10.34894/INZBF2</a></li>
+        <li>Vizualizácie a dataset mirror: <a href="https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database" target="_blank" rel="noopener">Our World in Data – MPD GDPpc</a></li>
+      </ul>
+
+      <p class="note">
+        Text aj tabuľky sú zámerne písané „bez PR“. Ak je potrebné, vieme doplniť druhý model (napr. „CSK ako priemer Beneluxu“) a uviesť intervaly vedľa seba.
+      </p>
+    </section>
+
+    <footer>
+      © Case 0047 – Kontrafaktuálna projekcia. Všetko podstatné je v pravidlách modelu. Bez kúziel.
+    </footer>
+  </div>
+</body>
+</html>
