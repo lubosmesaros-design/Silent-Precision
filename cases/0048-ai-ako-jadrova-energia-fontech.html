@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case 0048 – ai ako jadrova energia | bez-bullshitu.org</title>
+  <meta name="description" content="CASE 0048: Fontech balí rozumnú diskusiu o AI safety do apokalyptického titulku o vyhynutí ľudstva. Pitva titulku, framingu a reality obsahu." />
+
+  <style>
+    :root{
+      --bg:#0b0f14; --text:#e8eef7; --muted:#a9b4c4;
+      --line:rgba(255,255,255,.10); --accent:#7dd3fc; --shadow:0 18px 60px rgba(0,0,0,.45);
+      --radius:18px; --mono:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,"Liberation Mono","Courier New", monospace;
+      --sans:ui-sans-serif, system-ui,-apple-system, Segoe UI, Roboto, Helvetica, Arial,"Apple Color Emoji","Segoe UI Emoji";
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:var(--sans); color:var(--text); line-height:1.55;
+      background:
+        radial-gradient(1200px 900px at 20% 0%, rgba(125,211,252,.10), transparent 60%),
+        radial-gradient(1000px 800px at 85% 10%, rgba(52,211,153,.08), transparent 55%),
+        var(--bg);
+    }
+    .wrap{max-width:980px; margin:0 auto; padding:28px 16px 72px;}
+    header{display:flex; flex-direction:column; gap:10px; margin-bottom:18px;}
+    .kicker{font-family:var(--mono); color:var(--muted); font-size:13px; letter-spacing:.04em; text-transform:uppercase;}
+    .kicker a{color:var(--muted); text-decoration:none}
+    .kicker a:hover{color:var(--text); text-decoration:underline}
+    h1{font-size:clamp(26px, 3.2vw, 40px); line-height:1.15; margin:0;}
+    .sub{color:var(--muted); font-size:15px; margin-top:6px; max-width:86ch;}
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      border:1px solid var(--line); border-radius:var(--radius);
+      box-shadow:var(--shadow); overflow:hidden;
+    }
+    .meta{
+      display:grid; grid-template-columns:repeat(12, 1fr); gap:10px;
+      padding:14px 16px; background:rgba(0,0,0,.18); border-bottom:1px solid var(--line);
+    }
+    .chip{
+      grid-column:span 6; border:1px solid var(--line); background:rgba(255,255,255,.02);
+      border-radius:999px; padding:8px 12px; color:var(--muted); font-size:13px;
+      display:flex; justify-content:space-between; gap:10px;
+    }
+    .chip b{color:var(--text); font-weight:650;}
+    @media (max-width:720px){ .chip{grid-column:span 12;} }
+
+    .content{padding:16px; display:flex; flex-direction:column; gap:14px;}
+    section{border:1px solid var(--line); border-radius:16px; background:rgba(255,255,255,.02); padding:14px;}
+    section h2{margin:0 0 10px; font-size:16px; letter-spacing:.01em;}
+    .muted{color:var(--muted)}
+    blockquote{
+      margin:10px 0 0; padding:12px;
+      border-left:4px solid rgba(125,211,252,.45);
+      background:rgba(125,211,252,.06);
+      border-radius:12px;
+    }
+    ul{margin:8px 0 0 18px; padding:0;}
+    .callout{
+      border-radius:16px; border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(125,211,252,.10), rgba(125,211,252,.03));
+      padding:14px;
+    }
+    .callout h3{margin:0 0 8px; font-size:15px;}
+    .verdict{
+      border-radius:16px; border:1px solid rgba(251,113,133,.28);
+      background:linear-gradient(180deg, rgba(251,113,133,.10), rgba(251,113,133,.03));
+      padding:14px;
+    }
+    .verdict h3{margin:0 0 8px; font-size:15px;}
+    .stamp{
+      margin-top:14px; padding-top:12px; border-top:1px dashed var(--line);
+      color:var(--muted); font-family:var(--mono); font-size:12px;
+      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
+    }
+    .tag{font-family:var(--mono); font-size:12px; color:var(--muted);}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="kicker"><a href="https://bez-bullshitu.org">bez-bullshitu.org</a> • Silent-Precision • CASE 0048</div>
+      <h1>ai ako jadrova energia</h1>
+      <div class="sub">
+        Keď je obsah v zásade rozumný, ale titulok reve ako posledná siréna pred koncom civilizácie, niekto tu neinformuje.
+        Niekto tu predáva strach. A presne to treba rozobrať bez anestézie.
+      </div>
+    </header>
+
+    <article class="card">
+      <div class="meta">
+        <div class="chip"><span class="muted">Dátum</span><b>29.03.2026</b></div>
+        <div class="chip"><span class="muted">Téma</span><b>AI, AGI, safety, titulková manipulácia</b></div>
+        <div class="chip"><span class="muted">Médium</span><b>Fontech / Startitup</b></div>
+        <div class="chip"><span class="muted">Typ</span><b>Apokalyptický framing vs. realita textu</b></div>
+      </div>
+
+      <div class="content">
+
+        <section>
+          <h2>Zdroj</h2>
+          <div class="muted">
+            Fontech / Startitup: „Umelá inteligencia je ako jadrová energia, varuje expert. Ak sa toto stane, ľudstvo vyhynie“
+            (Peter Hodal, 28.03.2026). Článok sumarizuje rozhovor s Dariom Amodeim, CEO Anthropic, o bezpečnosti AI,
+            interpretovateľnosti, AGI, regulácii a rizikách zneužitia pokročilých systémov.
+          </div>
+        </section>
+
+        <section>
+          <h2>Prečo to pitváme</h2>
+          <ul>
+            <li>Pretože titulok sľubuje existenčný horor, ale text prináša v zásade štandardnú diskusiu o AI safety.</li>
+            <li>Pretože spojenie „ak sa toto stane, ľudstvo vyhynie“ je učebnicová neurčitá hrozba bez konkrétneho mechanizmu.</li>
+            <li>Pretože keď médiá tlačia strach viac než obsah, nevzniká informovanosť, ale lacná chemická reakcia v mozgu čitateľa.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Citované tvrdenie</h2>
+          <blockquote>
+            „AGI má potenciál vyriešiť mnohé globálne problémy – od klimatických zmien až po liečbu chorôb. No zároveň predstavuje existenčné riziko.“
+          </blockquote>
+          <blockquote>
+            „Pri dostatočne pokročilom systéme môže dôjsť k situácii, keď ani jeho tvorcovia nedokážu úplne pochopiť alebo kontrolovať jeho správanie.“
+          </blockquote>
+          <div class="tag" style="margin-top:8px;">Poznámka: titulok hovorí o vyhynutí ľudstva, samotný text však pracuje najmä s rámcom rizika, kontroly, regulácie a bezpečnosti.</div>
+        </section>
+
+        <section>
+          <h2>Fakty</h2>
+          <ul>
+            <li><b>Titulok je tvrdší než samotný obsah.</b> Text nepopisuje konkrétny scenár „toto sa stane a ľudstvo vyhynie“. Pracuje so všeobecným pojmom existenčného rizika.</li>
+            <li><b>Amodei nepredáva instantnú apokalypsu.</b> Hovorí o potrebe safety, interpretovateľnosti, robustnosti a regulácie. To je seriózna odborná pozícia, nie trailer na koniec sveta.</li>
+            <li><b>Článok opakovane zdôrazňuje aj prínosy AI.</b> Zdravotníctvo, vzdelávanie, výskum, lieky, riešenie problémov. To je v priamom napätí s titulkom, ktorý tlačí len katastrofický register.</li>
+            <li><b>„AI ako jadrová energia“ je metafora o dvojitom potenciáli.</b> Nie dôkaz, že sme tri minúty pred vyhynutím. Je to porovnanie s technológiou, ktorá vyžaduje pravidlá, dohľad a disciplínu.</li>
+            <li><b>Text sám priznáva neistotu.</b> Hovorí o možných rizikách, o potrebe kontroly a o dlhšej ceste k AGI. Titulok však túto neistotu premení na emocionálny výstrel.</li>
+            <li><b>Black box problém je legitímny.</b> Nepriehľadnosť modelov je reálna technická a bezpečnostná otázka. Lenže legitímny problém ešte automaticky nie je povolenka na hysterický framing.</li>
+          </ul>
+
+          <div class="callout" style="margin-top:12px;">
+            <h3>Najtvrdšia pravda o tomto článku</h3>
+            <ul>
+              <li><b>Obsah je vcelku normálny.</b> Titulok je ten, čo tu robí cirkus.</li>
+              <li><b>„Ak sa toto stane“</b> je perfektný mediálny trik: nevieš čo, nevieš kedy, nevieš ako, ale už sa bojíš.</li>
+              <li><b>Existenčné riziko</b> je odborný pojem pre veľmi vážne dlhodobé riziká, nie automatický synonymický preklad na „zajtra všetci zomrieme“.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2>Čo je na tom celé typické</h2>
+          <ul>
+            <li><b>Headline inflation:</b> z rozumnej diskusie o safety sa stane titulkový armagedon.</li>
+            <li><b>Emócia pred presnosťou:</b> čitateľ má najprv cítiť hrozbu, až potom prípadne zistiť, že text je oveľa miernejší.</li>
+            <li><b>Neurčitý strašiak:</b> čím menej konkrétny mechanizmus, tým širší priestor pre fantáziu a klik.</li>
+          </ul>
+          <div class="muted">
+            Je to stará mediálna disciplína. Zoberieš serióznu tému, nafúkneš ju na existenciálny poplach a predáš ju ako urgentnú pravdu.
+            Obsah potom pokojne môže byť slušný. Škoda už bola spôsobená v titulku.
+          </div>
+        </section>
+
+        <section>
+          <h2>Verdikt</h2>
+          <div class="verdict">
+            <h3>Bez bullshitu:</h3>
+            <ul>
+              <li><b>Článok nie je úplný odpad.</b> Má legitímnu tému a viaceré vecne správne body.</li>
+              <li><b>Titulok je však manipulatívny prepal.</b> Vyrába dojem bezprostredného vyhynutia z textu, ktorý hovorí hlavne o opatrnosti, kontrole a regulácii.</li>
+              <li><b>Najväčší problém nie je AI v tomto článku.</b> Najväčší problém je redakčný reflex: keď nevieš zvýšiť hodnotu, zvýš hlasitosť.</li>
+              <li><b>Výsledok:</b> čitateľ dostane menej porozumenia a viac adrenalínu. Presne ten dedinský model, ktorý internet miluje až na kosť.</li>
+            </ul>
+            <div style="margin-top:10px; font-family: var(--mono); color: var(--muted); font-size: 12.5px;">
+              Jedna veta na stenu: <b>Keď titulok kričí o vyhynutí, ale text len opatrne diskutuje riziká, problém nie je v technológii. Problém je v marketingu.</b>
+            </div>
+          </div>
+
+          <div class="stamp">
+            <div>Ticho. Precízne. Neodvratne.</div>
+            <div>CASE 0048 • Silent-Precision</div>
+          </div>
+        </section>
+
+      </div>
+    </article>
+  </div>
+</body>
+</html>
