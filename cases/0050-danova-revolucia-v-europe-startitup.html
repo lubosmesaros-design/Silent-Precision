@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case 0050 – Daňová revolúcia v Európe? Nie. Holandský experiment nafúknutý na kontinent | bez-bullshitu.org</title>
+  <meta name="description" content="CASE 0050: Startitup nafúkol holandskú reformu Box 3 na európsku daňovú revolúciu. Realita: existuje reálny návrh, ale nie celoeurópska lavína." />
+
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#121821;
+      --panel-2:#0f141c;
+      --text:#e8eef7;
+      --muted:#a9b4c4;
+      --line:rgba(255,255,255,.08);
+      --accent:#ffffff;
+      --accent-soft:rgba(255,255,255,.08);
+      --good:#7ee787;
+      --warn:#ffd866;
+      --bad:#ff7b72;
+      --shadow:0 20px 60px rgba(0,0,0,.35);
+      --radius:22px;
+      --max:980px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,.05), transparent 28%),
+        linear-gradient(180deg, #0a0e13 0%, #0b0f14 100%);
+      color:var(--text);
+      font:16px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
+      letter-spacing:.01em;
+    }
+
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:32px 18px 80px;
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:18px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .brand{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .brand-dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:#fff;
+      box-shadow:0 0 18px rgba(255,255,255,.55);
+    }
+
+    .hero{
+      background:linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:30px;
+      padding:32px 26px 26px;
+      box-shadow:var(--shadow);
+      margin-bottom:22px;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      padding:7px 12px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:var(--accent-soft);
+      color:#fff;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      margin-bottom:18px;
+    }
+
+    h1{
+      margin:0 0 14px;
+      font-size:clamp(30px, 5vw, 54px);
+      line-height:1.08;
+      letter-spacing:-.03em;
+    }
+
+    .lead{
+      margin:0;
+      color:#d9e2ef;
+      font-size:clamp(16px, 2.2vw, 20px);
+      max-width:860px;
+    }
+
+    .meta{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+      margin-top:24px;
+    }
+
+    .meta-card{
+      background:var(--panel-2);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:14px 14px 13px;
+    }
+
+    .meta-k{
+      color:var(--muted);
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      margin-bottom:6px;
+    }
+
+    .meta-v{
+      font-weight:700;
+      color:#fff;
+    }
+
+    .section{
+      background:linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.015));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:24px 22px;
+      box-shadow:var(--shadow);
+      margin-bottom:18px;
+    }
+
+    .section h2{
+      margin:0 0 14px;
+      font-size:24px;
+      line-height:1.2;
+      letter-spacing:-.02em;
+    }
+
+    .section p{
+      margin:0 0 14px;
+      color:#d7e0ec;
+    }
+
+    .section p:last-child{margin-bottom:0}
+
+    .quote{
+      margin:14px 0 0;
+      padding:18px 18px 18px 20px;
+      border-left:4px solid #fff;
+      background:rgba(255,255,255,.035);
+      border-radius:14px;
+      color:#f4f7fb;
+      font-size:18px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+
+    .card{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px;
+    }
+
+    .card h3{
+      margin:0 0 10px;
+      font-size:18px;
+      line-height:1.25;
+    }
+
+    .card p{
+      margin:0;
+      color:#d7e0ec;
+    }
+
+    .badge{
+      display:inline-block;
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      margin-bottom:10px;
+      font-weight:700;
+    }
+
+    .badge.good{color:var(--good);background:rgba(126,231,135,.08)}
+    .badge.warn{color:var(--warn);background:rgba(255,216,102,.08)}
+    .badge.bad{color:var(--bad);background:rgba(255,123,114,.08)}
+
+    .verdict{
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:24px;
+      padding:24px 22px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      box-shadow:var(--shadow);
+    }
+
+    .verdict-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:12px;
+    }
+
+    .verdict h2{
+      margin:0;
+      font-size:28px;
+      letter-spacing:-.02em;
+    }
+
+    .score{
+      white-space:nowrap;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,123,114,.35);
+      background:rgba(255,123,114,.08);
+      color:var(--bad);
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-size:12px;
+    }
+
+    .footer{
+      margin-top:22px;
+      color:var(--muted);
+      font-size:13px;
+      text-align:center;
+    }
+
+    @media (max-width:760px){
+      .meta,.grid{grid-template-columns:1fr}
+      .hero{padding:26px 20px 22px}
+      .section{padding:20px 18px}
+      .verdict-head{flex-direction:column;align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <a href="https://bez-bullshitu.org" target="_blank" rel="noopener noreferrer">bez-bullshitu.org</a>
+      </div>
+      <div>CASE 0050</div>
+    </div>
+
+    <header class="hero">
+      <div class="eyebrow">Silent Precision / Case File</div>
+      <h1>Daňová revolúcia v Európe? Nie. Holandský experiment nafúknutý na kontinent.</h1>
+      <p class="lead">
+        Startitup postavil silný a ľahko predajný headline na reálnom základe. Problém nie je v tom, že by si tému vymyslel.
+        Problém je v tom, že z holandského návrhu spravil dojem širšej európskej lavíny. To je presne ten typ textu,
+        ktorý je formálne obhájiteľný, ale mentálne manipuluje rozsahom hrozby.
+      </p>
+
+      <div class="meta">
+        <div class="meta-card">
+          <div class="meta-k">Médium</div>
+          <div class="meta-v">Startitup</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-k">Typ manipulácie</div>
+          <div class="meta-v">Legitímny základ + nafúknutý dosah</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-k">Verdikt</div>
+          <div class="meta-v">Zavádzajúci rámec</div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2>Zdroj</h2>
+      <p>
+        Analyzovaný text: <strong>„Daňová revolúcia v Európe: Investori zaplatia aj za zisky, ktoré ešte nedosiahli (NÁZOR ODBORNÍKA)”</strong>
+      </p>
+      <p>
+        Článok pracuje s atraktívnym a konfliktným framingom: investor zaplatí aj za niečo, čo ešte nepredal. Téma je silná, citlivá
+        a ľahko virálna. Práve preto si pýta presnú chirurgiu.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Prečo to pitváme</h2>
+      <p>
+        Pretože toto nie je klasický lacný fake. Toto je sofistikovanejší formát. Autor zoberie reálnu legislatívnu tému,
+        posadí ju na emočne výbušnú vetu a potom jemne posunie čitateľa k dojmu, že sa pred ním otvára celoeurópsky precedens.
+        Formálne je krytý. Mentálne však tlačí publikum do širšieho strachu, než aký zodpovedá realite.
+      </p>
+      <p>
+        V preklade: nie je problém, že text upozorňuje na sporný návrh. Problém je, že medzi riadkami podsúva väčší geografický aj systémový dosah,
+        než je zatiaľ obhájiteľné.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Citované tvrdenie</h2>
+      <div class="quote">
+        „Daňová revolúcia v Európe: Investori zaplatia aj za zisky, ktoré ešte nedosiahli.“
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Fakty</h2>
+      <div class="grid">
+        <div class="card">
+          <span class="badge good">Áno, jadro témy existuje</span>
+          <h3>Holandsko naozaj rieši novú Box 3 reformu</h3>
+          <p>
+            Nejde o výmysel. V Holandsku sa skutočne rieši nový model zdaňovania majetku v režime Box 3.
+            Návrh cieli na „skutočný výnos“ a pri časti aktív zahŕňa aj zmenu hodnoty majetku, teda aj papierový rast.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="badge warn">Lenže</span>
+          <h3>Nie je to „Európa“, ale konkrétny holandský návrh</h3>
+          <p>
+            Headline stavia dojem, že ide o širší európsky posun. Realita je oveľa užšia.
+            Hovoríme o jednom národnom daňovom návrhu, nie o jednotnej európskej reforme ani o automatickom vzore pre celý kontinent.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="badge warn">Dôležitý detail</span>
+          <h3>Návrh nie je stabilná hotová realita</h3>
+          <p>
+            Aj samotný holandský proces ukazuje, že vec nie je uzavretá. Návrh čelí kritike, úpravám aj politickému tlaku.
+            To znamená, že z neho robiť hotovú kontinentálnu budúcnosť je predčasné.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="badge bad">Kde je háčik</span>
+          <h3>Text nafukuje rozsah hrozby</h3>
+          <p>
+            Najsilnejší manipulačný prvok nie je v samotnej informácii o papierových ziskoch.
+            Je v tom, že čitateľ dostane pocit širšej „daňovej revolúcie v Európe“, hoci zatiaľ sleduje skôr holandský experiment
+            a spor o konkrétny právno-daňový model.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Čo text robí psychologicky</h2>
+      <p>
+        Funguje to elegantne. Zoberie legitímny detail, ktorý vie človeka okamžite vytočiť:
+        <strong>„zaplatíš aj za zisk, ktorý ešte nemáš v hotovosti“</strong>. To je silné samo osebe.
+        Potom sa k tomu prilepí širší rámec „Európa“ a z lokálnej daňovej komplikácie je zrazu civilizačný trend.
+      </p>
+      <p>
+        Takéto texty sa nešíria preto, že by boli úplne nepravdivé. Šíria sa preto, že sú postavené na pravde,
+        ktorú niekto natiahne cez väčšie územie, väčší strach a väčší dosah. To je mediálne veľmi efektívne.
+        A intelektuálne veľmi lacné.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Čo je na téme legitímne problematické</h2>
+      <p>
+        Samotná výhrada voči zdaňovaniu nerealizovaných ziskov nie je hystéria. Je to úplne legitímny ekonomický problém.
+        Papierový zisk nie je hotovosť. Ak štát pýta daň z niečoho, čo investor nepredal, vytvára tlak na predaj alebo na zháňanie likvidity.
+        To je reálny konflikt medzi účtovnou hodnotou a fyzickou dostupnosťou peňazí.
+      </p>
+      <p>
+        Presne preto je táto téma citlivá. Lenže citlivosť témy ešte automaticky neospravedlňuje nafúknutý headline.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Bez bullshitu</h2>
+      <p>
+        Keby headline znel: <strong>„Holandsko rieši kontroverzný návrh, ktorý by pri časti majetku zasiahol aj papierové zisky“</strong>,
+        bolo by to vecné, presné a poctivé. Lenže to by už nemalo ten správny pach civilizačnej paniky.
+      </p>
+      <p>
+        Preto prišlo „daňová revolúcia v Európe“. Nie preto, že by to bolo najpresnejšie. Ale preto, že to lepšie predáva.
+      </p>
+    </section>
+
+    <section class="verdict">
+      <div class="verdict-head">
+        <h2>Verdikt</h2>
+        <div class="score">Zavádzajúce</div>
+      </div>
+      <p>
+        Startitup nevymyslel tému. Holandský návrh má reálny základ a kontroverzia okolo papierových ziskov je legitímna.
+        Zlyhanie textu je inde: z jedného konkrétneho daňového návrhu robí dojem širšej európskej revolúcie.
+      </p>
+      <p>
+        Čistý výsledok: <strong>pravdivé jadro, nafúknutý rámec, emócia pred presnosťou</strong>.
+      </p>
+    </section>
+
+    <div class="footer">
+      bez-bullshitu.org / Silent Precision / CASE 0050
+    </div>
+  </div>
+</body>
+</html>
