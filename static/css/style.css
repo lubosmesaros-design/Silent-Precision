@@ -145,7 +145,7 @@ p {
   border: 1px solid #242a38;
   border-radius: 18px;
   padding: 26px;
-  box-shadow: 0 10px 35px rgba(0,0,0,0.35);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(10px);
 }
 
@@ -260,14 +260,20 @@ footer {
   display: block;
   padding: 14px 16px;
   margin-bottom: 10px;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 14px;
-  background: rgba(255,255,255,0.02);
-  color: #e8eef7;
+  background: rgba(255, 255, 255, 0.02);
+  color: #ffffff;
   text-decoration: none;
   font-size: 15px;
   line-height: 1.45;
   transition: all 0.15s ease;
+}
+
+.caseLink:visited,
+.caseLink:active,
+.caseLink:focus {
+  color: #ffffff;
 }
 
 .caseLink:last-child {
@@ -276,8 +282,8 @@ footer {
 
 .caseLink:hover {
   color: #ffffff;
-  background: rgba(255,255,255,0.05);
-  border-color: rgba(255,255,255,0.16);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.16);
   transform: translateY(-1px);
 }
 
