@@ -13,11 +13,20 @@
 
 /* ---- Base ---- */
 body {
-  background-color: #0f1115;
   color: #e6e6e6;
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   font-size: 16px;
   line-height: 1.7;
+  background:
+    radial-gradient(900px 500px at 18% 20%, rgba(120, 140, 255, 0.10), transparent 55%),
+    radial-gradient(900px 600px at 82% 30%, rgba(180, 120, 255, 0.08), transparent 55%),
+    radial-gradient(700px 500px at 50% 85%, rgba(120, 255, 200, 0.06), transparent 55%),
+    linear-gradient(180deg, #0c0e13 0%, #0f1115 50%, #0c0e13 100%);
+  background-attachment: fixed;
+}
+
+main {
+  min-height: 100vh;
 }
 
 /* ---- Layout ---- */
@@ -25,6 +34,18 @@ body {
   max-width: 960px;
   margin: 80px auto;
   padding: 40px;
+  position: relative;
+}
+
+/* subtle film grain */
+.container::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
 }
 
 /* ---- Headings ---- */
@@ -53,9 +74,9 @@ p {
 
 /* --- Hero --- */
 .hero {
-  margin-bottom: 48px;
-  padding: 40px 0 24px;
-  border-bottom: 1px solid #22262d;
+  margin-bottom: 26px;
+  padding: 58px 0 34px;
+  border-bottom: 1px solid #1f2430;
 }
 
 .kicker {
@@ -64,161 +85,6 @@ p {
   text-transform: uppercase;
   color: #7f8794;
   margin-bottom: 14px;
-}
-
-.hero h1 {
-  font-size: 44px;
-  line-height: 1.12;
-  margin-bottom: 14px;
-}
-
-.lead {
-  font-size: 18px;
-  color: #bfc6d1;
-  max-width: 70ch;
-}
-
-/* --- Grid cards --- */
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 28px;
-}
-
-.card {
-  background: #12151c;
-  border: 1px solid #22262d;
-  border-radius: 14px;
-  padding: 26px;
-}
-
-.card p {
-  margin-bottom: 14px;
-}
-
-.subhead {
-  margin-top: 18px;
-  margin-bottom: 10px;
-  color: #bfc6d1;
-  font-weight: 600;
-}
-
-/* --- Footer line --- */
-.footerline {
-  margin-top: 32px;
-  padding-top: 18px;
-  border-top: 1px solid #22262d;
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  color: #7f8794;
-  font-size: 14px;
-}
-
-/* --- Responsive --- */
-@media (max-width: 900px) {
-  .container { margin: 40px auto; padding: 22px; }
-  .grid { grid-template-columns: 1fr; }
-  .hero h1 { font-size: 34px; }
-}
-
-/* ---- Lists (spec-style) ---- */
-ul {
-  list-style: none;
-  margin: 24px 0;
-  padding-left: 0;
-}
-
-ul li {
-  margin-bottom: 10px;
-  padding-left: 18px;
-  position: relative;
-}
-
-ul li::before {
-  content: "—";
-  position: absolute;
-  left: 0;
-  color: #7f8794;
-}
-
-/* ---- Language blocks ---- */
-.lang {
-  margin-top: 64px;
-  padding-top: 32px;
-  border-top: 1px solid #22262d;
-}
-
-.lang-label {
-  font-size: 12px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: #7f8794;
-  margin-bottom: 24px;
-}
-
-/* ---- Emphasis ---- */
-strong {
-  font-weight: 600;
-  color: #ffffff;
-}
-
-/* ---- Links ---- */
-a {
-  color: #9fb3ff;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* ---- Footer spacing (future-proof) ---- */
-footer {
-  margin-top: 120px;
-  font-size: 14px;
-  color: #7f8794;
-}
-
-/* =========================================================
-   Alive layer (hero + cards + ambient background)
-   ========================================================= */
-
-body {
-  background:
-    radial-gradient(900px 500px at 18% 20%, rgba(120, 140, 255, 0.10), transparent 55%),
-    radial-gradient(900px 600px at 82% 30%, rgba(180, 120, 255, 0.08), transparent 55%),
-    radial-gradient(700px 500px at 50% 85%, rgba(120, 255, 200, 0.06), transparent 55%),
-    linear-gradient(180deg, #0c0e13 0%, #0f1115 50%, #0c0e13 100%);
-  background-attachment: fixed;
-}
-
-main {
-  min-height: 100vh;
-}
-
-/* container: už máš, len jemne vylepšíme “feel” */
-.container {
-  position: relative;
-}
-
-/* subtle film grain */
-.container::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
-  mix-blend-mode: overlay;
-}
-
-/* HERO */
-.hero {
-  padding: 58px 0 34px;
-  border-bottom: 1px solid #1f2430;
-  margin-bottom: 26px;
 }
 
 .brand {
@@ -266,7 +132,7 @@ main {
   font-size: 13px;
 }
 
-/* grid cards */
+/* --- Grid cards --- */
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -294,15 +160,26 @@ main {
   font-weight: 600;
 }
 
-.lang-label {
-  font-size: 12px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #8b93a3;
-  margin-bottom: 16px;
+/* ---- Lists (spec-style) ---- */
+ul {
+  list-style: none;
+  margin: 24px 0;
+  padding-left: 0;
 }
 
-/* list look = “spec sheet” */
+ul li {
+  margin-bottom: 10px;
+  padding-left: 18px;
+  position: relative;
+}
+
+ul li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: #7f8794;
+}
+
 .card ul li {
   padding-left: 18px;
 }
@@ -312,7 +189,39 @@ main {
   color: #8b93a3;
 }
 
-/* footer */
+/* ---- Language blocks ---- */
+.lang {
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid #22262d;
+}
+
+.lang-label {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #8b93a3;
+  margin-bottom: 16px;
+}
+
+/* ---- Emphasis ---- */
+strong {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* ---- Links ---- */
+a {
+  color: #e8eef7;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* --- Footer line --- */
 .footerline {
   margin-top: 26px;
   padding-top: 18px;
@@ -324,11 +233,13 @@ main {
   color: #aab3c2;
 }
 
-/* responsive */
-@media (max-width: 900px) {
-  .grid { grid-template-columns: 1fr; }
-  .hero h1 { font-size: 40px; }
+/* ---- Footer spacing (future-proof) ---- */
+footer {
+  margin-top: 120px;
+  font-size: 14px;
+  color: #7f8794;
 }
+
 /* =========================
    CASES LIST (index page)
    ========================= */
@@ -341,25 +252,47 @@ main {
   font-size: 14px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #8ab3ff;
+  color: #bfc6d1;
   margin-bottom: 14px;
 }
 
 .caseLink {
-  display: block;                 /* POD SEBA */
-  padding: 8px 0;
-  margin-bottom: 4px;
-  border-bottom: 1px solid #1f2933;
-  color: #9bbcff;
+  display: block;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.02);
+  color: #e8eef7;
   text-decoration: none;
   font-size: 15px;
+  line-height: 1.45;
+  transition: all 0.15s ease;
 }
 
 .caseLink:last-child {
-  border-bottom: none;
+  margin-bottom: 0;
 }
 
 .caseLink:hover {
-  color: #c5d4ff;
-  text-decoration: underline;
+  color: #ffffff;
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.16);
+  transform: translateY(-1px);
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .container {
+    margin: 40px auto;
+    padding: 22px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
 }
